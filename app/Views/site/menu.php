@@ -121,9 +121,8 @@
                                         endforeach; ?>
                                     </div>
                                 </div>
-                            </li>
-                            
-                            <li><?= anchor('/category/school', "ESCOLA"); ?></li>
+                            </li>                            
+                            <li><?= anchor('/school', "ESCOLA"); ?></li>
 
                         </ul>
                         <!--nav menu end-->

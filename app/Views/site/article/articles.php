@@ -31,12 +31,13 @@
                         <div class="entry-content">
                             <?= $dataArticle['text']; ?>
                             <?=createQuote($dataArticle['quote'],$dataArticle['quote-author']);?>
-                                      <p><img class="float-left" src="<?= base_url(); ?>/assets/images/news/news-details/post_style.jpg" alt=""></p>
-
+                            <?php if ($dataArticle['image-text-second']) : ?>
+                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
+                            <?php endif;?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
 
-                            <?php
+                            <?php                            
                             if ($dataArticle['image-gallery']) : ?>
                                 <div class="gallery-img">
                                     <?php
@@ -70,6 +71,8 @@
 
 
             </div><!-- col end -->
+            <?=view('site/side');?>
+       
             <!-- col end-->
         </div><!-- row end-->
     </div><!-- container-->

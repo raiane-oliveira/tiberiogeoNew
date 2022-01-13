@@ -40,7 +40,8 @@
                                     <div class="col-md-8">
                                         <div class="post-content">
                                             <h3 class="post-title md">
-                                                <?= anchor('/' . $e['category'] . '/' . $e['slug'], $e['title']); ?>
+                                                <?=anchorArticle($e['category'],$e['title'], $e['title']); 
+                                                 ?>
                                             </h3>
                                             <ul class="post-meta-info">
                                                 <li><a href="">Donald Ramos</a></li>

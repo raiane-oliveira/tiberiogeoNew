@@ -3,9 +3,7 @@
       <div class="row">
          <div class="col-lg-9">
             <div class="ts-grid-box bg-dark-item">
-               <div class="ts-heading-item">
-                  <h2 class="ts-title"><span>Destaque</span></h2>
-               </div>
+              
                <div class="row ts-grid-item ts-post-style-2">
                   <div class="col-lg-12">
                      <div class="post-list ts-grid-box ts-grid-box-heighlight text-white">

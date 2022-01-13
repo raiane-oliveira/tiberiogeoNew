@@ -38,6 +38,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/world/(:any)', 'World::index/$1');
 $routes->get('/article/(:any)/(:any)', 'Article::index/$1/$2');
 $routes->get('/category/(:any)', 'Category::index/$1');
+$routes->get('/school', 'School::index');
 //$routes->get('/article/(:num)', 'Article::index/$1');
 
 /*

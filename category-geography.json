@@ -1,58 +1,78 @@
 [
-  {
-    "title": "A Hidrosfera",
-    "slug": "a-hidrosfera",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 1,
-    "category":"geography",
-    "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going"
-  },
-  {
-    "title": "Formação do capitalismo",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 2,
-    "category":"geography",
-    "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going"
-  },
-  {
-    "title": "A Atmosfera",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 3,
-    "category":"geography",
-    "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
-  },
-  {
-    "title": "A Atmosfera",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 3,
-    "category":"geography",
-    "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
-  },  
-  {
-    "title": "A Atmosfera",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 3,
-    "category":"geography",
-    "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
-  },
-  {
-    "title": "A Atmosfera",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 3,
-    "category":"geography",
-    "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
-  },
-  {
-    "title": "A Atmosfera",
-    "slug": "formacao-do-capitalismo",
-    "image-main": "Gentrificacao_1.jpg",
-    "id": 3,
-    "category":"geography",
-    "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
-  }
+    {
+        "title": "A Hidrosfera",
+        "slug": "a-hidrosfera",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 1,
+        "category": "geography",
+        "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going"
+    },
+    {
+        "title": "Formação do capitalismo",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 2,
+        "category": "geography",
+        "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going"
+    },
+    {
+        "title": "A Atmosfera",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 3,
+        "category": "geography",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
+    },
+    {
+        "title": "A Atmosfera",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 3,
+        "category": "geography",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
+    },
+    {
+        "title": "A Atmosfera",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 3,
+        "category": "geography",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
+    },
+    {
+        "title": "A Atmosfera",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 3,
+        "category": "geography",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
+    },
+    {
+        "title": "A Atmosfera",
+        "slug": "formacao-do-capitalismo",
+        "image-main": "Gentrificacao_1.jpg",
+        "id": 3,
+        "category": "geography",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta."
+    },
+    {
+        "id": 4,
+        "category": "geography",
+        "title": "A Gentrificação",
+        "resume": "O termo é derivado de um neologismo criado pela socióloga britânica Ruth Glass em 1963, em um artigo onde ela falava sobre as mudanças urbanas em Londres (Inglaterra).",
+        "image-main": "Gentrificacao_1.jpg",
+        "date": "14/09/2014",
+        "text": "<p>A palavra gentrifica&ccedil;&atilde;o (do ingl&ecirc;s gentrification) pode ser entendida como o processo de mudan&ccedil;a imobili&aacute;ria, nos perfis residenciais e padr&otilde;es culturais, seja de um bairro, regi&atilde;o ou cidade. Esse processo envolve necessariamente a troca de um grupo por outro com maior poder aquisitivo em um determinado espa&ccedil;o e que passa a ser visto como mais qualificado que o outro.</p><p>O termo &eacute; derivado de um neologismo criado pela soci&oacute;loga brit&acirc;nica Ruth Glass em 1963, em um artigo onde ela falava sobre as mudan&ccedil;as urbanas em Londres (Inglaterra). Ela se referia ao &ldquo;aburguesamento&rdquo; do centro da cidade, usando o termo ir&ocirc;nico &ldquo;gentry&rdquo;, que pode ser traduzido como &ldquo;bem-nascido&rdquo;, como consequ&ecirc;ncia da ocupa&ccedil;&atilde;o de bairros oper&aacute;rios pela classe m&eacute;dia e alta londrina.</p><p>O uso da express&atilde;o teve altos e baixos. Em meados dos anos 1980 foi usada em tom positivo, apontando melhoramentos em uma &aacute;rea abandonada ou degradada, e depois passou a ter uma conota&ccedil;&atilde;o negativa, que permanece at&eacute; hoje, justificada pela vis&atilde;o de que essa gentrifica&ccedil;&atilde;o promoveria um urbanismo excludente, expulsando as camadas mais pobres das zonas centrais, em uma esp&eacute;cie de &ldquo;higieniza&ccedil;&atilde;o social&rdquo;.</p><h3>Entre os principais resultados da mudan&ccedil;a que gentrifica&ccedil;&atilde;o provoca em um espa&ccedil;o, podemos destacar:</h3><ul><li>a reorganiza&ccedil;&atilde;o da geografia urbana com a substitui&ccedil;&atilde;o de um grupo por outro;</li><li>a reorganiza&ccedil;&atilde;o espacial de indiv&iacute;duos com determinados estilos de vida e caracter&iacute;sticas culturais;</li><li>a transforma&ccedil;&atilde;o do ambiente constru&iacute;do com a cria&ccedil;&atilde;o de novos servi&ccedil;os e melhorias;</li><li>a altera&ccedil;&atilde;o de leis de zoneamento que permita um aumento no valor dos im&oacute;veis, aumento da densidade populacional e uma mudan&ccedil;a no perfil socioecon&ocirc;mico.</li></ul></p><p>Em Nova York, por exemplo, a gentrifica&ccedil;&atilde;o ocorreu nos bairros do Soho, Greenwich Village e Harlem. O processo come&ccedil;ou naturalmente, com a instala&ccedil;&atilde;o de artistas que buscavam alugueis mais baratos e valorizavam o patrim&ocirc;nio hist&oacute;rico. Sua chegada a esses bairros antigos gerou uma nova vida cultural e bo&ecirc;mia e aumentou o pre&ccedil;o das propriedades.</p><p>Hoje, este processo pode ser observado em diferentes capitais brasileiras: na revitaliza&ccedil;&atilde;o do Centro de S&atilde;o Paulo (SP); nas obras da zona portu&aacute;ria e no aumento do pre&ccedil;o da moradia em bairros como Botafogo e Flamengo, no Rio de Janeiro (RJ); em Salvador (BA) e no Recife (PE), no hist&oacute;rico cais Estelita, recente alvo de manifesta&ccedil;&otilde;es para impedir a constru&ccedil;&atilde;o de mais de dez pr&eacute;dios no local. Todas essas mudan&ccedil;as foram impulsionadas tamb&eacute;m pela realiza&ccedil;&atilde;o de eventos internacionais no Pa&iacute;s, como a Copa do Mundo de 2014 e as Olimp&iacute;adas de 2016.</p>",
+        "text-second": "<p>A gentrifica&ccedil;&atilde;o n&atilde;o est&aacute; limitada ao espa&ccedil;o urbano. Muitos desses processos acontecem em &aacute;reas perif&eacute;ricas ou suburbanas, em casos de remo&ccedil;&otilde;es for&ccedil;adas de comunidades para dar espa&ccedil;o ao novo paisagismo urbano ou a projetos de transportes.</p><p>No Rio de Janeiro, esse processo estaria ocorrendo na favela do Vidigal, conhecida pela bela vista para a praia de Ipanema. Ap&oacute;s a instala&ccedil;&atilde;o da UPP em 2012, a viol&ecirc;ncia diminuiu e os im&oacute;veis da comunidade foram valorizados, atraindo muitos estrangeiros e novos moradores em busca de terrenos e casas. Para este ano, ainda &eacute; esperada a inaugura&ccedil;&atilde;o de um hotel de luxo no morro.</p><p>Em S&atilde;o Paulo, desde meados dos anos 1980, o poder p&uacute;blico, associado &agrave; iniciativa privada, vem tra&ccedil;ando planos de revitaliza&ccedil;&atilde;o para o centro da cidade, j&aacute; que a sua deteriora&ccedil;&atilde;o barraria a atra&ccedil;&atilde;o imobili&aacute;ria na regi&atilde;o e impede tamb&eacute;m a instala&ccedil;&atilde;o de melhores servi&ccedil;os, com&eacute;rcios e outros benef&iacute;cios aos residentes e trabalhadores da &aacute;rea.</p><p>Dentre in&uacute;meras obras e opera&ccedil;&otilde;es que visam reorganizar e reocupar um espa&ccedil;o est&aacute; a Opera&ccedil;&atilde;o Urbana Nova Luz cujo objetivo &eacute;, segundo documentos oficiais, \"promover a requalifica&ccedil;&atilde;o e a recupera&ccedil;&atilde;o da &aacute;rea da Nova Luz a partir de interven&ccedil;&otilde;es p&uacute;blicas que valorizem os espa&ccedil;os p&uacute;blicos da cria&ccedil;&atilde;o de um conjunto de est&iacute;mulos &agrave; realiza&ccedil;&atilde;o de novos investimentos privados\". O local degradado, que abriga a cracol&acirc;ndia, vem sofrendo diversas interven&ccedil;&otilde;es para revitalizar a &aacute;rea.</p><h3>Quais os principais problemas?</h3><p>A gentrifica&ccedil;&atilde;o n&atilde;o &eacute; necessariamente ruim, mas o processo pode resultar na descaracteriza&ccedil;&atilde;o total de um bairro -- em janeiro deste ano, a revista The New Yorker chamou o est&aacute;dio do Itaquer&atilde;o, em S&atilde;o Paulo, de &ldquo;monumento &agrave; gentrifica&ccedil;&atilde;o&rdquo;, ao afirmar que a opul&ecirc;ncia do est&aacute;dio contrasta com &ldquo;a arruinada zona leste, onde grafites e lixo predominam&rdquo; e que poderia aumentar o abismo da desigualdade social se for guiada pela l&oacute;gica da especula&ccedil;&atilde;o imobili&aacute;ria.</p><p>Os defensores argumentam que essa reorganiza&ccedil;&atilde;o espacial cria bairros e vizinhan&ccedil;as sustent&aacute;veis, promove a reconstru&ccedil;&atilde;o de locais abandonados e introduz novos moradores articulados que pressionam para a melhoria de servi&ccedil;os que beneficiam a todos.</p><p>Os cr&iacute;ticos deste processo se preocupam justamente com os que n&atilde;o est&atilde;o dentro deste grupo. Na forma como a gentrifica&ccedil;&atilde;o ocorre hoje, moradores s&atilde;o expulsos ou obrigados a sair de suas casas devido aos altos custos dos servi&ccedil;os e despesas. Muitas vezes, se vendem sua casa para uma empreiteira, nem sempre conseguem comprar uma casa ou um apartamento na mesma regi&atilde;o devido &agrave; alta dos pre&ccedil;os. Dessa forma, o espa&ccedil;o se torna um mecanismo de poder. \"&Eacute; importante lembrar que ao mesmo tempo que o espa&ccedil;o &eacute; produto e meio da a&ccedil;&atilde;o social, &eacute; tamb&eacute;m instrumental e um mecanismo de poder que simultaneamente produz uma hierarquia de lugares.</p><p>Portanto, o espa&ccedil;o &eacute; fundamental para o processo de acumula&ccedil;&atilde;o e de reacomoda&ccedil;&atilde;o de poder e deve ser colocado como prioridade nos estudos sobre gentrifica&ccedil;&atilde;o\", escreve o professor Christopher Gaffney no artigo Forjando os an&eacute;is: a paisagem imobili&aacute;ria pr&eacute;-Ol&iacute;mpica no Rio de Janeiro.</p><p>Outro ponto levantado por cr&iacute;ticos como resultado dessa mudan&ccedil;a no espa&ccedil;o &eacute; a homogeneiza&ccedil;&atilde;o de paisagens comerciais e residenciais ao redor do mundo, que, baseadas em cidades-modelo, acabam construindo obras parecidas, e tamb&eacute;m a desvaloriza&ccedil;&atilde;o ambiental. Boa parte das &aacute;reas verdes derrubadas para a constru&ccedil;&atilde;o de pr&eacute;dios ou outros empreendimentos que preenchem a nova paisagem urbana n&atilde;o s&atilde;o &ldquo;devolvidas&rdquo; &agrave; cidade.</p><p>No livro &ldquo;De volta &agrave; cidade: dos processos de gentrifica&ccedil;&atilde;o &agrave;s pol&iacute;ticas de \"revitaliza&ccedil;&atilde;o\" dos centros urbanos&rdquo;, a autora Catherine Bidou-Zachariasen escreve as etapas de gentrifica&ccedil;&atilde;o observadas na Europa nos anos 1970 e 1980, para apontar que a gentrifica&ccedil;&atilde;o de hoje vem acompanhada de novas pol&iacute;ticas e pr&aacute;ticas. \"Para as classes m&eacute;dias, reconquistar a cidade implica muito mais do que somente obter um apartamento gentrificado&rdquo;, escreve a autora, segundo a qual, o processo atual mostra que essa gentrifica&ccedil;&atilde;o &ldquo;conecta o mercado financeiro mundial com os promotores imobili&aacute;rios, com o com&eacute;rcio local, com agentes imobili&aacute;rios e com lojas de marcas, todos estimulados pelos poderes locais, para os quais os impactos sociais ser&atilde;o doravante mais asseguradas pelo mercado do que por sua pr&oacute;pria regulamenta&ccedil;&atilde;o; a l&oacute;gica do mercado, e n&atilde;o mais os financiamentos dos servi&ccedil;os sociais, &eacute; o novo modus operandi das pol&iacute;ticas p&uacute;blicas\".</p><h3>O papel do Estado</h3><p>O Governo possui um papel fundamental no planejamento e gest&atilde;o do espa&ccedil;o de uma cidade, criando regras para o desenvolvimento local. O processo de gentrifica&ccedil;&atilde;o seria uma das consequ&ecirc;ncias de planos de revitaliza&ccedil;&atilde;o de &aacute;reas e tamb&eacute;m de pol&iacute;ticas habitacionais.</p><p>Na cidade de Recife (PE), o bairro do Recife Antigo, que possui diversos im&oacute;veis tombados pelo patrim&ocirc;nio hist&oacute;rico tamb&eacute;m teve sua recupera&ccedil;&atilde;o impulsionada por um plano de revitaliza&ccedil;&atilde;o desenhado pelo Governo do Estado. As a&ccedil;&otilde;es foram iniciadas em 1993 e em 2000 foi criado o projeto Porto Digital, que contou com investimentos p&uacute;blicos na reforma de pr&eacute;dios e incentivos fiscais para atrair pequenas e m&eacute;dias empresas de tecnologia. Hoje a regi&atilde;o &eacute; um importante polo tur&iacute;stico, cultural e bo&ecirc;mio da cidade.</p>",
+        "image-text-second": "Gentrificacao_2.jpg",
+        "quote": "A paciência é o segredo da sabedoria!",
+        "quote-author": "Tibério Mendonça",
+        "image-video": "",
+        "link-video": "",
+        "title-video": "",
+        "text-video": "",
+        "image-gallery": "",
+        "font": "UOL | http://vestibular.uol.com.br/",
+        "access": 6215
+    }
 ]
