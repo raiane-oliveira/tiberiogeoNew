@@ -1,0 +1,58 @@
+[
+    {
+        "title": "O menor país do mundo",
+        "slug": "o-menor-pais-do-mundo",
+        "image-main": "mundo.jpg",
+        "id": 1,
+        "category": "world",
+        "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
+        "date": "24/07/2016"
+    },
+    {
+        "title": "A maior cratera",
+        "slug": "a-maior-cratera",
+        "image-main": "cratera.jpg",
+        "id": 2,
+        "category": "world",
+        "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
+        "date": "24/07/2016"
+    },
+    {
+        "title": "O Estado Islâmico",
+        "slug": "O Estado Islâmico",
+        "image-main": "MapaEstadoIslamico_1.jpg",
+        "id": 3,
+        "category": "world",
+        "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
+        "date": "24/07/2016"
+    },
+    {
+        "title": "O Estado Islâmicoe",
+        "slug": "O Estado Islâmico",
+        "image-main": "MapaEstadoIslamico_1.jpg",
+        "id": 3,
+        "category": "world",
+        "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
+        "date": "24/07/2016"
+    },
+    {
+        "title": "Entendendo a Eleição nos Estados Unidos",
+        "slug": "entendendo-a-eleição-nos-Estados-Unidos",
+        "image-main": "EleicaoEUA_Maior.jpg",
+        "id": 4,
+        "category": "world",
+        "resume": "A 58ª eleição presidencial do país, que oficialmente elegeu Donald Trump e Mike Pence, o presidente e o vice-presidente dos Estados Unidos, respectivamente.",
+        "date": "24/09/2021",
+        "text": "<p><span class='tie-dropcap'>D</span>epois de uma longa e agressiva a campanha eleitoral >Donald Trump, o magnata sem experiência política que para muitos representa um salto no escuro, ganhou de Hillary Clinton, uma candidata veterana, dona de uma consistente carreira pública.</p><p>O artigo dois da Constituição dos Estados Unidos prevê que, para uma pessoa ser eleita e atuar como presidente do país, <span>deve ser um cidadão nato dos Estados Unidos</span>, ter pelo menos 35 anos de idade e ser um residente local por um período não inferior a catorze anos. Os candidatos procuram os partidos para fazer sua nomeação e em seguida os partidos realizam eleições primárias para escolher um deles. Os delegados dos partidos então nomeiam um destes candidatos para concorrer na eleição geral.</p><h3>Afinal, em quem vota o cidadão comum?</h3><p>Isso significa que o apoio do cidadão comum na realidade escolhe o voto do Colégio Eleitoral, que é formado por 538 eleitores procedentes de todos os Estados e da capital federal, Washington.</p>",
+        "text-second": "<p>O presidente se elege em uma assembleia formada por 538 delegados. <span>Este número é igual a soma de 100 Senadores + 435 Deputados + 3 Delegados de Washington D.C.</span>, que não tem senadores mas sim delegados. Cada estado contribui com um número de delegados, cujo número é igual a soma de seus deputados mais seus senadores no Congresso. Exceto Washington D.C., que não tem senadores, mas sim três delegados.</p><p>Nas cédulas de votação, cada candidato a presidência leva junto do nome, o nome do vice-presidente e do partido afiliado. Mas esses votos não elegem de imediato o presidente, mas sim os Delegados que depois no colégio eleitoral, irão elegê-lo.</p><p>Caso nenhum desses candidatos obtenham mais de 270 votos no Colégio Eleitoral, a 12ª Emenda entra em vigor e a Câmara dos Representantes dos Estados Unidos decide quem será o novo presidente e o Senado dos Estados Unidos da América escolhe o vice. Cada delegação de congressistas de cada estado têm direito a um voto, e uma simples maioria de estados nomeia o vencedor.</p><p>De acordo com o número de habitantes, cada Estado elege um número determinado de membros do Colégio Eleitoral, que representam proporcionalmente a população dos EUA.</p><p>Mas, na maior parte dos Estados, o candidato que consegue a maioria dos votos populares leva todos os votos correspondentes no Colégio Eleitoral.</p><p>Com isso, para vencer é preferível ganhar em muitos Estados - mesmo que seja por apenas um voto de vantagem - do que em poucos deles com uma vantagem de milhares de votos. Foi o que aconteceu com Hillary.</p>",
+        "quote": "A paciência é o segredo da sabedoria!",
+        "quote-author": "Tibério Mendonça",
+        "image-video": "EleicaoEUA_3.jpg",
+        "link-video": "https://www.youtube.com/watch?v=oSMvrSdouLU",
+        "title-video": "Os candidatos procuram os partidos para fazer sua nomeação",
+        "text-video": "Quando um cidadão vota no seu candidato, esta pessoa está votando realmente é para instruir o delegado de seu estado em quem votar no colégio eleitoral. Por exemplo, se um eleitor vota no candidato do partido republicano, realmente esta pessoa está ordenando ao delegado de seu estado para que vote no candidato republicano no Colégio Eleitoral. Porém, mesmo que ganhe o voto popular em um determinado estado, ele deverá conseguir também os delegados desse estado.",
+        "image-gallery": "EleicaoEUA_2.png; EleicaoEUA_1.jpg",
+        "font": "BBC Brasil e Wikipédia Brasil",
+        "access": 5111
+    }
+]
