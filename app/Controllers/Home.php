@@ -14,7 +14,8 @@ class Home extends BaseController
         $dataCategoryBrazil = $this->category->getArticleMain('brazil');      
         //$geography =  new HomeModel();        
         $dataCategoryGeography = $this->category->getArticleMain('geography');
-        
+        $dataCategoryGeographyFavorite = $dataCategoryGeography;
+        shuffle($dataCategoryGeographyFavorite);
 
         $curiosity =  new CuriosityModel();
         $dataCategoryCuriosity = $curiosity->getAllCuriosities();
@@ -37,7 +38,7 @@ class Home extends BaseController
             "dataWorld" => end($dataCategoryWorld),
             "dataBrazil" => end($dataCategoryBrazil),
             "dataGeography" => end($dataCategoryGeography),
-            "dataGeographyFavorite" => $dataCategoryGeography,
+            "dataGeographyFavorite" => $dataCategoryGeographyFavorite,
             "dataCategoryEmphasis" => end($dataCategoryEmphasis),
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,

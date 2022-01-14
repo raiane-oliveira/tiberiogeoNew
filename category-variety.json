@@ -2,7 +2,7 @@
     {
         "title": "Por que a temperatura do pólo Sul é menor que a do pólo norte?",
         "slug": "o-menor-pais-do-mundo",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"maravilhas_mundo_2.jpg",
         "id": 1,
         "category": "variety",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
@@ -11,34 +11,34 @@
     {
         "title": "As 7 Maravilhas do Mundo Antigo e Moderno",
         "slug": "a-maior-cratera",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"maravilhas_mundo_2.jpg",
         "id": 2,
         "category": "variety",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
         "date": "24/07/2016"
-    },
+    },    
     {
         "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
         "slug": "O Estado Islâmico",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"alho_gado_1.jpg",
         "id": 3,
         "category": "variety",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
         "date": "24/07/2016"
     },
     {
-        "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
+        "title": "Entenda o que é o ebola",
         "slug": "O Estado Islâmico",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"ebola_menor.j_01.jpg",
         "id": 3,
         "category": "variety",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
         "date": "24/07/2016"
     },
     {
-        "title": "Entendendo a Eleição nos Estados Unidos",
+        "title": "Entenda um ano luz",
         "slug": "entendendo-a-eleição-nos-Estados-Unidos",
-        "image-main": "EleicaoEUA_Maior.jpg",
+        "image-main": "ano_luz.gif",
         "id": 4,
         "category": "variety",
         "resume": "A 58ª eleição presidencial do país, que oficialmente elegeu Donald Trump e Mike Pence, o presidente e o vice-presidente dos Estados Unidos, respectivamente.",

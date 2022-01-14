@@ -26,18 +26,24 @@
         </div>
         <div class="row">
             <div class="col-lg-9">
+            <ol class="breadcrumb">
+                        <li><?=anchor('/','<i class="fa fa-home"></i> HOME');?></li>
+                        <li><?=anchorCategory($dataArticle['category'], false);?>
+                        <li><?=$dataArticle['title'];?></li>
+            </ol>
                 <div class="ts-grid-box content-wrapper single-post">
+                   
                     <div class="post-content-area">
                         <div class="entry-content">
                             <?= $dataArticle['text']; ?>
-                            <?=createQuote($dataArticle['quote'],$dataArticle['quote-author']);?>
+                            <?= createQuote($dataArticle['quote'], $dataArticle['quote-author']); ?>
                             <?php if ($dataArticle['image-text-second']) : ?>
                                 <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
-                            <?php endif;?>
+                            <?php endif; ?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
 
-                            <?php                            
+                            <?php
                             if ($dataArticle['image-gallery']) : ?>
                                 <div class="gallery-img">
                                     <?php
@@ -71,8 +77,8 @@
 
 
             </div><!-- col end -->
-            <?=view('site/side');?>
-       
+            <?= view('site/side'); ?>
+
             <!-- col end-->
         </div><!-- row end-->
     </div><!-- container-->

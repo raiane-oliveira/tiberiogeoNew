@@ -21,7 +21,7 @@
                               </div>
                            </div><!-- col lg end-->
                            <div class="col-md-9">
-                              <div class="post-content text-white">
+                              <div class="post-content text-white" >
                                  <h3 class="post-title md"><a href="#"><?= $dataCategoryEmphasis['title']; ?></a></h3>
                                  <ul class="post-meta-info text-white">
                                     <li><a href="">Devid Ronald</a></li>

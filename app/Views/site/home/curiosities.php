@@ -22,8 +22,9 @@
                   endif;
             ?>
                <div class="col-lg-4 col-md-6 mb-30">
-                  <div class="ts-grid-box ts-grid-content"><a class="post-cat ts-<?=$class;?>-bg" href="#">Travel</a>
-                     <div class="ts-post-thumb"><a href="#">
+                  <div class="ts-grid-box ts-grid-content">
+                     
+                     <div class="ts-post-thumb">
                      <?php
                         $image = [
                            'src' => base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'],
@@ -32,7 +33,7 @@
                         echo anchorArticle($item['category'], $item['title'], img($image)); ?>
 
                      </div>
-                     <div class="post-content">
+                     <div class="post-content" style="height:100px">
                         <h3 class="post-title">
                            <?=anchorArticle($item['category'],$item['title'],$item['title']);?>
                            

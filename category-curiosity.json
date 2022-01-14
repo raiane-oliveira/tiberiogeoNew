@@ -2,7 +2,7 @@
     {
         "title": "Por que a temperatura do pólo Sul é menor que a do pólo norte?",
         "slug": "o-menor-pais-do-mundo",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"cidade_antiga_america_sul_3.jpg",
         "id": 1,
         "category": "curiosity",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
@@ -11,7 +11,7 @@
     {
         "title": "As 7 Maravilhas do Mundo Antigo e Moderno",
         "slug": "a-maior-cratera",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"maravilhas_mundo_1.jpg",
         "id": 2,
         "category": "curiosity",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
@@ -20,7 +20,16 @@
     {
         "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
         "slug": "O Estado Islâmico",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"ponte_millau.gif",
+        "id": 3,
+        "category": "curiosity",
+        "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
+        "date": "24/07/2016"
+    },
+    {
+        "title": "Efeito Estufa",
+        "slug": "O Estado Islâmico",
+        "image-main":"polo_sul.gif",
         "id": 3,
         "category": "curiosity",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
@@ -29,16 +38,7 @@
     {
         "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
         "slug": "O Estado Islâmico",
-        "image-main":"EleicaoEUA_Maior.jpg",
-        "id": 3,
-        "category": "curiosity",
-        "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
-        "date": "24/07/2016"
-    },
-    {
-        "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
-        "slug": "O Estado Islâmico",
-        "image-main":"EleicaoEUA_Maior.jpg",
+        "image-main":"EstadoIslamico_2.jpg",
         "id": 3,
         "category": "curiosity",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
