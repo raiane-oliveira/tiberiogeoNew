@@ -8,16 +8,8 @@
                     <span id="tempo"><?=$data_temperature['results']['temp'];?></span>
                     <span><b>c</b></span> | <i class="fa fa-map-marker"></i>
                     <span id="city"><?=$data_temperature['results']['city'];?></span> | <img src="<?=base_url();?>/assets/images/temperature/<?php echo $data_temperature['results']['img_id']; ?>.png" class="imagem-do-tempo">
-                    <span id="description"><?=$data_temperature['results']['description'];?></span> | 
-                   
-                    
+                    <span id="description"><?=$data_temperature['results']['description'];?></span>  
                 </div>
-                <ul class="ts-top-nav">
-                    <!--<li><a href="#">Blog</a></li>
-            <li><a href="#">Forums</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Advertisement</a></li>-->
-                </ul>
             </div>
             <!-- end col-->
             <div class="col-lg-6 text-right align-self-center">

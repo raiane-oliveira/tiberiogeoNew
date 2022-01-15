@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-12">
+            <div class="col-lg-8">
                 <div class="right-sidebar">
                     <div class="post-list-item widgets">
                         <!-- Nav tabs -->
@@ -86,7 +86,11 @@
                 </div><!-- right sidebar end-->
             </div><!-- col end-->
 
-            <div class="col-lg-3">
+            <div class="col-lg-4">
+            <div class="right-sidebar-1">        
+                   
+                    <?=view('site/side-category');?>
+                              </div>
                 
             </div><!-- right sidebar end-->
         </div><!-- col end-->

@@ -28,14 +28,23 @@
    <?php echo view("site/header-temp.php"); ?>  
    <?php echo view("site/header.php"); ?>
    <?= $this->renderSection('content') ?>
-
-   <?php echo view("site/banner-main.php"); ?>
+   
+ 
+   <?php echo view("site/home/utils.php");  ?>
+   <?php echo view("site/banner-main.php");  ?>
    <!-- footer social list start-->
    <section class="ts-footer-social-list">
       <div class="container">
          <div class="row">
             <div class="col-lg-4">
-               <div class="footer-logo"><a href="#"><img src="<?= base_url(); ?>/assets/images/logo/logo-footer.png" alt=""></a></div>
+               <div class="footer-logo">
+                  <?php 
+                  $image = [
+                     'src'=>base_url().'/assets/images/logo/logo-footer.png'
+                     ];
+
+                     echo anchor('/',img($image));?>                 
+               </div>
                <!-- footer logo end-->
             </div><!-- col end-->
             <div class="col-lg-8 align-self-center">
@@ -56,17 +65,16 @@
          <div class="row">
             <div class="col-lg-12">
                <div class="footer-menu text-center">
-                  <ul>
-                     <li><a href="#">Support</a></li>
-                     <li><a href="#">Suggestion</a></li>
-                     <li><a href="#">Privacy</a></li>
-                     <li><a href="#">About</a></li>
-                     <li><a href="#">Our Ads</a></li>
-                     <li><a href="#">Terms</a></li>
+                  <ul>                   
+                     <li><?=anchor('/','Home');?></li>
+                     <li><?=anchor('/category/world','Mundo');?></li>
+                     <li><?=anchor('/category/brazil','Brasil');?></li>
+                     <li><?=anchor('/category/Geography','Geografia');?></li>
+                     <li><?=anchor('/school','Escola');?></li>                    
                   </ul>
                </div>
                <div class="copyright-text text-center">
-                  <p>&copy; 2018, Vinazine. All rights <a href="http://www.bootstrapmb.com/" title="bootstrapmb">Reserved</a></p>
+                  <p>&copy; <?=date('Y');?>, Tiberiogeo. All rights</p>
                </div>
             </div>
             <!-- col end -->
@@ -78,6 +86,7 @@
       <!-- Container end-->
    </footer>
    <!-- footer end -->
+   
    <!-- javaScript Files	=============================================================================-->
    <?php
    foreach ($js as $path) : ?>

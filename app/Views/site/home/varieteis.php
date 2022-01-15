@@ -1,9 +1,9 @@
-<section class="block-wrapper mt-15">
+<section class="block-wrapper p-30 section-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="ts-grid-box clearfix ts-category-title">
-                    <h2 class="ts-title float-left">Variedades</h2>
+                <div class="ts-title-item clearfix">
+                    <h2 class="ts-cat-title float-left"><span>Variedades</span></h2>
                     <div class="float-right">
                         <?= anchor('/category/variety', '+ mais', ['class' => 'view-all-link']); ?>
                     </div>
@@ -16,7 +16,7 @@
                     ?>
                             <div class="col-lg-3 col-md-6 mb-30">
                                 <div class="ts-grid-box ts-grid-content">
-                                    
+
                                     <div class="ts-post-thumb"><a href="#">
                                             <?php
                                             $image = [
@@ -37,9 +37,8 @@
                         $count++;
                     endforeach; ?>
                 </div>
-
             </div>
-
-        </div><!-- row end-->
-    </div><!-- container end-->
+            
+        </div>
+    </div><!-- row end-->
 </section>

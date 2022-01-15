@@ -77,7 +77,11 @@
 
 
             </div><!-- col end -->
+            <div class="col-lg-3">
             <?= view('site/side'); ?>
+            </div>
+            
+          
 
             <!-- col end-->
         </div><!-- row end-->

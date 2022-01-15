@@ -1,5 +1,5 @@
 
-<section class="block-wrapper">
+<section class="block-wrapper p-30 section-bg">
    <div class="container">
       <div class="row">
          <div class="col-lg-12">

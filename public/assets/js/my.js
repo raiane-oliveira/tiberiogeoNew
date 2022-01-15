@@ -20,5 +20,5 @@
 }
 );*/
 $('.pagination__list').paginate({
-    items_per_page: 2
+    items_per_page: 5
 });

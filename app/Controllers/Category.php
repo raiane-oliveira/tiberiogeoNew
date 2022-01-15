@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\VarietyModel;
+use App\Models\CuriosityModel;
 use App\Controllers\BaseController;
 
 class Category extends BaseController
@@ -12,6 +14,17 @@ class Category extends BaseController
 	   
 	    $dataCategory = $this->category->getArticleMain($category);
         krsort($dataCategory);  
+
+         /*Define os favoritos*/
+         $categoryFavorite = 'geography';
+         $dataCategoryGeography = $this->category->getArticleMain($categoryFavorite);
+
+         $curiosity =  new CuriosityModel();
+         $dataCategoryCuriosity = $curiosity->getAllCuriosities();
+         
+ 
+         $variety =  new VarietyModel();
+         $dataCategoryVariety = $variety->getAllVariety();
           
 
 	    $data = [
@@ -22,6 +35,9 @@ class Category extends BaseController
             "dataMenuWorld" => $this->menuWorld,
             "dataMenuBrazil" => $this->menuBrazil,
             "dataMenuGeography" => $this->menuGeography,
+            "dataGeographyFavorite" => $dataCategoryGeography,
+            "dataCuriosity" => $dataCategoryCuriosity,
+            "dataVariety" => $dataCategoryVariety,
         ];       
 	 
 	    
