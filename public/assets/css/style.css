@@ -3629,7 +3629,7 @@ p img.float-left {
   position: relative;
   font-size: 14px;
   font-weight: 400;
-  background: #ab1129;
+  background: #275bcf;
   color: #fff;
   line-height: 26px;
   padding: 0 5px;
@@ -3652,7 +3652,7 @@ p img.float-left {
   bottom: 13px;
   width: 100%;
   height: 1px;
-  background: #ab1129;
+  background: #275bcf;
   content: "";
   z-index: 0;
 }

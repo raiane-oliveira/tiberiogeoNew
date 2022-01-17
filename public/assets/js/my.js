@@ -19,6 +19,12 @@
     }
 }
 );*/
+
+$('.textarea').each(function () {
+    var editor = new Jodit(this);
+    editor.value = '';
+});
+
 $('.pagination__list').paginate({
     items_per_page: 5
 });

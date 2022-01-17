@@ -16,7 +16,9 @@
                         </li>
                         <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataArticle['date']); ?></li>
                         <li class="active"><i class="el el-fire">Acessos: </i><?= $dataArticle['access']; ?></li>
-                        <li class="share-post"><a href="#"><i class="fa fa-share"></i></a></li>
+                        <li class="share-post">
+                            <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['title'], ['target' => '_blank']), '<i class="fa fa-whatsapp"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
+                        </li>
                     </ul>
                 </div><!-- single post header end-->
                 <div class="post-content-area">
@@ -26,17 +28,20 @@
         </div>
         <div class="row">
             <div class="col-lg-9">
-            <ol class="breadcrumb">
-                        <li><?=anchor('/','<i class="fa fa-home"></i> HOME');?></li>
-                        <li><?=anchorCategory($dataArticle['category'], false);?>
-                        <li><?=$dataArticle['title'];?></li>
-            </ol>
+                <ol class="breadcrumb">
+                    <li><?= anchor('/', '<i class="fa fa-home"></i> HOME'); ?></li>
+                    <li><?= anchorCategory($dataArticle['category'], false); ?>
+                    <li><?= $dataArticle['title']; ?></li>
+                </ol>
                 <div class="ts-grid-box content-wrapper single-post">
-                   
+
                     <div class="post-content-area">
                         <div class="entry-content">
-                            <?= $dataArticle['text']; ?>
-                            <?= createQuote($dataArticle['quote'], $dataArticle['quote-author']); ?>
+                            <?= $dataArticle['text'];
+                                if ($dataArticle['quote']) :
+                                    echo createQuote($dataArticle['quote'], $dataArticle['quote-author']);
+                                endif; ?>
+
                             <?php if ($dataArticle['image-text-second']) : ?>
                                 <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
                             <?php endif; ?>
@@ -78,10 +83,10 @@
 
             </div><!-- col end -->
             <div class="col-lg-3">
-            <?= view('site/side'); ?>
+                <?= view('site/side'); ?>
             </div>
-            
-          
+
+
 
             <!-- col end-->
         </div><!-- row end-->

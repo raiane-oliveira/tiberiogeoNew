@@ -8,7 +8,7 @@ class CuriosityModel extends Model
 {
     public function getAllCuriosities(): array
     {
-        $jsonString = file_get_contents('../category-curiosity.json');
+        $jsonString = file_get_contents(APPPATH. 'Base/category-curiosity.json');
         $dataCategoryCuriosities = json_decode($jsonString, true); 
         return $dataCategoryCuriosities;
     }

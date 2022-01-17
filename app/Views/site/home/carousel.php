@@ -43,7 +43,7 @@
             <!--/ Featured post end -->
         </div>
         <!-- Item 2 end -->
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/images/news/travel/travel3.jpg)">
+        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/brazil/<?= $dataGeography['image-main']; ?>)">
             
         <?=anchorCategory($dataGeography['category'], true);?>
         
@@ -52,6 +52,7 @@
                     <h2 class="post-title lg">
                         <?= anchorArticle($dataGeography['category'],$dataGeography['title'],$dataGeography['title']);?> 
                         </h2>
+                        <p class="text-white"><?= $dataGeography['resume']; ?></p>
                     <ul class="post-meta-info">
                         <li class="author"><a href="#"><img src="<?= base_url(); ?>/assets/images/avater/author1.jpg" alt="">Donald Ramos</a></li>
                         <li><i class="fa fa-clock-o"></i> March 21, 2019</li>

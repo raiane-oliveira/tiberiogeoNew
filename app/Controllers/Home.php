@@ -53,7 +53,7 @@ class Home extends BaseController
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-		return $parser->render('site/home/home');       
+		return $parser->render('site/home/home');      
 	}	
 
 }

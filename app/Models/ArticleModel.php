@@ -16,7 +16,7 @@ class ArticleModel extends Model
     public function updateArticle(array $dados, string $category):void{
 
         $article = json_encode($dados, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        file_put_contents('../category-' . $category . '.json', $article);
+        file_put_contents(APPPATH. 'Base/category-' . $category . '.json', $article);
         
     }
 }

@@ -1,5 +1,4 @@
-<section class="block-wrapper p-30 section-bg">
-    namespace App\Views\site\home;
+<section class="block-wrapper p-30 section-bg">   
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

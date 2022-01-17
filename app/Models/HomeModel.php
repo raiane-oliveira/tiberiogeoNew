@@ -13,7 +13,7 @@ class HomeModel extends Model
      */
     public function getArticleMain(string $category):array
     {
-        $jsonString = file_get_contents('../category-'.$category.'.json');
+        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');
         $dataCategory = json_decode($jsonString, true); 
         return $dataCategory;
     }
@@ -24,11 +24,13 @@ class HomeModel extends Model
      * @param  string $category
      * @return array
      */
-    public function getMenu(string $category):array{
-
-        $jsonString = file_get_contents('../category-'.$category.'.json');
+    public function getMenu(string $category):array{      
+      
+        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');
         $dataCategory = json_decode($jsonString, true); 
         return $dataCategory;
 
     }
+
+    
 }
