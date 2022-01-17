@@ -25,9 +25,8 @@
                            <div class="col-md-8">
                               <div class="post-content text-white" >
                                  <h3 class="post-title md"><a href="#"><?= $dataCategoryEmphasis['title']; ?></a></h3>
-                                 <ul class="post-meta-info text-white">
-                                    <li><a class="text-white" href="">Devid Ronald</a></li>
-                                    <li><i class="fa fa-clock-o"></i> March 21, 2019</li>
+                                 <ul class="post-meta-info text-white">                                    
+                                    <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataCategoryEmphasis['date']); ?></li>
                                  </ul>
                                  <p class="text-white"><?= $dataCategoryEmphasis['resume']; ?></p>
 
@@ -45,8 +44,7 @@
          
          <div class="col-lg-3">
          <div class="right-sidebar">
-               <?=view('site/side-category');?>
-               
+               <?=view('site/side-category');?>               
             </div>
            </div>
          

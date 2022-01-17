@@ -38,8 +38,14 @@
                                                 ?>
                                             </h3>
                                             <ul class="post-meta-info">
-                                                <li><a href="">Donald Ramos</a></li>
-                                                <li><i class="fa fa-clock-o"></i> March 21, 2019</li>
+                                            <li class="author">
+                                                <?php
+                                                $image = [
+                                                    'src'=> base_url().'/assets/images/avater/logo-avater.png',
+                                                ];
+                                                echo anchor('/', img($image).'Tiberiogeo');?>
+                                                </li>
+                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($item['date']); ?></li>
                                             </ul>
                                             <p><?= $item['resume']; ?></p>
                                         </div>

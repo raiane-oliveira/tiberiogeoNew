@@ -29,7 +29,7 @@
                                     <div class="post-content" style="height:100px">
                                         <h3 class="post-title">
                                             <?= anchorArticle($item['category'], $item['title'], $item['title']); ?>
-                                        </h3><span class="post-date-info"><i class="fa fa-clock-o"></i> March 21, 2019</span>
+                                        </h3><span class="post-date-info"><i class="fa fa-clock-o"></i> <?= toDatePost($item['date']); ?></span>
                                     </div>
                                 </div><!-- ts grid box-->
                             </div><!-- col end-->
