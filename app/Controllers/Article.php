@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use DateTime;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use IntlDateFormatter;
 use PHPUnit\Util\Json;
 use App\Models\ArticleModel;
@@ -13,6 +15,7 @@ use App\Controllers\BaseController;
 class Article extends BaseController
 {  
     public $articleUpdate;
+    public $article;
 
     public function index($category, $article)
     {
@@ -82,5 +85,23 @@ class Article extends BaseController
         $parser->setData($this->javascript);
         return $parser->render('site/article/articles');
         
+    }
+
+    public function buildPdf($article, $category){
+
+        $this->article = new ArticleModel();
+        
+        $dados = $this->article->getArticle($article, $category);        
+
+        $v = view('output',$dados);
+        $options = new Options();
+        $options->setChroot(__DIR__);
+        $options->setIsRemoteEnabled(true);
+        
+        $pdf = new Dompdf($options);
+        $pdf->loadHtml($v);
+        $pdf->render();
+        $pdf->stream(createSlug($article).'pdf',['Attachment'=>false]);
+        //$pdf->output();
     }
 }

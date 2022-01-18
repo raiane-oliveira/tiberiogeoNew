@@ -22,6 +22,7 @@
                         <li class="share-post">
                             <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['title'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
                         </li>
+                        <li><?=anchor('/article/pdf/'.createSlug($dataArticle['title']).'/'.$dataArticle['category'],'<i class="fa fa-file-pdf-o" style="color:red"></i>',['target'=>'_blank','title'=>'Visualizar em PDF']);?></li>
                     </ul>
                 </div><!-- single post header end-->
                 <div class="post-content-area">

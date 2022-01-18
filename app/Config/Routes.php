@@ -36,6 +36,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/world/(:any)', 'World::index/$1');
+$routes->get('/article/pdf/(:any)/(:any)', 'Article::buildPdf/$1/$2');
 $routes->get('/article/(:any)/(:any)', 'Article::index/$1/$2');
 $routes->get('/category/(:any)', 'Category::index/$1');
 $routes->get('/school', 'School::index');
