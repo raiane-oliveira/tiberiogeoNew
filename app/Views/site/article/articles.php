@@ -12,12 +12,15 @@
                     <h2 class="post-title lg"><?= $dataArticle['title']; ?></h2>
                     <p><?= $dataArticle['resume']; ?></p>
                     <ul class="post-meta-info">
-                        <li class="author"><a href="#"><strong>Fonte:</strong> <img src="<?= base_url(); ?>/assets/images/avater/logo-avater.png" alt=""><?= $dataArticle['font']; ?></a>
+                        <li class="author">
+                            <strong>Fonte:</strong>
+                             <img src="<?= base_url(); ?>/assets/images/avater/logo-avater.png" alt="">
+                             <?= $dataArticle['font']; ?>
                         </li>
                         <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataArticle['date']); ?></li>
-                        <li class="active"><i class="el el-fire">Acessos: </i><?= $dataArticle['access']; ?></li>
+                        <li class=""><i class="fa fa-eye"></i>Acessos: <?= $dataArticle['access']; ?></li>
                         <li class="share-post">
-                            <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['title'], ['target' => '_blank']), '<i class="fa fa-whatsapp"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
+                            <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['title'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
                         </li>
                     </ul>
                 </div><!-- single post header end-->
@@ -29,15 +32,15 @@
         <div class="row">
             <div class="col-lg-9">
                 <ol class="breadcrumb">
-                    <li><?= anchor('/', '<i class="fa fa-home"></i> HOME'); ?></li>
-                    <li><?= anchorCategory($dataArticle['category'], false); ?>
+                    <li><?= anchor('/', '<i class="fa fa-home"></i> Home'); ?></li>
+                    <li><?= anchor('/category/'.$dataArticle['category'],firstUppercase(toCategory($dataArticle['category']))); ?>
                     <li><?= $dataArticle['title']; ?></li>
                 </ol>
                 <div class="ts-grid-box content-wrapper single-post">
 
                     <div class="post-content-area">
                         <div class="entry-content">
-                            <?= $dataArticle['text'];
+                            <?= firstCapitulate($dataArticle['text']);
                                 if ($dataArticle['quote']) :
                                     echo createQuote($dataArticle['quote'], $dataArticle['quote-author']);
                                 endif; ?>

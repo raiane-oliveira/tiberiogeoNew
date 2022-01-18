@@ -20,20 +20,27 @@ function toDataMsql($data)
     return NULL;
 }
 
+/**
+ * toDatePost
+ *
+ * @param  string $date
+ * @return string
+ */
 function toDatePost(string $date): string
 {
-    if ($date == null)
+    return $date;    
+    /*if ($date == null)
         return '--';
 
     $date = explode("/", $date);
     $jd = gregoriantojd($date[1], $date[0], $date[2]);
-    return  jdmonthname($jd, 1) . " " . $date[0] . ", " . $date[2];
+    return  jdmonthname($jd, CAL_MONTH_GREGORIAN_LONG) . " " . $date[0] . ", " . $date[2];*/
 }
 
 /**
  * toCategory
  *
- * @param  mixed $category
+ * @param  string $category
  * @return string
  */
 function toCategory(string $category): string
@@ -142,4 +149,30 @@ function defineSocial(string $name, string $slug, bool $title = null):string
     }
      return anchor('https://www.'.$name.'.com/'.$slug,'<i class="fa fa-'.$name.'"></i><span>'.$name.'</span>', ['target'=>'_blank']);
     
+}
+
+
+/**
+ * firstUppercase
+ *
+ * @param  string $string
+ * @return string
+ */
+function firstUppercase (string $string): string
+{
+    $s = mb_strtoupper(mb_substr($string,0,1));
+    return $s.mb_strtolower(mb_substr($string,1));
+
+}
+
+/**
+ * firstCapitulate
+ *
+ * @param  string $string
+ * @return string
+ */
+function firstCapitulate(string $string): string
+{
+    $stringCapitulate = mb_strtoupper(mb_substr($string,3,1));   
+    return '<span class="tie-dropcap">'.$stringCapitulate.'</span><p>'.mb_substr($string,4);
 }

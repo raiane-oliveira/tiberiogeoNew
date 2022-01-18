@@ -46,14 +46,14 @@
                             ];
                             echo anchor('/', img($image) . 'Tiberiogeo'); ?>
                         </li>
-                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataWorld['date']); ?></li>
+                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataBrazil['date']); ?></li>
                     </ul>
                 </div>
             </div>
             <!--/ Featured post end -->
         </div>
         <!-- Item 2 end -->
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/brazil/<?= $dataGeography['image-main']; ?>)">
+        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/geography/<?= $dataGeography['image-main']; ?>)">
 
             <?= anchorCategory($dataGeography['category'], true); ?>
 
@@ -71,7 +71,7 @@
                             ];
                             echo anchor('/', img($image) . 'Tiberiogeo'); ?>
                         </li>
-                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataWorld['date']); ?></li>
+                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataGeography['date']); ?></li>
                     </ul>
                 </div>
             </div>

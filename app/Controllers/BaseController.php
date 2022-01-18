@@ -38,7 +38,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['html'];    
+    protected $helpers = ['html','form'];    
     
     /**
      * dateNow
@@ -111,7 +111,7 @@ class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
         helper('utils'); 
-        helper('form');       
+        //helper('form');       
        
         // Preload any models, libraries, etc, here.
 
@@ -126,7 +126,7 @@ class BaseController extends Controller
             IntlDateFormatter::GREGORIAN
         );
         $this->dateNow = $formatter->format($date);
-
+        
         $this->style = [
 	        "css" => [               
                 ["path" => base_url()."/assets/css/bootstrap.min.css"],
