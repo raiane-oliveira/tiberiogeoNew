@@ -65,7 +65,6 @@
 		<header>
 		<img src="<?=base_url();?>/assets/images/logo/logo-topo.png"/>
 		<?php
-		setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
 		echo '<span class="date">Gerando em: Campina Grande, ' . (strftime(' %d de %B de %Y', strtotime(date('Y-m-d')))) . '.</span>'; 
 		?>
 		<hr>

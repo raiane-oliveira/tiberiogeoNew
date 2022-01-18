@@ -189,7 +189,8 @@ class BaseController extends Controller
 
         $this->menuGeography = $this->category->getMenu('geography');     
         krsort($this->menuGeography);
-
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+		
         
     }
 }

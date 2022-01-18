@@ -1,6 +1,6 @@
 <?php
+setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
 
-use function PHPUnit\Framework\returnSelf;
 
 function toDataBr($data): String
 {
@@ -11,7 +11,7 @@ function toDataBr($data): String
     return $data[2] . "/" . $data[1] . "/" . $data[0];
 }
 
-function toDataMsql($data)
+function toDateMsql($data)
 {
     if (!empty($data)) {
         $data = explode("/", $data);
@@ -27,8 +27,9 @@ function toDataMsql($data)
  * @return string
  */
 function toDatePost(string $date): string
-{
-    return $date;    
+{   $nDate = toDateMsql($date);
+    return strftime('%d de %B, %Y', strtotime($nDate));
+    //return $date;    
     /*if ($date == null)
         return '--';
 
