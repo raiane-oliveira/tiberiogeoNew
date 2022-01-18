@@ -41,7 +41,6 @@ $routes->get('/category/(:any)', 'Category::index/$1');
 $routes->get('/school', 'School::index');
 $routes->get('/build', 'Build::index');
 //$routes->get('/article/(:num)', 'Article::index/$1');
-
 $routes->post('/build/add', 'Build::add');
 
 /*

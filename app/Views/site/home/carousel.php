@@ -1,7 +1,7 @@
 <div class="col-lg-8 col-md-12">
     <div id="featured-slider" class="owl-carousel ts-overlay-style ts-featured">
 
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/world/<?= $dataWorld['image-main']; ?>); height:560px">
+        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/world/<?= $dataWorld['image-main']; ?>)">
             <?= anchorCategory($dataWorld['category'], true); ?>
             <?php //anchor('category/' . $dataWorld['category'], toCategory($dataWorld['category']), array('class' => 'post-cat ts-orange-bg')); 
             ?>

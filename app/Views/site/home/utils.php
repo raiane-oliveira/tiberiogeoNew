@@ -7,7 +7,7 @@
                 </div>
                 <div class="row ts-col-list-post">
                     <div class="col-lg-2">
-                        <div class="ts-grid-box ts-col-box" style="height: 150px;">
+                        <div class="ts-grid-box ts-col-box">
                             <div class="item">
                                 <span class="post-cat ts-pink-bg">Interatividade</span>
                                 <div class="post-content">
@@ -19,7 +19,7 @@
                         </div><!-- ts gird box end-->
                     </div><!-- col end-->
                     <div class="col-lg-2">
-                        <div class="ts-grid-box ts-col-box" style="height: 150px;">
+                        <div class="ts-grid-box ts-col-box">
                             <div class="item">
                                 <span class="post-cat ts-pink-bg">Interatividade</span>
                                 <div class="post-content">
@@ -30,7 +30,7 @@
                         </div><!-- ts gird box end-->
                     </div><!-- col end-->
                     <div class="col-lg-2">
-                        <div class="ts-grid-box ts-col-box" style="height: 150px;">
+                        <div class="ts-grid-box ts-col-box">
                             <div class="item">
                                 <span class="post-cat ts-pink-bg">Interatividade</span>
                                 <div class="post-content">
@@ -41,7 +41,7 @@
                         </div><!-- ts gird box end-->
                     </div><!-- col end-->
                     <div class="col-lg-3">
-                        <div class="ts-grid-box ts-col-box" style="height: 150px;">
+                        <div class="ts-grid-box ts-col-box">
                             <div class="item">
                                 <span class="post-cat ts-pink-bg">Artigo</span>
                                 <div class="post-content">
@@ -53,7 +53,7 @@
                         </div><!-- ts gird box end-->
                     </div><!-- col end-->
                     <div class="col-lg-3">
-                        <div class="ts-grid-box ts-col-box" style="height: 150px;">
+                        <div class="ts-grid-box ts-col-box">
                             <div class="item">
                                 <span class="post-cat ts-pink-bg">Artigo</span>
                                 <div class="post-content">

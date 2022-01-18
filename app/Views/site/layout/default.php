@@ -74,7 +74,7 @@
                   </ul>
                </div>
                <div class="copyright-text text-center">
-                  <p>&copy; <?=date('Y');?>, Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES. All rights</p>
+                  <p>&copy; <?=date('Y');?>, Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES.<br>Todos os direitos reservados</p>
                </div>
             </div>
             <!-- col end -->
