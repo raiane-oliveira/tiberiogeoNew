@@ -31,6 +31,9 @@
 			text-align: center;
 			font-size: 0.8 rem;
 		}
+		li{
+			padding: 10px;
+		}
 		
 		hr{
 			color: #eee;

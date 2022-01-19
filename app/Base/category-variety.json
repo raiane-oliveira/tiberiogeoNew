@@ -2,7 +2,7 @@
     {
         "title": "Por que a temperatura do pólo Sul é menor que a do pólo norte?",
         "slug": "o-menor-pais-do-mundo",
-        "image-main":"maravilhas_mundo_2.jpg",
+        "image-main": "maravilhas_mundo_2.jpg",
         "id": 1,
         "category": "variety",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
@@ -11,16 +11,16 @@
     {
         "title": "As 7 Maravilhas do Mundo Antigo e Moderno",
         "slug": "a-maior-cratera",
-        "image-main":"maravilhas_mundo_2.jpg",
+        "image-main": "maravilhas_mundo_2.jpg",
         "id": 2,
         "category": "variety",
         "resume": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going",
         "date": "24/07/2016"
-    },    
+    },
     {
         "title": "Alho na Ração do Gado Reduz Gás do Efeito Estufa",
         "slug": "O Estado Islâmico",
-        "image-main":"alho_gado_1.jpg",
+        "image-main": "alho_gado_1.jpg",
         "id": 3,
         "category": "variety",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
@@ -29,7 +29,7 @@
     {
         "title": "Entenda o que é o ebola",
         "slug": "O Estado Islâmico",
-        "image-main":"ebola_menor.j_01.jpg",
+        "image-main": "ebola_menor.j_01.jpg",
         "id": 3,
         "category": "variety",
         "resume": "Conhecido pelos métodos brutais, o Estado Islâmico amplia a sua atuação em vários países, desafiando a segurança mundial e desestabilizando o Oriente Médio.",
@@ -54,5 +54,25 @@
         "image-gallery": "EleicaoEUA_2.png; EleicaoEUA_1.jpg",
         "font": "BBC Brasil e Wikipédia Brasil",
         "access": 5109
+    },
+    {
+        "id": "202201191514385115248469",
+        "title": "Clima Paraibano",
+        "resume": "Existe uma distribuição bem diversificada do clima na Paraíba.",
+        "text": "<p>A distribuição dos climas da Paraíba está relacionada com a localização geográfica, ou seja, quanto mais próximo do litoral, mas úmido será o clima; quanto mais longe, mais seco.</p><p>Essa variação climática do litoral para o interior reflete-se, também, na ocorrência de diferentes tipos de solo e vegetação do Estado. Verifica-se na Paraíba a ocorrência dos seguintes climas:</p><ul><li>Clima tropical quente-úmido, com chuvas abundantes (média anual de 1.800 mm) e temperatura média anual de 26°C. Com essas características, esse tipo climático domina em todo o litoral. Nessa região aparecem os solos arenosos das praias e restingas;</li>\r\n    <li>Clima semiárido, depois do Brejo, em toda porção aplainada elevada da Borborema e nos vales que cortam, como os do rio Paraíba, Curimataú, Taperoá, Seridó, etc., a semi-aridez do clima caracteriza a paisagem. Esse clima, quente e seco, com chuvas de verão, alcançam os índices mais baixos de precipitação do estado, com média anual de 500 mm e temperatura média anual é de 26°C. Os municípios de Barra de Santa Rosa e Cabaceiras apresentam índices inferiores a 300 mm, e constituem, juntamente com Acari-RN, o chamado \"triângulo mais seco do Brasil\". Sob essas condições, desenvolve-se a vegetação de caatinga das regiões do Cariri e Curimataú paraibanos;</li><li>Clima quente semi-úmido, as chuvas de verão-outono alcançam, em média, 800 mm anuais determinadas pelas massas quentes úmidas oriundas da Amazônia. A temperatura média anual é de 27°C. Esse tipo de clima domina todo o Pediplano Sertanejo, embora com precipitações menos baixas que as do Cariri, também está sujeito ao fenômeno das secas, porque as suas chuvas são igualmente irregulares. A vegetação de caatinga foi sendo degradada ao longo do tempo para a ocupação do solo com o algodão, milho e ainda com o pasto para criação do gado, principal atividade econômica.</li></ul><p>Nas serras isoladas da região semi-árida, como as de Araruna, Cuité, Teixeira, Santa Luzia, Monte Horebe, entre outras, os índices anuais de pluviosidade ficam entre 900 mm e 1.000 mm.</p><p>A formação do Agreste ocorre em faixas entre o Brejo úmido e o Cariri semiárido, ou seja, em área de transição climática.</p><p>Na região do Brejo, os ventos aquecidos na depressão eleva-se, resfriam-se e dão origem às chuvas orográficas. O clima tropical quente volta a apresentar índices pluviométricos anuais bem aproximados daqueles do litoral. A precipitação média do Brejo é de 1.400 mm, favorecendo a perenidade dos cursos d'água. A altitude de 500/600 m propicia temperatura média anual de 22°C, com as mínimas atingindo menos de 15°C nos anos mais frios. Por causa da boa quantidade de chuvas e a ação das águas sobre rochas graníticas, os solos são bem evoluídos, espessos, avermelhados (argilosos).</p>",
+        "image-main": "clima-paraibano-01.jpg",
+        "category": "variety",
+        "date": "19/01/2022",
+        "text-second": "",
+        "image-text-second": "",
+        "quote": "",
+        "quote-author": "",
+        "image-video": "",
+        "link-video": "",
+        "title-video": "",
+        "text-video": "",
+        "image-gallery": "",
+        "font": "Tiberiogeo. A Geografia Levada a Sério.",
+        "access": 8
     }
 ]

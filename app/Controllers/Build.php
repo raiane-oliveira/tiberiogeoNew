@@ -93,6 +93,7 @@ class Build extends BaseController
             $blog['data_postagem'] = date('d/m/Y');*/
 
             $dadosArticle = array(
+                'id' => generateId(10,false,false,true,false),
                 'title' => $this->request->getPost('title'),
                 'resume' => $this->request->getPost('resume'),
                 'text' => $this->request->getPost('text'),

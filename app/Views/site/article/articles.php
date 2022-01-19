@@ -3,8 +3,9 @@
 <?= $this->section('content') ?>
 <!-- single post start -->
 <section class="single-post-wrapper post-layout-10">
+    
     <div class="container">
-        <div class="row mb-30">
+        <div class="row mb-30">        
             <div class="col-lg-12">
                 <div class="entry-header">
                     <?= anchorCategory($dataArticle['category'], true); ?>
