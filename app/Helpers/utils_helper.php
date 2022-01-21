@@ -229,3 +229,18 @@ function generateId(int $tamanho = null, bool $maiusculas = null, bool $minuscul
     // retorna a senha embaralhada com "str_shuffle" com o tamanho definido pela variável $tamanho
     return date('YmdHis').substr(str_shuffle($senha), 0, $tamanho);
 }
+
+function createImageGallery($images,$title){
+    if(empty($images)){
+        return "";
+    }
+    $img = "";
+        
+    $image = explode(';',str_replace(" ","", $images));
+    
+    for($i = 0; $i < count($image); $i++){
+        $img .= $title.'-'.$image[$i].'.jpg;';
+
+    }
+    return $img;
+}

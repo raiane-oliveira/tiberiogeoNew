@@ -24,6 +24,7 @@ class School extends BaseController
 
         $school = new SchoolModel();
         $datas = $school->getSchool();
+      
 
         $data = [
 

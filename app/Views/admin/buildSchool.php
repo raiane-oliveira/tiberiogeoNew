@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>
 <?php
 
@@ -98,55 +98,92 @@ $javascript = [
             </div><!-- row  end -->
         </div><!-- container end -->
     </section>
-
+    
     <section class="block-wrapper mt-15">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact-box ts-grid-box">
-                        <h3>Listar Artigo</h3>
-                        <?php
-                        echo form_open('/build/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
+                        <h3>Construir Escola</h3>
+                        <?php 
+                    echo form_open('/buildSchool/add',['enctype'=>'multipart/form-data','role'=>'form','id'=>'contact-form'])?>
 
-                        <div class="error-container">
-                            <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
-                                <strong><?= $msgs['message']; ?></strong>
+                            <div class="error-container">
+                            <div class=" border-left-<?=$msgs['alert']?> alert alert-show alert-<?=$msgs['alert']?>">
+                    <strong><?=$msgs['message'];?></strong>
+
                             </div>
-                            <div class="row">
-                                <div class="table">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Título</th>
-                                                <th>Imagem</th>
-                                                <th>Categoria</th>
-                                                <th>Editar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php 
-                                            
-                                            foreach($dataWorld AS $item):?>
-                                            <tr>
-                                                <td><?=$item['title'];?></td>
-                                                <td></td>
-                                                <td><?=toCategory($item['category']);?></td>
-                                                <td><?=anchor('build/edit/'.$item['id'],$item['id']);?></td>
-                                            </tr>
-                                            <?php endforeach;?>
-                                        </tbody>
-                                    </table>
+                           
+                            <div class="row">    
+                            <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tipo</label>
+                                        <select name="type" class="form-control form-control-name">
+                                            <option value="exercicie">Exercício</option>
+                                            <option value="evidences">Prova</option>
+                                            <option value="slide">Slide</option>
+                                            <option value="text">Texto</option>                                            
+                                        </select>
+                                       
+                                    </div>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('category'):'';?></span>
+                                </div>                        
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Título</label>
+                                        <input value="<?= old('title')?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
+                                    </div>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title'):'';?></span>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Container end-->
-                        </footer>
-                        <!-- footer end -->
-                        <!-- javaScript Files	=============================================================================-->
-                        <?php
-                        foreach ($javascript['js'] as $path) : ?>
-                            <script src="<?= $path['path']; ?>"></script>
-                        <?php endforeach; ?>
+                            </div>                            
+                            <div class="row">                            
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Link</label>
+                                        <input value="<?= old('title')?>" class="form-control form-control-name" name="link" id="title" placeholder="Digite um título" type="text">
+                                    </div>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('link'):'';?></span>
+                                </div>
+                            </div>  
+                            <div class="text-right"><br><button class="btn btn-primary solid blank" type="submit">Salvar</button></div>
+                        
+                        <?=form_close()?>
+                    </div><!-- grid box end -->
+                </div><!-- col end-->
+              </div><!-- row end-->
+        </div><!-- container end-->
+    </section>
+
+
+
+
+    <!-- newslater end -->
+    <!-- footer start -->
+    <footer class="ts-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-menu text-center">
+                       
+                    </div>
+                    <div class="copyright-text text-center">
+                  <p>&copy; <?=date('Y');?>, Tiberiogeo. All rights</p>
+               </div>
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <div id="back-to-top" class="back-to-top"><button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-up"></i></button></div>
+            <!-- Back to top end -->
+        </div>
+        <!-- Container end-->
+    </footer>
+    <!-- footer end -->
+    <!-- javaScript Files	=============================================================================-->
+    <?php
+    foreach ($javascript['js'] as $path) : ?>
+        <script src="<?= $path['path']; ?>"></script>
+    <?php endforeach; ?>
 </body>
 
 </html>

@@ -41,7 +41,7 @@ class Article extends BaseController
                 $dataArticle['text-video'] = $dados['text-video'];
                 $dataArticle['image-gallery'] = $dados['image-gallery'];
                 $dataArticle['font'] = $dados['font'];
-                $dataCategory[$key]['access'] = $dados['access'] + 1;
+                $dataCategory[$key]['access'] = $dados['access'] + 1;                
                 $dataArticle['access'] = $dados['access'] + 1;
                 break;
             }

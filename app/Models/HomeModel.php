@@ -31,6 +31,6 @@ class HomeModel extends Model
         return $dataCategory;
 
     }
-
+   
     
 }
