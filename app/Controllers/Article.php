@@ -24,8 +24,9 @@ class Article extends BaseController
         $dataArticle = [];
 
         foreach ($dataCategory as $key => $dados) {
-            if (createSlug($dados['title']) == $article) {
+            if ($dados['slug'] == $article) {
                 $dataArticle['title'] = $dados['title'];
+                $dataArticle['slug'] = $dados['slug'];
                 $dataArticle['category'] = $dados['category'];
                 $dataArticle['date'] = $dados['date'];
                 $dataArticle['image-main'] = $dados['image-main'];

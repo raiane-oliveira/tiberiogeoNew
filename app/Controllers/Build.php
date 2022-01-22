@@ -39,6 +39,35 @@ class Build extends BaseController
         $parser->setData($this->javascript);
         return $parser->render('admin/build');
     }
+    public function create()
+    {
+        $msg = [
+            'message' => '',
+            'alert' => ''
+        ];
+        if (session()->has('erro')) {
+            $this->erros = session('erro');
+            $msg = [
+                'message' => '<i class="fa fa-exclamation-triangle"></i> Opps! Erro(s) no preenchimento!',
+                'alert' => 'danger'
+            ];
+        }
+        //$dataCategoryWorld = $this->category->getArticleMain('world');
+
+        $data = array(
+            'msgs' => $msg,
+            'erro' => $this->erros,
+            //"dataWorld" => $dataCategoryWorld,
+        );
+
+
+        $parser = \Config\Services::renderer();
+        $parser->setData($this->style);
+        $parser->setData($data);
+        $parser->setData($this->dataHeader);
+        $parser->setData($this->javascript);
+        return $parser->render('admin/buildCreate');
+    }
     public function edit($id)
     {
         $msg = [
@@ -134,31 +163,49 @@ class Build extends BaseController
 
             foreach ($dataCategory as $key => $dados) {
                 if ($dados['id'] === $this->request->getPost('id')) {
-                    $dataArticle[$key]['id'] = $dados['id'];
-                    $dataArticle[$key]['title'] = $this->request->getPost('title');
-                    $dataArticle[$key]['category'] = $dados['category'];
-                    $dataArticle[$key]['date'] = $dados['date'];
-                    $dataArticle[$key]['image-main'] = $dados['image-main'];
-                    $dataArticle[$key]['resume'] = $this->request->getPost('resume');
-                    $dataArticle[$key]['text'] = $this->request->getPost('text');
-                    $dataArticle[$key]['text-second'] = $this->request->getPost('text-second');
-                    $dataArticle[$key]['image-text-second'] = $dados['image-text-second'];
-                    $dataArticle[$key]['quote'] = $this->request->getPost('quote');
-                    $dataArticle[$key]['quote-author'] = $this->request->getPost('quote-author');
-                    $dataArticle[$key]['image-video'] = $dados['image-video'];
-                    $dataArticle[$key]['link-video'] = $this->request->getPost('link-video');
-                    $dataArticle[$key]['title-video'] = $this->request->getPost('title-video');
-                    $dataArticle[$key]['text-video'] = $this->request->getPost('text-video');
-                    $dataArticle[$key]['image-gallery'] = $dados['image-gallery'];
-                    $dataArticle[$key]['font'] = $this->request->getPost('font');
-                    //$dataCategory[$key]['access'] = $dados['access'] + 1;
-                    $dataArticle[$key]['access'] = $dados['access'] + 1;
+                    /*$dataArticle['id'] = $dados['id'];
+                    $dataArticle['title'] = $this->request->getPost('title');
+                    $dataArticle['category'] = $dados['category'];
+                    $dataArticle['date'] = $dados['date'];
+                    $dataArticle['image-main'] = $dados['image-main'];
+                    $dataArticle['resume'] = $this->request->getPost('resume');
+                    $dataArticle['text'] = $this->request->getPost('text');
+                    $dataArticle['text-second'] = $this->request->getPost('text-second');
+                    $dataArticle['image-text-second'] = $dados['image-text-second'];
+                    $dataArticle['quote'] = $this->request->getPost('quote');
+                    $dataArticle['quote-author'] = $this->request->getPost('quote-author');
+                    $dataArticle['image-video'] = $dados['image-video'];
+                    $dataArticle['link-video'] = $this->request->getPost('link-video');
+                    $dataArticle['title-video'] = $this->request->getPost('title-video');
+                    $dataArticle['text-video'] = $this->request->getPost('text-video');
+                    $dataArticle['image-gallery'] = $dados['image-gallery'];
+                    $dataArticle['font'] = $this->request->getPost('font');*/
+
+                    $dataCategory[$key]['id'] = $dados['id'];
+                    $dataCategory[$key]['slug'] = $dados['slug'];
+                    $dataCategory[$key]['title'] = $this->request->getPost('title');
+                    $dataCategory[$key]['category'] = $dados['category'];
+                    $dataCategory[$key]['date'] = $dados['date'];
+                    $dataCategory[$key]['image-main'] = $dados['image-main'];
+                    $dataCategory[$key]['resume'] = $this->request->getPost('resume');
+                    $dataCategory[$key]['text'] = $this->request->getPost('text');
+                    $dataCategory[$key]['text-second'] = $this->request->getPost('text-second');
+                    $dataCategory[$key]['image-text-second'] = $dados['image-text-second'];
+                    $dataCategory[$key]['quote'] = $this->request->getPost('quote');
+                    $dataCategory[$key]['quote-author'] = $this->request->getPost('quote-author');
+                    $dataCategory[$key]['image-video'] = $dados['image-video'];
+                    $dataCategory[$key]['link-video'] = $this->request->getPost('link-video');
+                    $dataCategory[$key]['title-video'] = $this->request->getPost('title-video');
+                    $dataCategory[$key]['text-video'] = $this->request->getPost('text-video');
+                    $dataCategory[$key]['image-gallery'] = $dados['image-gallery'];
+                    $dataCategory[$key]['font'] = $this->request->getPost('font');                    
+                    $dataCategory[$key]['access'] = $dados['access'];
                     break;
                 }
-            }           
+            }                       
             /*Atualiza o arquivo*/
             $this->articleUpdate = new ArticleModel();            
-            $this->articleUpdate->updateArticle($dataArticle, $this->request->getPost('category'));
+            $this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
 
             
         }
@@ -275,6 +322,7 @@ class Build extends BaseController
 
             $dadosArticle = array(
                 'id' => generateId(10, false, false, true, false),
+                'slug' => createSlug($this->request->getPost('title')),
                 'title' => $this->request->getPost('title'),
                 'resume' => $this->request->getPost('resume'),
                 'text' => $this->request->getPost('text'),
@@ -351,7 +399,7 @@ class Build extends BaseController
         $parser->setData($datas);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('admin/build');
+        return $parser->render('admin/buildCreate');
     }
     public function addSchool()
     {

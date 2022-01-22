@@ -1,6 +1,7 @@
 [
     {
         "title": "Água, um bem precioso",
+        "slug": "agua,-um-bem-precioso",
         "resume": "Com 12% a 16% da água doce disponível na Terra, o Brasil é um país rico nesse insumo que a natureza provê de graça à população e à economia. Cada habitante pode contar com mais de 43 mil m³ por ano dos mananciais, mas apenas 0,7% disso termina utilizado.",
         "text": "<p>Nações como a Argélia e regiões como a Palestina, em contraste, usam quase a metade dos recursos hídricos disponíveis, e outras ainda, como a Arábia Saudita e os Emirados Árabes, precisam obtê-los por dessalinização de água do mar. </p><p>  Só em aparência, contudo, é confortável a situação brasileira. Em primeiro lugar, há o problema da distribuição: o líquido é tanto mais abundante onde menor é a população e mais preservadas são as florestas, como na Amazônia. No litoral do país, assim como nas regiões Sudeste e Nordeste (onde se concentram 70% da população), muitos centros urbanos já enfrentam dificuldades de abastecimento –agravados por secas como as que se abateram sobre São Paulo, neste ano, e sobre o semiárido nordestino em 2012/13. </p><p>Para anuviar o horizonte, sobrevêm os riscos de piora com o aquecimento global. Com as crescentes emissões de dióxido de carbono (CO?) e de outros gases do efeito estufa decorrentes da queima de combustíveis ou por outras atividades humanas, a atmosfera terrestre retém mais calor do Sol perto da superfície. Aumenta, assim, a temperatura das massas de ar, energia que alimenta os ventos e tempestades. </p><p>Os padrões de circulação atmosférica se alteram. Algumas regiões poderão sofrer estiagens mais frequentes e graves, enquanto outras ficarão mais sujeitas a inundações. Isso, é claro, se os resultados das simulações do clima futuro feitas por modelos de computador estiverem corretas.</p>",
         "image-main": "agua,-um-bem-precioso-01.jpg",
@@ -14,8 +15,8 @@
         "link-video": "",
         "title-video": "",
         "text-video": "",
-        "image-gallery": "agua,-um-bem-precioso-03.jpg; agua,-um-bem-precioso-04.jpg",
+        "image-gallery": "agua,-um-bem-precioso-03.jpg;agua,-um-bem-precioso-04.jpg;agua,-um-bem-precioso-05.jpg",
         "font": "Folha | http://www1.folha.uol.com.br/especial/2014/",
-        "access": 71
+        "access": 85
     }
 ]

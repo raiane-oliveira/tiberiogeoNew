@@ -59,6 +59,10 @@ function toCategory(string $category): string
             return 'BRASIL';
         case 'geography';
             return 'GEOGRAFIA';
+        case 'variety';
+            return 'VARIEDADES';
+        case 'curiosity';
+            return 'CURIOSIDADES';
         default:
             return 'INDEFINIDO';
     }
@@ -134,7 +138,7 @@ function anchorCategory(string $category, bool $style = false): string
 function anchorArticle(string $category, string $article, string $title = null):string
 {
     $titleEnd = $title;
-    return anchor('article/' . $category . '/' . createSlug($article), $titleEnd);
+    return anchor('article/' . $category . '/' . $article, $titleEnd);
 }
 
 /**

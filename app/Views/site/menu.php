@@ -29,13 +29,13 @@
                                                         <div class="ts-post-thumb">
                                                             <?= anchorArticle(
                                                                 $item['category'],
-                                                                $item['title'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'] . '" alt="">'
+                                                                $item['slug'],
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
                                                             <h3 class="post-title">
-                                                                <?= anchorArticle($item['category'], $item['title'], $item['title']); ?>
+                                                                <?= anchorArticle($item['category'], $item['slug'], $item['title']); ?>
                                                             </h3>
                                                         </div>
                                                     </div>
@@ -62,13 +62,13 @@
                                                         <div class="ts-post-thumb">
                                                             <?= anchorArticle(
                                                                 $item['category'],
-                                                                $item['title'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'] . '" alt="">'
+                                                                $item['slug'],
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
                                                             <h3 class="post-title">
-                                                                <?= anchorArticle($item['category'], $item['title'], $item['title']); ?>
+                                                                <?= anchorArticle($item['category'], $item['slug'], $item['title']); ?>
                                                             </h3>
                                                         </div>
                                                     </div>
@@ -95,13 +95,13 @@
                                                         <div class="ts-post-thumb">
                                                             <?= anchorArticle(
                                                                 $item['category'],
-                                                                $item['title'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'] . '" alt="">'
+                                                                $item['slug'],
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
                                                             <h3 class="post-title">
-                                                                <?= anchorArticle($item['category'], $item['title'], $item['title']); ?>
+                                                                <?= anchorArticle($item['category'], $item['slug'], $item['title']); ?>
                                                             </h3>
                                                         </div>
                                                     </div>

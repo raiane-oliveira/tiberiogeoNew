@@ -27,7 +27,7 @@ class ArticleModel extends Model
         $dataArticle = [];
 
         foreach ($dataCategory as $key => $dados) {
-            if (createSlug($dados['title']) == $article) {
+            if ($dados['slug'] == $article) {
                 $dataArticle['title'] = $dados['title'];
                 $dataArticle['category'] = $dados['category'];
                 $dataArticle['date'] = $dados['date'];

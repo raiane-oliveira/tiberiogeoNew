@@ -23,12 +23,12 @@
                                                 'src' => base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'],
                                                 'class' => 'img-fluid',
                                             ];
-                                            echo anchorArticle($item['category'], $item['title'], img($image)); ?>
+                                            echo anchorArticle($item['category'], $item['slug'], img($image)); ?>
 
                                     </div>
                                     <div class="post-content" style="height:100px">
                                         <h3 class="post-title">
-                                            <?= anchorArticle($item['category'], $item['title'], $item['title']); ?>
+                                            <?= anchorArticle($item['category'], $item['slug'], $item['title']); ?>
                                         </h3><span class="post-date-info"><i class="fa fa-clock-o"></i> <?= toDatePost($item['date']); ?></span>
                                     </div>
                                 </div><!-- ts grid box-->

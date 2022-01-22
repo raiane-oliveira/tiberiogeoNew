@@ -19,13 +19,13 @@
                         <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataArticle['date']); ?></li>
                         <li class=""><i class="fa fa-eye"></i>Acessos: <?= $dataArticle['access']; ?></li>
                         <li class="share-post">
-                            <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['title'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
+                            <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['slug'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
                         </li>
-                        <li><?=anchor('/article/pdf/'.createSlug($dataArticle['title']).'/'.$dataArticle['category'],'<i class="fa fa-file-pdf-o" style="color:red"></i>',['target'=>'_blank','title'=>'Visualizar em PDF']);?></li>
+                        <li><?=anchor('/article/pdf/'.$dataArticle['slug'].'/'.$dataArticle['category'],'<i class="fa fa-file-pdf-o" style="color:red"></i>',['target'=>'_blank','title'=>'Visualizar em PDF']);?></li>
                     </ul>
                 </div><!-- single post header end-->
                 <div class="post-content-area">
-                    <div class="single-big-img img-ovarlay" style="background-image: url(<?= base_url(); ?>/assets/img/<?= $dataArticle['category']; ?>/<?=createSlug($dataArticle['title'])?>/<?= $dataArticle['image-main']; ?>)"></div>
+                    <div class="single-big-img img-ovarlay" style="background-image: url(<?= base_url(); ?>/assets/img/<?= $dataArticle['category']; ?>/<?=$dataArticle['slug']?>/<?= $dataArticle['image-main']; ?>)"></div>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                                 endif; ?>
 
                             <?php if ($dataArticle['image-text-second']) : ?>
-                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=createSlug($dataArticle['title'])?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
+                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug']?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
                             <?php endif; ?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
@@ -59,8 +59,8 @@
                                     $imageGallery = explode(';', trim($dataArticle['image-gallery']));
 
                                     for ($i = 0; $i < count($imageGallery); $i++) : ?>
-                                        <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
-                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=createSlug($dataArticle['title'])?>/<?= $imageGallery[$i]; ?>" alt="">
+                                        <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug'];?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
+                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug'];?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1">
                                         </a>
                                     <?php endfor; ?>
                                 </div>
@@ -68,7 +68,7 @@
                             if ($dataArticle['image-video']) : ?>
 
                                 <div class="post-video">
-                                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=createSlug($dataArticle['title'])?>/<?= $dataArticle['image-video']; ?>" alt="">
+                                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['title'];?>/<?= $dataArticle['image-video']; ?>" alt="">
                                     <div class="post-video-content">
                                         <a href="<?= $dataArticle['link-video']; ?>" class="ts-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                         <h3><a href=""><?= $dataArticle['title-video']; ?></a></h3>

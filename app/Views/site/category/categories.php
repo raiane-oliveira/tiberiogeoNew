@@ -23,18 +23,18 @@
                                         <div class="ts-post-thumb">
                                            <?php
                                           $image = [
-                                                'src' => base_url().'/assets/img/'.$item['category'].'/'.$item['image-main'],
+                                                'src' => base_url().'/assets/img/'.$item['category'].'/'.$item['slug'].'/'.$item['image-main'],
                                                 'class'=>'img-fluid',
                                                 
                                           ];
-                                          echo anchorArticle($item['category'],$item['title'],img($image));
+                                          echo anchorArticle($item['category'],$item['slug'],img($image));
                                           ?>                                           
                                         </div>
                                     </div><!-- col lg end-->
                                     <div class="col-md-8">
                                         <div class="post-content">
                                             <h3 class="post-title md">
-                                                <?= anchorArticle($item['category'], $item['title'], $item['title']);
+                                                <?= anchorArticle($item['category'], $item['slug'], $item['title']);
                                                 ?>
                                             </h3>
                                             <ul class="post-meta-info">

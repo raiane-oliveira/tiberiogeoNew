@@ -104,7 +104,14 @@ $javascript = [
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact-box ts-grid-box">
-                        <h3>Construir Artigo</h3>
+                    <div class="clearfix">
+                            <h2 class="float-left"><span>Criar Artigo</span></h2>
+
+                            <div class="float-right">
+                                <?= anchor('/build', 'LISTAR ARTIGOS', ['class' => 'btn btn-primary']); ?>
+                            </div>
+                        </div>
+                      
                         <?php 
                     echo form_open('/build/add',['enctype'=>'multipart/form-data','role'=>'form','id'=>'contact-form'])?>
 

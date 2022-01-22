@@ -13,18 +13,21 @@
                               <div class="ts-post-thumb">
                                  <?php
                                  $image = [
-                                    'src' => base_url() . '/assets/img/' . $dataCategoryEmphasis['category'] . '/' . $dataCategoryEmphasis['image-main'],
+                                    'src' => base_url() . '/assets/img/' . $dataCategoryEmphasis['category'] . '/'.$dataCategoryEmphasis['slug'] .'/'. $dataCategoryEmphasis['image-main'],
                                     'class' => 'img-fludid',
                                     'height' => '150',
                                     'width' => '150'
                                  ];
-                                 echo anchorArticle($dataCategoryEmphasis['category'], $dataCategoryEmphasis['title'], img($image)); ?>
+                                 echo anchorArticle($dataCategoryEmphasis['category'], $dataCategoryEmphasis['slug'], img($image)); ?>
 
                               </div>
                            </div><!-- col lg end-->
                            <div class="col-md-8">
                               <div class="post-content text-white" >
-                                 <h3 class="post-title md"><a href="#"><?= $dataCategoryEmphasis['title']; ?></a></h3>
+                                 <h3 class="post-title md">
+                                    <?=anchorArticle($dataCategoryEmphasis['category'], $dataCategoryEmphasis['slug'],$dataCategoryEmphasis['title']);?>
+                                    
+                                 </h3>
                                  <ul class="post-meta-info text-white">                                    
                                     <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataCategoryEmphasis['date']); ?></li>
                                  </ul>

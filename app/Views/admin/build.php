@@ -104,7 +104,14 @@ $javascript = [
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact-box ts-grid-box">
-                        <h3>Listar Artigo</h3>
+                        <div class="clearfix">
+                            <h2 class="float-left"><span>Listar Artigos</span></h2>
+
+                            <div class="float-right">
+                                <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
+                            </div>
+                        </div>
+
                         <?php
                         echo form_open('/build/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
@@ -115,25 +122,25 @@ $javascript = [
                             <div class="row">
                                 <div class="table">
                                     <table class="table">
-                                        <thead>
+                                        <thead class="thead-dark">
                                             <tr>
                                                 <th>Título</th>
                                                 <th>Imagem</th>
                                                 <th>Categoria</th>
-                                                <th>Editar</th>
+                                                <th class="text-center">Editar</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <?php 
-                                            
-                                            foreach($dataWorld AS $item):?>
-                                            <tr>
-                                                <td><?=$item['title'];?></td>
-                                                <td></td>
-                                                <td><?=toCategory($item['category']);?></td>
-                                                <td><?=anchor('build/edit/'.$item['id'],$item['id']);?></td>
-                                            </tr>
-                                            <?php endforeach;?>
+                                        <tbody class="table-striped">
+                                            <?php
+
+                                            foreach ($dataWorld as $item) : ?>
+                                                <tr>
+                                                    <td><?= $item['title']; ?></td>
+                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
+                                                    <td><?= toCategory($item['category']); ?></td>
+                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id'], '<i class="fa fa-edit fa-2x"></i>'); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

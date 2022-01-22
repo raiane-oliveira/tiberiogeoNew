@@ -103,8 +103,17 @@ $javascript = [
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    
                     <div class="contact-box ts-grid-box">
-                        <h3>Editar Artigo</h3>
+                    <div class="clearfix">
+                            <h2 class="float-left"><span>Editar Artigo</span></h2>
+
+                            <div class="float-right">
+                                <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
+                                <?= anchor('/build', 'LISTAR ARTIGO', ['class' => 'btn btn-primary']); ?>
+                            </div>
+                        </div>
+                       
                         <?php
                         echo form_open('/build/update', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
@@ -119,8 +128,8 @@ $javascript = [
                                     <div class="form-group">
                                         <label>Título</label>
                                         <input value="<?= $dataWord['title'] ?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
-                                        <input value="<?= $dataWord['id'] ?>" class="form-control form-control-name" name="id" id="id" placeholder="Digite um título" type="text">
-                                        <input value="<?= $dataWord['category'] ?>" class="form-control form-control-name" name="category" id="category" placeholder="Digite um título" type="text">
+                                        <input value="<?= $dataWord['id'] ?>" class="form-control form-control-name" name="id" id="id" placeholder="Digite um título" type="hidden">
+                                        <input value="<?= $dataWord['category'] ?>" class="form-control form-control-name" name="category" id="category" placeholder="Digite um título" type="hidden">
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
@@ -198,8 +207,8 @@ $javascript = [
                                 </div>
                             </div>
                             <div class="text-right"><br>
-                            <button class="btn btn-primary solid blank" type="submit">Salvar</button>
-                            <button class="btn btn-primary solid blank" type="submit">Voltar</button>
+                            <button class="btn btn-primary solid blank" type="submit">Salvar</button>                          
+                            
                         </div>
                           
 
