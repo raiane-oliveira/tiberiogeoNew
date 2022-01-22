@@ -107,7 +107,6 @@ $javascript = [
                     <div class="contact-box ts-grid-box">
                     <div class="clearfix">
                             <h2 class="float-left"><span>Editar Artigo</span></h2>
-
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
                                 <?= anchor('/build', 'LISTAR ARTIGO', ['class' => 'btn btn-primary']); ?>
@@ -127,16 +126,16 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Título</label>
-                                        <input value="<?= $dataWord['title'] ?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
-                                        <input value="<?= $dataWord['id'] ?>" class="form-control form-control-name" name="id" id="id" placeholder="Digite um título" type="hidden">
-                                        <input value="<?= $dataWord['category'] ?>" class="form-control form-control-name" name="category" id="category" placeholder="Digite um título" type="hidden">
+                                        <input value="<?= $dataCategory['title'] ?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
+                                        <input value="<?= $dataCategory['id'] ?>" class="form-control form-control-name" name="id" id="id" placeholder="Digite um título" type="hidden">
+                                        <input value="<?= $dataCategory['category'] ?>" class="form-control form-control-name" name="category" id="category" placeholder="Digite um título" type="hidden">
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Resumo</label>
-                                <textarea class="form-control form-control-message" name="resume" id="resume" placeholder="" rows="5"><?= $dataWord['resume'] ?></textarea>
+                                <textarea class="form-control form-control-message" name="resume" id="resume" placeholder="" rows="5"><?= $dataCategory['resume'] ?></textarea>
                             </div>
                             <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('resume') : ''; ?></span>
                             
@@ -144,7 +143,7 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 01</label>
-                                        <textarea class="form-control form-control-message" name="text" id="text" placeholder="" rows="5"><?= $dataWord['text'] ?></textarea>
+                                        <textarea class="form-control form-control-message" name="text" id="text" placeholder="" rows="5"><?= $dataCategory['text'] ?></textarea>
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('text') : ''; ?></span>
                                 </div>
@@ -154,7 +153,7 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 02</label>
-                                        <textarea class="form-control form-control-message" name="text-second" id="text-second" placeholder="" rows="5"><?= $dataWord['text-second'] ?></textarea>
+                                        <textarea class="form-control form-control-message" name="text-second" id="text-second" placeholder="" rows="5"><?= $dataCategory['text-second'] ?></textarea>
                                     </div>
                                 </div>
 
@@ -163,15 +162,14 @@ $javascript = [
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação</label>
-                                        <input value="<?= $dataWord['quote'] ?>" class="form-control form-control-name" name="quote" id="quote" placeholder="Digite uma citação" type="text">
+                                        <input value="<?= $dataCategory['quote'] ?>" class="form-control form-control-name" name="quote" id="quote" placeholder="Digite uma citação" type="text">
                                     </div>
                                 </div>
-
                             
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação autor</label>
-                                        <input value="<?= $dataWord['quote-author'] ?>" class="form-control form-control-name" name="quote-author" id="quote-author" placeholder="Digite autor da citação" type="text">
+                                        <input value="<?= $dataCategory['quote-author'] ?>" class="form-control form-control-name" name="quote-author" id="quote-author" placeholder="Digite autor da citação" type="text">
                                     </div>
                                 </div>
 
@@ -180,13 +178,19 @@ $javascript = [
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Link vídeo</label>
-                                        <input value="<?= $dataWord['link-video'] ?>" class="form-control form-control-name" name="link-video" id="link-video" placeholder="Digite o link do vídeo" type="text">
+                                        <input value="<?= $dataCategory['link-video'] ?>" class="form-control form-control-name" name="link-video" id="link-video" placeholder="Digite o link do vídeo" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Imagem vídeo</label>
+                                        <input value="<?= $dataCategory['image-video'] ?>" class="form-control form-control-name" name="image-video" id="link-video" placeholder="Digite o link do vídeo" type="text">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Titulo vídeo</label>
-                                        <input value="<?= $dataWord['title-video'] ?>" class="form-control form-control-name" name="title-video" id="title-video" placeholder="Digite o título do vídeo" type="text">
+                                        <input value="<?= $dataCategory['title-video'] ?>" class="form-control form-control-name" name="title-video" id="title-video" placeholder="Digite o título do vídeo" type="text">
                                     </div>
                                 </div>
 
@@ -195,14 +199,14 @@ $javascript = [
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Texto vídeo</label>
-                                        <input value="<?= $dataWord['text-video'] ?>" class="form-control form-control-name" name="text-video" id="text-video" placeholder="Digite o texto do vídeo" type="text">
+                                        <input value="<?= $dataCategory['text-video'] ?>" class="form-control form-control-name" name="text-video" id="text-video" placeholder="Digite o texto do vídeo" type="text">
                                     </div>
                                 </div>
                           
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Fonte</label>
-                                        <input value="<?= $dataWord['font'] ?>" class="form-control form-control-name" name="font" id="font" placeholder="Digite as fontes do artigo" type="text">
+                                        <input value="<?= $dataCategory['font'] ?>" class="form-control form-control-name" name="font" id="font" placeholder="Digite as fontes do artigo" type="text">
                                     </div>
                                 </div>
                             </div>

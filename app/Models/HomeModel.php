@@ -30,7 +30,6 @@ class HomeModel extends Model
         $dataCategory = json_decode($jsonString, true); 
         return $dataCategory;
 
-    }
-   
+    }  
     
 }

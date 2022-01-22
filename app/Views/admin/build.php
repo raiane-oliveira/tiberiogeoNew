@@ -121,26 +121,52 @@ $javascript = [
                             </div>
                             <div class="row">
                                 <div class="table">
-                                    <table class="table">
+                                    <table class="table table-striped">
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th>Título</th>
                                                 <th>Imagem</th>
                                                 <th>Categoria</th>
-                                                <th class="text-center">Editar</th>
+                                                <th class="text-center">Ação</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="table-striped">
+                                        <tbody>
                                             <?php
-
                                             foreach ($dataWorld as $item) : ?>
                                                 <tr>
                                                     <td><?= $item['title']; ?></td>
                                                     <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
                                                     <td><?= toCategory($item['category']); ?></td>
-                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id'], '<i class="fa fa-edit fa-2x"></i>'); ?></td>
+                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
+                                            <?php
+                                            foreach ($dataBrazil as $item) : ?>
+                                                <tr>
+                                                    <td><?= $item['title']; ?></td>
+                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
+                                                    <td><?= toCategory($item['category']); ?></td>
+                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                            <?php
+                                            foreach ($dataGeography as $item) : ?>
+                                                <tr>
+                                                    <td><?= $item['title']; ?></td>
+                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
+                                                    <td><?= toCategory($item['category']); ?></td>
+                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>                                           
+                                            <?php
+                                            foreach ($dataCuriosity as $item) : ?>
+                                                <tr>
+                                                    <td><?= $item['title']; ?></td>
+                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
+                                                    <td><?= toCategory($item['category']); ?></td>
+                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
+                                                </tr>
+                                            <?php endforeach; ?>                                           
                                         </tbody>
                                     </table>
                                 </div>

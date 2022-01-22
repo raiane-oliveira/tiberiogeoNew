@@ -3,7 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\WorldModel;
+use App\Models\BrazilModel;
 use App\Models\ArticleModel;
+use App\Models\GeographyModel;
 use App\Controllers\BaseController;
 
 class Build extends BaseController
@@ -24,11 +26,17 @@ class Build extends BaseController
             ];
         }
         $dataCategoryWorld = $this->category->getArticleMain('world');
+        $dataCategoryBrazil = $this->category->getArticleMain('brazil');
+        $dataCategoryGeography = $this->category->getArticleMain('geography');
+        $dataCategoryCuriosity = $this->category->getArticleMain('curiosity');
 
         $data = array(
             'msgs' => $msg,
             'erro' => $this->erros,
             "dataWorld" => $dataCategoryWorld,
+            "dataBrazil" => $dataCategoryBrazil,
+            "dataGeography" => $dataCategoryGeography,
+            "dataCuriosity" => $dataCategoryCuriosity,
         );
 
 
@@ -68,7 +76,7 @@ class Build extends BaseController
         $parser->setData($this->javascript);
         return $parser->render('admin/buildCreate');
     }
-    public function edit($id)
+    public function edit($id, $category)
     {
         $msg = [
             'message' => '',
@@ -81,16 +89,15 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
-        $world = new WorldModel();
-
-        $dataCategoryWorld = $world->getById($id);
+        $article = new ArticleModel();
+        $dataCategory = $article->getById($id, $category); 
 
         $data = array(
             'msgs' => $msg,
             'erro' => $this->erros,
-            'dataWord' => $dataCategoryWorld,
+            'dataCategory' => $dataCategory,
+            
         );
-
 
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
@@ -193,7 +200,7 @@ class Build extends BaseController
                     $dataCategory[$key]['image-text-second'] = $dados['image-text-second'];
                     $dataCategory[$key]['quote'] = $this->request->getPost('quote');
                     $dataCategory[$key]['quote-author'] = $this->request->getPost('quote-author');
-                    $dataCategory[$key]['image-video'] = $dados['image-video'];
+                    $dataCategory[$key]['image-video'] = $this->request->getPost('image-video');
                     $dataCategory[$key]['link-video'] = $this->request->getPost('link-video');
                     $dataCategory[$key]['title-video'] = $this->request->getPost('title-video');
                     $dataCategory[$key]['text-video'] = $this->request->getPost('text-video');
@@ -211,18 +218,24 @@ class Build extends BaseController
         }
 
         $datas['msgs'] = [
-            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo criado com sucesso!',
+            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo alterado com sucesso!',
             'alert' => 'success',
 
         ];
 
         $dataCategoryWorld = $this->category->getArticleMain('world');
+        $dataCategoryBrazil = $this->category->getArticleMain('brazil');
+        $dataCategoryGeography = $this->category->getArticleMain('geography');
+        $dataCategoryCuriosity = $this->category->getArticleMain('curiosity');
 
        
 
         $data = [
             'erro' => '',
             "dataWorld" => $dataCategoryWorld,
+            "dataBrazil" => $dataCategoryBrazil,
+            "dataGeography" => $dataCategoryGeography,
+            "dataCuriosity" => $dataCategoryCuriosity,
         ];
 
         $parser = \Config\Services::renderer();

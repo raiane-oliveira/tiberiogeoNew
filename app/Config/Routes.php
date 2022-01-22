@@ -42,7 +42,7 @@ $routes->get('/category/(:any)', 'Category::index/$1');
 $routes->get('/school', 'School::index');
 $routes->get('/build', 'Build::index');
 $routes->get('/build/create', 'Build::create');
-$routes->get('/build/edit/(:any)', 'Build::edit/$1');
+$routes->get('/build/edit/(:any)/(:any)', 'Build::edit/$1/$2');
 $routes->post('/build/update', 'Build::update');
 $routes->post('/build/add', 'Build::add');
 

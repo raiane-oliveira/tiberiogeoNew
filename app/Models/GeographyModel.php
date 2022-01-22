@@ -4,11 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class WorldModel extends Model
+class GeographyModel extends Model
 {
+
     public function getById(string $id): array
     {
-        $jsonString = file_get_contents(APPPATH . 'Base/category-world.json');
+        $jsonString = file_get_contents(APPPATH . 'Base/category-geography.json');
         $dataCategory = json_decode($jsonString, true);
 
         $data = [];
