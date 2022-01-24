@@ -51,6 +51,9 @@ class Article extends BaseController
         $this->articleUpdate = new ArticleModel();
         $this->articleUpdate->updateArticle($dataCategory,$category);
 
+        /*Outro arquivo*/
+        $otherArticle = $this->articleUpdate->getOtherArticle($article, $category);
+
         /*Define os favoritos*/
         $categoryFavorite = 'geography';
         $dataCategoryGeography = $this->category->getArticleMain($categoryFavorite);
@@ -69,6 +72,7 @@ class Article extends BaseController
             "date_now" => $this->dateNow,
             "article" => $article,
             "dataArticle" => $dataArticle,
+            "otherArticle" => $otherArticle,
             "dataGeography" => $dataCategoryGeography,
             "dataGeographyFavorite" => $dataCategoryGeography,
             "dataMenuWorld" => $this->menuWorld,

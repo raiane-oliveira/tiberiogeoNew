@@ -87,4 +87,32 @@ class ArticleModel extends Model
         return $data;
         
     }
+    public function getOtherArticle(string $article, string $category): array
+    {
+        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');                
+        $dataCategory = json_decode($jsonString, true);        
+        shuffle($dataCategory);
+        $data = [];
+        foreach ($dataCategory as $item) {
+            if ($item['slug'] !== $article) {
+                $data['id'] = $item['id'];
+                $data['slug'] = $item['slug'];
+                $data['category'] = $item['category'];
+                $data['title'] = $item['title'];
+                $data['resume'] = $item['resume'];
+                $data['text'] = $item['text'];
+                $data['text-second'] = $item['text-second'];
+                $data['quote'] = $item['quote'];
+                $data['quote-author'] = $item['quote-author'];
+                $data['link-video'] = $item['link-video'];
+                $data['title-video'] = $item['title-video'];
+                $data['text-video'] = $item['text-video'];
+                $data['image-video'] = $item['image-video'];
+                $data['font'] = $item['font'];
+                break;
+            }
+        }
+        return $data;
+        
+    }
 }

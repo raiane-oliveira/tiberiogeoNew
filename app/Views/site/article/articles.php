@@ -44,7 +44,7 @@
                             if ($dataArticle['quote']) :
                                 echo createQuote($dataArticle['quote'], $dataArticle['quote-author']);
                             endif; ?>
-                              <?php
+                            <?php
                             if ($dataArticle['image-gallery']) : ?>
                                 <div class="gallery-img">
                                     <?php
@@ -59,12 +59,12 @@
                                 </div>
                             <?php endif; ?>
                             <?php if ($dataArticle['image-text-second']) : ?>
-                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug'] ?>/<?= $dataArticle['slug'].'-02.jpg'; ?>" alt=""></p>
+                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug'] ?>/<?= $dataArticle['slug'] . '-02.jpg'; ?>" alt=""></p>
                             <?php endif; ?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
 
-                          <?php
+                            <?php
                             if ($dataArticle['image-video']) : ?>
 
                                 <div class="post-video">
@@ -81,12 +81,21 @@
                         </div><!-- entry content end-->
                     </div><!-- post content area-->
                     <hr>
-                </div>
-                <!--single post end -->
-
-
+                    <?php if(count($otherArticle) >= 2):?>
+                    <div class="post-navigation clearfix">
+                        <div class="post-next float-right">
+                            <?=anchorArticle(
+                                $otherArticle['category'],
+                                $otherArticle['slug'],'<img src="'.base_url().'/assets/img/'.$otherArticle['category'].'/'.$otherArticle['slug'].'/'.$otherArticle['slug'].'-01.jpg" alt="">
+                                <span>Veja também</span>
+                                <p>'.$otherArticle["title"].'</p>');?>
+                            </a>
+                        </div>
+                    </div>
+                    <?php endif;?>
+                </div>                
             </div><!-- col end -->
-          
+
             <div class="col-lg-3">
                 <?= view('site/side'); ?>
             </div>

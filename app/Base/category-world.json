@@ -18,7 +18,7 @@
         "text-video": "",
         "image-gallery": "",
         "font": "Atualidades Vestibular + ENEM 1º Semestre 2016",
-        "access": 4931
+        "access": 4945
     },
     {
         "id": "202201201952053558146712",
@@ -39,7 +39,7 @@
         "text-video": "A Coreia do Norte reagiu com indignação ao sobrevoo de aviões de guerra americanos sobre a península coreana, realizado recentemente.",
         "image-gallery": "",
         "font": "BBCBrasil",
-        "access": 17
+        "access": 36
     },
     {
         "id": "202201210855587518241362",
@@ -60,7 +60,7 @@
         "text-video": "afafa",
         "image-gallery": "",
         "font": "Tiberiogeo. A Geografia Levada a Sério.",
-        "access": 2
+        "access": 8
     },
     {
         "id": "202201212236482471489035",
@@ -81,6 +81,6 @@
         "text-video": "",
         "image-gallery": "",
         "font": "Me Explica?; BBCBrasil; G1; Jornal de Angola; Jornal de Notícias",
-        "access": 16
+        "access": 21
     }
 ]
