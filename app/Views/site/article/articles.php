@@ -2,9 +2,9 @@
 
 <?= $this->section('content') ?>
 <!-- single post start -->
-<section class="single-post-wrapper post-layout-10">    
+<section class="single-post-wrapper post-layout-10">
     <div class="container">
-        <div class="row mb-30">        
+        <div class="row mb-30">
             <div class="col-lg-12">
                 <div class="entry-header">
                     <?= anchorCategory($dataArticle['category'], true); ?>
@@ -13,19 +13,19 @@
                     <ul class="post-meta-info">
                         <li class="author">
                             <strong>Fonte:</strong>
-                             <img src="<?= base_url(); ?>/assets/images/avater/logo-avater.png" alt="">
-                             <?= $dataArticle['font']; ?>
+                            <img src="<?= base_url(); ?>/assets/images/avater/logo-avater.png" alt="">
+                            <?= $dataArticle['font']; ?>
                         </li>
                         <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataArticle['date']); ?></li>
                         <li class=""><i class="fa fa-eye"></i>Acessos: <?= $dataArticle['access']; ?></li>
                         <li class="share-post">
                             <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['slug'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
                         </li>
-                        <li><?=anchor('/article/pdf/'.$dataArticle['slug'].'/'.$dataArticle['category'],'<i class="fa fa-file-pdf-o" style="color:red"></i>',['target'=>'_blank','title'=>'Visualizar em PDF']);?></li>
+                        <li><?= anchor('/article/pdf/' . $dataArticle['slug'] . '/' . $dataArticle['category'], '<i class="fa fa-file-pdf-o" style="color:red"></i>', ['target' => '_blank', 'title' => 'Visualizar em PDF']); ?></li>
                     </ul>
                 </div><!-- single post header end-->
                 <div class="post-content-area">
-                    <div class="single-big-img img-ovarlay" style="background-image: url(<?= base_url(); ?>/assets/img/<?= $dataArticle['category']; ?>/<?=$dataArticle['slug']?>/<?= $dataArticle['image-main']; ?>)"></div>
+                    <div class="single-big-img img-ovarlay" style="background-image: url(<?= base_url(); ?>/assets/img/<?= $dataArticle['category']; ?>/<?= $dataArticle['slug'] ?>/<?= $dataArticle['image-main']; ?>)"></div>
                 </div>
             </div>
         </div>
@@ -33,42 +33,42 @@
             <div class="col-lg-9">
                 <ol class="breadcrumb">
                     <li><?= anchor('/', '<i class="fa fa-home"></i> Home'); ?></li>
-                    <li><?= anchor('/category/'.$dataArticle['category'],firstUppercase(toCategory($dataArticle['category']))); ?>
+                    <li><?= anchor('/category/' . $dataArticle['category'], firstUppercase(toCategory($dataArticle['category']))); ?>
                     <li><?= $dataArticle['title']; ?></li>
                 </ol>
                 <div class="ts-grid-box content-wrapper single-post">
 
                     <div class="post-content-area">
-                        <div class="entry-content">
+                        <div class="entry-content space-list">
                             <?= firstCapitulate($dataArticle['text']);
-                                if ($dataArticle['quote']) :
-                                    echo createQuote($dataArticle['quote'], $dataArticle['quote-author']);
-                                endif; ?>
+                            if ($dataArticle['quote']) :
+                                echo createQuote($dataArticle['quote'], $dataArticle['quote-author']);
+                            endif; ?>
+                              <?php
+                            if ($dataArticle['image-gallery']) : ?>
+                                <div class="gallery-img">
+                                    <?php
 
+                                    $imageGallery = explode(';', trim($dataArticle['image-gallery']));
+
+                                    for ($i = 0; $i < count($imageGallery); $i++) : ?>
+                                        <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
+                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1">
+                                        </a>
+                                    <?php endfor; ?>
+                                </div>
+                            <?php endif; ?>
                             <?php if ($dataArticle['image-text-second']) : ?>
-                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug']?>/<?= $dataArticle['image-text-second']; ?>" alt=""></p>
+                                <p><img class="float-left" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug'] ?>/<?= $dataArticle['slug'].'-02.jpg'; ?>" alt=""></p>
                             <?php endif; ?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
 
-                            <?php
-                            if ($dataArticle['image-gallery']) : ?>
-                                <div class="gallery-img">
-                                    <?php
-                                    
-                                    $imageGallery = explode(';', trim($dataArticle['image-gallery']));
-
-                                    for ($i = 0; $i < count($imageGallery); $i++) : ?>
-                                        <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug'];?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
-                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['slug'];?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1">
-                                        </a>
-                                    <?php endfor; ?>
-                                </div>
-                            <?php endif;
+                          <?php
                             if ($dataArticle['image-video']) : ?>
 
                                 <div class="post-video">
-                                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?=$dataArticle['title'];?>/<?= $dataArticle['image-video']; ?>" alt="">
+                                    <img class="img-fluid" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $dataArticle['image-video']; ?>" alt="">
                                     <div class="post-video-content">
                                         <a href="<?= $dataArticle['link-video']; ?>" class="ts-play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                         <h3><a href=""><?= $dataArticle['title-video']; ?></a></h3>
@@ -80,12 +80,13 @@
 
                         </div><!-- entry content end-->
                     </div><!-- post content area-->
-
+                    <hr>
                 </div>
                 <!--single post end -->
 
 
             </div><!-- col end -->
+          
             <div class="col-lg-3">
                 <?= view('site/side'); ?>
             </div>

@@ -2784,6 +2784,7 @@ img.sidebar-img {
   margin-bottom: 26px;
   line-height: 28px;
 }
+
 .single-post ul {
   margin-bottom: 25px;
   padding-left: 20px;
@@ -5672,4 +5673,12 @@ p img.float-left {
 .imagem-do-tempo{
     width: 30px;
     height: 30px;   
+}
+.space-list ul li {
+  padding: 5px;
+}
+.space-list h4 {
+  font-size: 16px;
+  color:#222222;
+  font-weight:700;
 }
