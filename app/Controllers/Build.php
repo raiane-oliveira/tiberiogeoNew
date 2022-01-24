@@ -340,8 +340,7 @@ class Build extends BaseController
                 'resume' => $this->request->getPost('resume'),
                 'text' => $this->request->getPost('text'),
                 'image-main' => createSlug($this->request->getPost('title')) . '-01.jpg',
-                'category' => $this->request->getPost('category'),
-                'date' => date('d/m/Y'),
+                'category' => $this->request->getPost('category'),                
                 'text-second' => $this->request->getPost('text-second'),
                 'image-text-second' => !empty($this->request->getPost('image-text-second')) ? createSlug($this->request->getPost('title')) . '-02.jpg' : '',
                 'quote' => $this->request->getPost('quote'),
@@ -352,7 +351,9 @@ class Build extends BaseController
                 'text-video' => $this->request->getPost('text-video'),
                 'image-gallery' => createImageGallery($this->request->getPost('image-gallery'), createSlug($this->request->getPost('title'))),
                 'font' => $this->request->getPost('font'),
-                'access' => 1,
+                'date' => !empty($this->request->getPost('date')) ? $this->request->getPost('date'): date('d/m/Y'),
+                'access' => !empty($this->request->getPost('access')) ? $this->request->getPost('access') : 1
+                
             );
 
             // extrai a informação do ficheiro

@@ -5,4 +5,5 @@ echo $this->section('content');
    echo view("site/home/curiosities");
    echo view("site/home/emphasis");
    echo view('site/home/varieteis');  
+   echo view("site/home/utils.php"); 
 echo  $this->endSection();

@@ -2760,6 +2760,11 @@ img.sidebar-img {
   background: #fff9b5;
   padding: 5px 6px;
 }
+.single-post p strong {
+  background: #fff9b5;
+  padding: 5px 6px;
+  font-weight:600;
+}
 .single-post .text-bg {
   background: #f7f7f7;
   font-size: 13px;
@@ -5682,3 +5687,4 @@ p img.float-left {
   color:#222222;
   font-weight:700;
 }
+

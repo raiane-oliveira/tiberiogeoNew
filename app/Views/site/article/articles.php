@@ -53,7 +53,7 @@
 
                                     for ($i = 0; $i < count($imageGallery); $i++) : ?>
                                         <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
-                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1">
+                                            <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1 py-1">
                                         </a>
                                     <?php endfor; ?>
                                 </div>

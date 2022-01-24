@@ -238,10 +238,22 @@ $javascript = [
                                 
                             </div>
                             <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Fonte</label>
                                         <input class="form-control form-control-name" name="font" id="font" placeholder="Digite as fontes do artigo" type="text"  >
+                                    </div>
+                                </div>
+                            <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Data (Ex.: 24/04/1977)</label>
+                                        <input class="form-control form-control-name" name="date" id="date" placeholder="Digite a data de criação" type="text"  >
+                                    </div>
+                                </div>
+                            <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Número de acessos</label>
+                                        <input class="form-control form-control-name" name="access" id="access" placeholder="Digite a quantiade de acessos" type="text"  >
                                     </div>
                                 </div>
                             

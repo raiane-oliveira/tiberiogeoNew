@@ -19,7 +19,7 @@
                            <div class="ts-post-thumb" style="height: 200px;">
                               <?php
                               $image = [
-                                 'src' => base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'],
+                                 'src' => base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug'] .'/' .$item['image-main'],
                                  'class' => 'img-fluid',
                               ];
                               echo anchorArticle($item['category'], $item['slug'], img($image)); ?>
@@ -45,7 +45,7 @@
                            <div class="ts-post-thumb" style="height: 200px;">
                               <?php
                               $image = [
-                                 'src' => base_url() . '/assets/img/' . $item['category'] . '/' . $item['image-main'],
+                                 'src' => base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug'] .'/.' .$item['image-main'],
                                  'class' => 'img-fluid',
                               ];
                               echo anchorArticle($item['category'], $item['slug'], img($image)); ?>

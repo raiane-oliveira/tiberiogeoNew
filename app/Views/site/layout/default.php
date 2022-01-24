@@ -30,7 +30,7 @@
    <?= $this->renderSection('content') ?>
    
  
-   <?php echo view("site/home/utils.php");  ?>
+   
    <?php echo view("site/banner-main.php");  ?>
    <!-- footer social list start-->
    <section class="ts-footer-social-list">
