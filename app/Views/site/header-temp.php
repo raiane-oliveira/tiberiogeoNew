@@ -12,7 +12,7 @@
                 </div>
             </div>
             <!-- end col-->
-            <div class="col-lg-6 text-right align-self-center">
+            <div class="col-lg-6 text-right align-self-centedr">
                 <ul class="top-social">
                     <li>
                         <?=defineSocial('facebook', getenv('FACEBOOK'));?>

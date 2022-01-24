@@ -111,8 +111,10 @@ function anchorCategory(string $category, bool $style = false): string
         $color = "orange";
     elseif($category == 'brazil'):
         $color = "blue";    
-    else:
+    elseif($category == 'geography'):
            $color = "green";
+    else:
+        $color = "blue-light";
     endif; 
 
     if($style):
