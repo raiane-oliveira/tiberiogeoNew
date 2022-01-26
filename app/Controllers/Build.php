@@ -25,7 +25,7 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
-        //dd($category);
+        
         $dataCategory = $this->category->getArticleMain($category);
         krsort($dataCategory);                
 
@@ -163,7 +163,8 @@ class Build extends BaseController
             $blog['data_postagem'] = date('d/m/Y');*/
 
             /*Busca o artigo*/
-            $dataCategory = $this->category->getArticleMain($this->request->getPost('category'));
+            $category = $this->request->getPost('category');
+            $dataCategory = $this->category->getArticleMain($category);
             $dataArticle = [];            
 
             foreach ($dataCategory as $key => $dados) {
@@ -203,30 +204,13 @@ class Build extends BaseController
 
         ];
 
-        $dataCategoryWorld = $this->category->getArticleMain('world');
-        ksort($dataCategoryWorld);
-
-        $dataCategoryBrazil = $this->category->getArticleMain('brazil');
-        ksort($dataCategoryBrazil);
-
-        $dataCategoryGeography = $this->category->getArticleMain('geography');
-        ksort($dataCategoryGeography);
-
-        $dataCategoryCuriosity = $this->category->getArticleMain('curiosity');
-        ksort($dataCategoryCuriosity);
-
-        $dataCategoryVariety = $this->category->getArticleMain('variety');
-        ksort($dataCategoryVariety);
-
-       
+        $dataCategory = $this->category->getArticleMain($category);
+        krsort($dataCategory);                
 
         $data = [
             'erro' => '',
-            "dataWorld" => $dataCategoryWorld,
-            "dataBrazil" => $dataCategoryBrazil,
-            "dataGeography" => $dataCategoryGeography,
-            "dataCuriosity" => $dataCategoryCuriosity,
-            "dataVariety" => $dataCategoryVariety,
+            "data" => $dataCategory,
+            'category' => $category
         ];
 
         $parser = \Config\Services::renderer();
