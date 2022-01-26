@@ -18,7 +18,7 @@
         "image-gallery": "",
         "font": "Terra",
         "date": "13/06/2010",
-        "access": 5611
+        "access": 5614
     },
     {
         "id": "202201240947433863705214",
@@ -39,7 +39,7 @@
         "image-gallery": "as-7-maravilhas-do-mundo-antigo-03.jpg;as-7-maravilhas-do-mundo-antigo-04.jpg;as-7-maravilhas-do-mundo-antigo-05.jpg;as-7-maravilhas-do-mundo-antigo-06.jpg;as-7-maravilhas-do-mundo-antigo-07.jpg;as-7-maravilhas-do-mundo-antigo-08.jpg;as-7-maravilhas-do-mundo-antigo-09.jpg;",
         "font": "Tiberiogeo. A Geografia Levada a Sério.",
         "date": "16/06/2010",
-        "access": 9859
+        "access": 9863
     },
     {
         "id": "202201241029064605873123",
@@ -60,7 +60,7 @@
         "image-gallery": "as-7-maravilhas-do-mundo-moderno-03.jpg;as-7-maravilhas-do-mundo-moderno-04.jpg;as-7-maravilhas-do-mundo-moderno-05.jpg;as-7-maravilhas-do-mundo-moderno-06.jpg;as-7-maravilhas-do-mundo-moderno-07.jpg;as-7-maravilhas-do-mundo-moderno-08.jpg;as-7-maravilhas-do-mundo-moderno-09.jpg;",
         "font": "",
         "date": "16/06/2010",
-        "access": 9837
+        "access": 9838
     },
     {
         "id": "202201241659132817524063",
@@ -102,7 +102,7 @@
         "image-gallery": "",
         "font": "Wikipedia",
         "date": "21/03/2011",
-        "access": 8694
+        "access": 8695
     },
     {
         "id": "202201241725135119734628",
@@ -123,6 +123,6 @@
         "image-gallery": "",
         "font": "Wikipedia",
         "date": "29/08/2010",
-        "access": 5411
+        "access": 5416
     }
 ]

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>
 <?php
 
@@ -98,50 +98,57 @@ $javascript = [
             </div><!-- row  end -->
         </div><!-- container end -->
     </section>
-    
+
     <section class="block-wrapper mt-15">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
+                        <strong><?= $msgs['message']; ?></strong>
+                    </div>
                     <div class="contact-box ts-grid-box">
-                    <div class="clearfix">
-                            <h2 class="float-left"><span>Criar Artigo</span></h2>
+                        <div class="clearfix">
+                            <h2 class="float-left"><span>CRIAR NOVO ARTIGO</span></h2>
 
                             <div class="float-right">
-                                <?= anchor('/build', 'LISTAR ARTIGOS', ['class' => 'btn btn-primary']); ?>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LISTAR ARTIGOS
+                                    </button>
+                                    <?=buildButtonListCategory()?>
+                                </div>
+
                             </div>
                         </div>
-                      
-                        <?php 
-                    echo form_open('/build/add',['enctype'=>'multipart/form-data','role'=>'form','id'=>'contact-form'])?>
+                        <hr>
 
-                            <div class="error-container">
-                            <div class=" border-left-<?=$msgs['alert']?> alert alert-show alert-<?=$msgs['alert']?>">
-                    <strong><?=$msgs['message'];?></strong>
+                        <?php
+                        echo form_open('/build/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
-                            </div>
+                        <div class="error-container">
+
                             <div class="row">
-                            
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Título</label>
-                                        <input value="<?= old('title')?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
+                                        <input value="<?= old('title') ?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="form-group">
                                 <label>Resumo</label>
-                                <textarea class="form-control form-control-message" name="resume" id="resume" placeholder="" rows="5"><?= old('resume')?></textarea>
+                                <textarea class="form-control form-control-message" name="resume" id="resume" placeholder="" rows="5"><?= old('resume') ?></textarea>
                             </div>
-                            <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('resume'):'';?></span>
+                            <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('resume') : ''; ?></span>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Imagem principal (850 L x 560 A)</label>
-                                        <input value="<?= old('image-main')?>" class="form-control form-control-name" name="image-main" id="image-main" placeholder="Digite o nome do arquivo da imagem" type="text"  >
+                                        <input value="<?= old('image-main') ?>" class="form-control form-control-name" name="image-main" id="image-main" placeholder="Digite o nome do arquivo da imagem" type="text">
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('image-main'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('image-main') : ''; ?></span>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -153,119 +160,119 @@ $javascript = [
                                             <option value="curiosity">CURIOSIDADE</option>
                                             <option value="variety">VARIEDADES</option>
                                         </select>
-                                       
+
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('category'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('category') : ''; ?></span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 01</label>
-                                        <textarea class="form-control form-control-message textarea" name="text" id="text" placeholder="" rows="5"  ><?= old('text')?></textarea>
+                                        <textarea class="form-control form-control-message textarea" name="text" id="text" placeholder="" rows="5"><?= old('text') ?></textarea>
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('text'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('text') : ''; ?></span>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 02</label>
-                                        <textarea class="form-control form-control-message textarea" name="text-second" id="text-second" placeholder="" rows="5"  ><?= old('text-second')?></textarea>
+                                        <textarea class="form-control form-control-message textarea" name="text-second" id="text-second" placeholder="" rows="5"><?= old('text-second') ?></textarea>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Imagem texto 02 ( 300 L x 405 A)</label>
-                                        <input class="form-control form-control-name" name="image-text-second" id="image-text-second" placeholder="Digite o nome do arquivo da imagem" type="text"  >
+                                        <input class="form-control form-control-name" name="image-text-second" id="image-text-second" placeholder="Digite o nome do arquivo da imagem" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação</label>
-                                        <input class="form-control form-control-name" name="quote" id="quote" placeholder="Digite uma citação" type="text"  >
+                                        <input class="form-control form-control-name" name="quote" id="quote" placeholder="Digite uma citação" type="text">
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação autor</label>
-                                        <input class="form-control form-control-name" name="quote-author" id="quote-author" placeholder="Digite autor da citação" type="text"  >
+                                        <input class="form-control form-control-name" name="quote-author" id="quote-author" placeholder="Digite autor da citação" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Imagem vídeo</label>
-                                        <input class="form-control form-control-name" name="image-video" id="image-video" placeholder="Digite o nome da imagem vídeo" type="text"  >
+                                        <input class="form-control form-control-name" name="image-video" id="image-video" placeholder="Digite o nome da imagem vídeo" type="text">
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Link vídeo</label>
-                                        <input class="form-control form-control-name" name="link-video" id="link-video" placeholder="Digite o link do vídeo" type="text"  >
+                                        <input class="form-control form-control-name" name="link-video" id="link-video" placeholder="Digite o link do vídeo" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Titulo vídeo</label>
-                                        <input class="form-control form-control-name" name="title-video" id="title-video" placeholder="Digite o título do vídeo" type="text"  >
+                                        <input class="form-control form-control-name" name="title-video" id="title-video" placeholder="Digite o título do vídeo" type="text">
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Texto vídeo</label>
-                                        <input class="form-control form-control-name" name="text-video" id="text-video" placeholder="Digite o texto do vídeo" type="text"  >
+                                        <input class="form-control form-control-name" name="text-video" id="text-video" placeholder="Digite o texto do vídeo" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Imagens da galeria (* separar com " ; ")</label>
-                                        <input class="form-control form-control-name" name="image-gallery" id="image-gallery" placeholder="Digite o nome da imagens" type="text" value="<?= old('image-gallery')?>" >
+                                        <input class="form-control form-control-name" name="image-gallery" id="image-gallery" placeholder="Digite o nome da imagens" type="text" value="<?= old('image-gallery') ?>">
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
-                            <div class="col-md-6">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Fonte</label>
-                                        <input class="form-control form-control-name" name="font" id="font" placeholder="Digite as fontes do artigo" type="text"  >
+                                        <input class="form-control form-control-name" name="font" id="font" placeholder="Digite as fontes do artigo" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-3">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Data (Ex.: 24/04/1977)</label>
-                                        <input class="form-control form-control-name" name="date" id="date" placeholder="Digite a data de criação" type="text"  >
+                                        <input class="form-control form-control-name" name="date" id="date" placeholder="Digite a data de criação" type="text">
                                     </div>
                                 </div>
-                            <div class="col-md-3">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <label>Número de acessos</label>
-                                        <input class="form-control form-control-name" name="access" id="access" placeholder="Digite a quantiade de acessos" type="text"  >
+                                        <input class="form-control form-control-name" name="access" id="access" placeholder="Digite a quantiade de acessos" type="text">
                                     </div>
                                 </div>
-                            
-                                
+
+
                             </div>
                             <div class="text-right"><br><button class="btn btn-primary solid blank" type="submit">Salvar</button></div>
-                        
-                        <?=form_close()?>
-                    </div><!-- grid box end -->
-                </div><!-- col end-->
-              </div><!-- row end-->
-        </div><!-- container end-->
+
+                            <?= form_close() ?>
+                        </div><!-- grid box end -->
+                    </div><!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container end-->
     </section>
 
 
@@ -278,11 +285,11 @@ $javascript = [
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-menu text-center">
-                       
+
                     </div>
                     <div class="copyright-text text-center">
-                  <p>&copy; <?=date('Y');?>, Tiberiogeo. All rights</p>
-               </div>
+                        <p>&copy; <?= date('Y'); ?>, Tiberiogeo. All rights</p>
+                    </div>
                 </div>
                 <!-- col end -->
             </div>

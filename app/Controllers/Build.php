@@ -10,9 +10,9 @@ use App\Controllers\BaseController;
 
 class Build extends BaseController
 {
-    public $erros = '';
-    public $article = '';
-    public function index()
+    public $erros = '';  
+    
+    public function index($category)
     {
         $msg = [
             'message' => '',
@@ -25,18 +25,16 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
-        $dataCategoryWorld = $this->category->getArticleMain('world');
-        $dataCategoryBrazil = $this->category->getArticleMain('brazil');
-        $dataCategoryGeography = $this->category->getArticleMain('geography');
-        $dataCategoryCuriosity = $this->category->getArticleMain('curiosity');
+        //dd($category);
+        $dataCategory = $this->category->getArticleMain($category);
+        krsort($dataCategory);                
 
         $data = array(
             'msgs' => $msg,
             'erro' => $this->erros,
-            "dataWorld" => $dataCategoryWorld,
-            "dataBrazil" => $dataCategoryBrazil,
-            "dataGeography" => $dataCategoryGeography,
-            "dataCuriosity" => $dataCategoryCuriosity,
+            "data" => $dataCategory,
+            'category' => $category
+           
         );
 
 
@@ -170,24 +168,6 @@ class Build extends BaseController
 
             foreach ($dataCategory as $key => $dados) {
                 if ($dados['id'] === $this->request->getPost('id')) {
-                    /*$dataArticle['id'] = $dados['id'];
-                    $dataArticle['title'] = $this->request->getPost('title');
-                    $dataArticle['category'] = $dados['category'];
-                    $dataArticle['date'] = $dados['date'];
-                    $dataArticle['image-main'] = $dados['image-main'];
-                    $dataArticle['resume'] = $this->request->getPost('resume');
-                    $dataArticle['text'] = $this->request->getPost('text');
-                    $dataArticle['text-second'] = $this->request->getPost('text-second');
-                    $dataArticle['image-text-second'] = $dados['image-text-second'];
-                    $dataArticle['quote'] = $this->request->getPost('quote');
-                    $dataArticle['quote-author'] = $this->request->getPost('quote-author');
-                    $dataArticle['image-video'] = $dados['image-video'];
-                    $dataArticle['link-video'] = $this->request->getPost('link-video');
-                    $dataArticle['title-video'] = $this->request->getPost('title-video');
-                    $dataArticle['text-video'] = $this->request->getPost('text-video');
-                    $dataArticle['image-gallery'] = $dados['image-gallery'];
-                    $dataArticle['font'] = $this->request->getPost('font');*/
-
                     $dataCategory[$key]['id'] = $dados['id'];
                     $dataCategory[$key]['slug'] = $dados['slug'];
                     $dataCategory[$key]['title'] = $this->request->getPost('title');
@@ -224,9 +204,19 @@ class Build extends BaseController
         ];
 
         $dataCategoryWorld = $this->category->getArticleMain('world');
+        ksort($dataCategoryWorld);
+
         $dataCategoryBrazil = $this->category->getArticleMain('brazil');
+        ksort($dataCategoryBrazil);
+
         $dataCategoryGeography = $this->category->getArticleMain('geography');
+        ksort($dataCategoryGeography);
+
         $dataCategoryCuriosity = $this->category->getArticleMain('curiosity');
+        ksort($dataCategoryCuriosity);
+
+        $dataCategoryVariety = $this->category->getArticleMain('variety');
+        ksort($dataCategoryVariety);
 
        
 
@@ -236,6 +226,7 @@ class Build extends BaseController
             "dataBrazil" => $dataCategoryBrazil,
             "dataGeography" => $dataCategoryGeography,
             "dataCuriosity" => $dataCategoryCuriosity,
+            "dataVariety" => $dataCategoryVariety,
         ];
 
         $parser = \Config\Services::renderer();

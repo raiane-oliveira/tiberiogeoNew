@@ -103,70 +103,55 @@ $javascript = [
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
+                                <strong><?= $msgs['message']; ?></strong>
+                            </div>
                     <div class="contact-box ts-grid-box">
                         <div class="clearfix">
-                            <h2 class="float-left"><span>Listar Artigos</span></h2>
+                            <h2 class="float-left"><span>LISTAR ARTIGOS [ <?=toCategory($category);?> ]</span></h2>
 
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LISTAR ARTIGOS
+                                    </button>
+                                    <?=buildButtonListCategory()?>
+                                </div>
                             </div>
+                          
+
                         </div>
+                        <!-- Example single danger button -->
+
+                        <hr>
 
                         <?php
                         echo form_open('/build/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
                         <div class="error-container">
-                            <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
-                                <strong><?= $msgs['message']; ?></strong>
-                            </div>
+                           
                             <div class="row">
                                 <div class="table">
                                     <table class="table table-striped">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th>Título</th>
-                                                <th>Imagem</th>
-                                                <th>Categoria</th>
-                                                <th class="text-center">Ação</th>
+                                                <th>TÍTULO</th>
+                                                <th>IMAGEM</th>
+                                                <th>CATEGORIA</th>
+                                                <th class="text-center">AÇÃO</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            foreach ($dataWorld as $item) : ?>
+                                            foreach ($data as $item) : ?>
                                                 <tr>
                                                     <td><?= $item['title']; ?></td>
                                                     <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
-                                                    <td><?= toCategory($item['category']); ?></td>
+                                                    <td><?=word_limiter($item['resume'],15,' ...'); ?></td>
                                                     <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
                                                 </tr>
-                                            <?php endforeach; ?>
-                                            <?php
-                                            foreach ($dataBrazil as $item) : ?>
-                                                <tr>
-                                                    <td><?= $item['title']; ?></td>
-                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
-                                                    <td><?= toCategory($item['category']); ?></td>
-                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
-                                                </tr>
-                                            <?php endforeach; ?>
-                                            <?php
-                                            foreach ($dataGeography as $item) : ?>
-                                                <tr>
-                                                    <td><?= $item['title']; ?></td>
-                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
-                                                    <td><?= toCategory($item['category']); ?></td>
-                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
-                                                </tr>
-                                            <?php endforeach; ?>                                           
-                                            <?php
-                                            foreach ($dataCuriosity as $item) : ?>
-                                                <tr>
-                                                    <td><?= $item['title']; ?></td>
-                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
-                                                    <td><?= toCategory($item['category']); ?></td>
-                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
-                                                </tr>
-                                            <?php endforeach; ?>                                           
+                                            <?php endforeach; ?>                                                                                  
                                         </tbody>
                                     </table>
                                 </div>

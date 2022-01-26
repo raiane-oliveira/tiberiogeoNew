@@ -117,7 +117,7 @@
                             <?php                             
                             if(getEnv('CI_ENVIRONMENT') === 'development'): ?>
                              <li>
-                            <?= anchor('/school', "ADMIN"); ?>
+                            <?= anchor('#', "ADMIN"); ?>
                                 <ul class="nav-dropdown nav-submenu">
                                     <li><?= anchor('/build/create', "CRIAR ARTIGO", ['target'=>'_blank']); ?></li>
                                     <li><?= anchor('/build', "EDITAR ARTIGO", ['target'=>'_blank']); ?></li>

@@ -164,7 +164,6 @@ function defineSocial(string $name, string $slug, bool $title = null):string
     
 }
 
-
 /**
  * firstUppercase
  *
@@ -249,4 +248,17 @@ function createImageGallery($images,$title){
 
     }
     return $img;
+}
+
+function buildButtonListCategory(){
+
+   $button = '<div class="dropdown-menu">'.
+        anchor('/build/category/world', 'MUNDO', ['class' => 'dropdown-item']).
+        anchor('/build/category/brazil', 'BRASIL', ['class' => 'dropdown-item']).
+        anchor('/build/category/geography', 'GEOGRAFIA', ['class' => 'dropdown-item']).
+        anchor('/build/category/curiosity', 'CURIOSIDADES', ['class' => 'dropdown-item']).
+        anchor('/build/category/variety', 'VARIEDADES', ['class' => 'dropdown-item']).
+    '</div>';
+
+    return $button;
 }

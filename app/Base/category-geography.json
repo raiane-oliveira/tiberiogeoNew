@@ -19,5 +19,26 @@
         "image-gallery": "urbanizacao-mundial-03.jpg; urbanizacao-mundial-04.jpg; urbanizacao-mundial-05.jpg; urbanizacao-mundial-06.jpg",
         "font": "Novo Tiberiogeo",
         "access": 113
+    },
+    {
+        "id": "202201251844265639454022",
+        "slug": "o-que-e-geografia",
+        "title": "O que é Geografia",
+        "resume": "Durante muito tempo a Geografia se caracterizou por ser uma disciplina meramente descritiva e voltada para memorização. Hoje ela é interpretativa.",
+        "text": "<p>A Geografia é o estudo da natureza do meio ambiente físico e humano. Classifica-se em geral em geografia física, que concerne ao ambiente físico da Terra (atmosfera, biosfera, hidrosfera e litosfera) e geografia humana, o estudo das pessoas e suas atividades. Em ambas há ênfase na análise espacial, qual seja, o estudo das localizações e dos padrões. Na análise ecológica aborda-se a interação entre os elementos humano e geofísico. A geografia aborda tanto as ciências físicas quanto as sociais, valendo-se de sua metodologia e de seu conteúdo, e também contribuindo para os mesmos. <strong>Pode ser subdividida em diversas outras disciplinas especializadas, como, por exemplo, a geomorfologia; a geografia demográfica; a geografia econômica e geopolítica.</strong></p><p>Durante muito tempo a Geografia se caracterizou por ser uma disciplina meramente descritiva e voltada para memorização, tendo como objeto principal o fornecimento de conhecimento de caráter informativo (catalogando nome de continentes, países, Estados, montanhas, rios, etc.). Nos dias atuais a Geografia mudou sua imagem e passou a caracterizar-se por interpretativa, ou seja, procura estudar como os homens organizam o espaço que habita e nele age, reage, interage e transforma. A Geografia estuda tudo aquilo necessário à manutenção da vida humana neste espaço organizado.</p><p>Etimologicamente a Geografia teria a função de explicar todos os fenômenos apresentados no globo, porém, o seu objeto de estudo e objetivo define a Geografia como o estudo da manutenção do homem no meio. A Geografia é, portanto, uma ciência porque tem um objeto de estudo (a Terra, apesar de ser esta objeto de estudo de outras ciências). Porém, seu objetivo (estudar a organização do espaço humano) é específico, próprio, singular</p>",
+        "image-main": "o-que-e-geografia-01.jpg",
+        "category": "geography",
+        "text-second": "<p>A Geografia é velha em conhecimento, vem desde a Idade Antiga com a criação do primeiro mapa-múndi produzido por Anaxímadro. A palavra Geografia é de origem grega: Geo = Terra; grafia = estudo, todavia, ela é nova como ciência, tornando-se autônoma somente no século XIX com trabalhos dos geógrafos alemães Alexander Von Humboldt, considerado o pai da Geografia, e Friedrich Ratzel.</p><h3>O que fazem os geógrafos? </h3><p>O geógrafo estuda o solo, o relevo, o clima, a distribuição das águas e a vegetação da Terra. Também estuda a organização das populações e sociedades, sua relação com o ambiente e a ordenação social e econômica de espaços urbanos e rurais. Elabora planos diretores de municípios e diagnósticos para a redução do impacto ambiental em regiões poluídas ou ameaçadas pela construção de grandes obras. Com base em dados recolhidos por satélites e radares, confecciona e interpreta mapas, diagnosticando fenômenos, como a desertificação, a erosão de solos, o desmatamento e o avanço dos oceanos sobre a faixa litorânea.</p><p>Após quatro anos de estudo, o profissional pode trabalhar em diversas áreas, sendo a mais comum o ensino (fundamental, médio, pré-vestibular ou superior). Pode ainda dedicar-se à cartografia digital, fazendo mapas com base em imagens captadas por satélites; ao ecoturismo, elaborando roteiros, organizando e guiando excursões em parques e áreas de preservação ambiental; à geopolítica, pesquisando a organização social, política e econômica de países e regiões; ao sensoriamento remoto, analisando imagens de satélites e fotografias aéreas para a preparação de mapas e levantamento de dados de solo, relevo, recursos hídricos, vegetação, clima e densidade de ocupação de áreas, cidades e regiões. Destaca-se também o trabalho nas áreas de geoprocessamento e planejamento agrícola e urbano. </p><p>O geógrafo pode trabalhar em empresas de engenharia, prefeituras, fundações e institutos de pesquisa, como o Instituto Brasileiro de Geografia e Estatística (IBGE), o Instituto de Pesquisa Aplicada (Ipea) e a Fundação Getúlio Vargas (FGV).</p>",
+        "image-text-second": "o-que-e-geografia-02.jpg",
+        "quote": "",
+        "quote-author": "",
+        "image-video": "",
+        "link-video": "",
+        "title-video": "",
+        "text-video": "",
+        "image-gallery": "",
+        "font": "Tiberiogeo. A Geografia Levada a Sério.",
+        "date": "27/05/2010",
+        "access": 8185
     }
 ]

@@ -103,24 +103,31 @@ $javascript = [
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    
+                    <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
+                        <strong><?= $msgs['message']; ?></strong>
+
+                    </div>
+
                     <div class="contact-box ts-grid-box">
-                    <div class="clearfix">
-                            <h2 class="float-left"><span>Editar Artigo</span></h2>
+                        <div class="clearfix">
+                            <h2 class="float-left"><span>EDITANDO ARTIGO [ <?=$dataCategory['id'];?> ]</span></h2>
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
-                                <?= anchor('/build', 'LISTAR ARTIGO', ['class' => 'btn btn-primary']); ?>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LISTAR ARTIGOS
+                                    </button>
+                                    <?=buildButtonListCategory()?>
+                                </div>
                             </div>
                         </div>
-                       
+                        <hr>
+
                         <?php
                         echo form_open('/build/update', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
                         <div class="error-container">
-                            <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
-                                <strong><?= $msgs['message']; ?></strong>
 
-                            </div>
                             <div class="row">
 
                                 <div class="col-md-12">
@@ -138,7 +145,7 @@ $javascript = [
                                 <textarea class="form-control form-control-message" name="resume" id="resume" placeholder="" rows="5"><?= $dataCategory['resume'] ?></textarea>
                             </div>
                             <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('resume') : ''; ?></span>
-                            
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -158,14 +165,14 @@ $javascript = [
                                 </div>
 
                             </div>
-                            <div class="row">                                
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação</label>
                                         <input value="<?= $dataCategory['quote'] ?>" class="form-control form-control-name" name="quote" id="quote" placeholder="Digite uma citação" type="text">
                                     </div>
                                 </div>
-                            
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Citação autor</label>
@@ -202,7 +209,7 @@ $javascript = [
                                         <input value="<?= $dataCategory['text-video'] ?>" class="form-control form-control-name" name="text-video" id="text-video" placeholder="Digite o texto do vídeo" type="text">
                                     </div>
                                 </div>
-                          
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Fonte</label>
@@ -211,10 +218,10 @@ $javascript = [
                                 </div>
                             </div>
                             <div class="text-right"><br>
-                            <button class="btn btn-primary solid blank" type="submit">Salvar</button>                          
-                            
-                        </div>
-                          
+                                <button class="btn btn-primary solid blank" type="submit">Salvar</button>
+
+                            </div>
+
 
                             <?= form_close() ?>
                         </div><!-- grid box end -->
