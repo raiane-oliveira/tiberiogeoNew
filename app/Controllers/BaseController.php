@@ -38,7 +38,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['html','form','text'];    
+    protected $helpers = ['html','form','text','url'];    
     
     /**
      * dateNow

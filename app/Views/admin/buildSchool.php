@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>
 <?php
 
@@ -98,60 +98,58 @@ $javascript = [
             </div><!-- row  end -->
         </div><!-- container end -->
     </section>
-    
+
     <section class="block-wrapper mt-15">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
+                        <strong><?= $msgs['message']; ?></strong>
+                    </div>
                     <div class="contact-box ts-grid-box">
-                        <h3>Construir Escola</h3>
-                        <?php 
-                    echo form_open('/buildSchool/add',['enctype'=>'multipart/form-data','role'=>'form','id'=>'contact-form'])?>
+                        <h3>CRIAR ESCOLA</h3>
+                        <?php
+                        echo form_open('/buildSchool/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
-                            <div class="error-container">
-                            <div class=" border-left-<?=$msgs['alert']?> alert alert-show alert-<?=$msgs['alert']?>">
-                    <strong><?=$msgs['message'];?></strong>
-
-                            </div>
-                           
-                            <div class="row">    
-                            <div class="col-md-6">
+                        <div class="error-container">
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Tipo</label>
                                         <select name="type" class="form-control form-control-name">
                                             <option value="exercicie">Exercício</option>
                                             <option value="evidences">Prova</option>
                                             <option value="slide">Slide</option>
-                                            <option value="text">Texto</option>                                            
+                                            <option value="text">Texto</option>
                                         </select>
-                                       
+
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('category'):'';?></span>
-                                </div>                        
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('category') : ''; ?></span>
+                                </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Título</label>
-                                        <input value="<?= old('title')?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
+                                        <input value="<?= old('title') ?>" class="form-control form-control-name" name="title" id="title" placeholder="Digite um título" type="text">
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
                             </div>                            
-                            <div class="row">                            
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Link</label>
-                                        <input value="<?= old('title')?>" class="form-control form-control-name" name="link" id="title" placeholder="Digite um título" type="text">
+                                        <label>Arquivo</label>
+                                        <input value="<?= old('arquivo') ?>" class="form-control form-control-name" name="arquivo" id="arquivo" placeholder="Digite um título" type="file">
                                     </div>
-                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('link'):'';?></span>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('link') : ''; ?></span>
                                 </div>
-                            </div>  
+                            </div>
                             <div class="text-right"><br><button class="btn btn-primary solid blank" type="submit">Salvar</button></div>
-                        
-                        <?=form_close()?>
-                    </div><!-- grid box end -->
-                </div><!-- col end-->
-              </div><!-- row end-->
-        </div><!-- container end-->
+
+                            <?= form_close() ?>
+                        </div><!-- grid box end -->
+                    </div><!-- col end-->
+                </div><!-- row end-->
+            </div><!-- container end-->
     </section>
 
 
@@ -164,11 +162,11 @@ $javascript = [
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-menu text-center">
-                       
+
                     </div>
                     <div class="copyright-text text-center">
-                  <p>&copy; <?=date('Y');?>, Tiberiogeo. All rights</p>
-               </div>
+                        <p>&copy; <?= date('Y'); ?>, Tiberiogeo. All rights</p>
+                    </div>
                 </div>
                 <!-- col end -->
             </div>

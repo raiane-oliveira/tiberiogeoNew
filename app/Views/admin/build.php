@@ -108,8 +108,8 @@ $javascript = [
                             </div>
                     <div class="contact-box ts-grid-box">
                         <div class="clearfix">
-                            <h2 class="float-left"><span>LISTAR ARTIGOS [ <?=toCategory($category);?> ]</span></h2>
-
+                            <h2 class="float-left"><span>LISTAR ARTIGOS [ <?=toCategory($category); ?> ]</span>
+                            <p>QTDE :: <?=str_pad(count($data), 2, '0', STR_PAD_LEFT)?></p></h2>  
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
                                 <div class="btn-group">
@@ -138,7 +138,7 @@ $javascript = [
                                             <tr>
                                                 <th>TÍTULO</th>
                                                 <th>IMAGEM</th>
-                                                <th>CATEGORIA</th>
+                                                <th>RESUMO</th>
                                                 <th class="text-center">AÇÃO</th>
                                             </tr>
                                         </thead>

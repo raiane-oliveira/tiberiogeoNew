@@ -120,7 +120,6 @@
                             <?= anchor('#', "ADMIN"); ?>
                                 <ul class="nav-dropdown nav-submenu">
                                     <li><?= anchor('/build/create', "CRIAR ARTIGO", ['target'=>'_blank']); ?></li>
-                                    <li><?= anchor('/build', "EDITAR ARTIGO", ['target'=>'_blank']); ?></li>
                                     <li><?= anchor('/buildSchool', "CRIAR ESCOLA", ['target'=>'_blank']); ?></li>
                                 </ul>    
                             </li>

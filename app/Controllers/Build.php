@@ -7,11 +7,12 @@ use App\Models\BrazilModel;
 use App\Models\ArticleModel;
 use App\Models\GeographyModel;
 use App\Controllers\BaseController;
+use CodeIgniter\Files\File;
 
 class Build extends BaseController
 {
-    public $erros = '';  
-    
+    public $erros = '';
+
     public function index($category)
     {
         $msg = [
@@ -25,16 +26,16 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
-        
+
         $dataCategory = $this->category->getArticleMain($category);
-        krsort($dataCategory);                
+        krsort($dataCategory);
 
         $data = array(
             'msgs' => $msg,
             'erro' => $this->erros,
             "data" => $dataCategory,
             'category' => $category
-           
+
         );
 
 
@@ -88,13 +89,13 @@ class Build extends BaseController
             ];
         }
         $article = new ArticleModel();
-        $dataCategory = $article->getById($id, $category); 
+        $dataCategory = $article->getById($id, $category);
 
         $data = array(
             'msgs' => $msg,
             'erro' => $this->erros,
             'dataCategory' => $dataCategory,
-            
+
         );
 
         $parser = \Config\Services::renderer();
@@ -165,7 +166,7 @@ class Build extends BaseController
             /*Busca o artigo*/
             $category = $this->request->getPost('category');
             $dataCategory = $this->category->getArticleMain($category);
-            $dataArticle = [];            
+            $dataArticle = [];
 
             foreach ($dataCategory as $key => $dados) {
                 if ($dados['id'] === $this->request->getPost('id')) {
@@ -186,16 +187,14 @@ class Build extends BaseController
                     $dataCategory[$key]['title-video'] = $this->request->getPost('title-video');
                     $dataCategory[$key]['text-video'] = $this->request->getPost('text-video');
                     $dataCategory[$key]['image-gallery'] = $dados['image-gallery'];
-                    $dataCategory[$key]['font'] = $this->request->getPost('font');                    
+                    $dataCategory[$key]['font'] = $this->request->getPost('font');
                     $dataCategory[$key]['access'] = $dados['access'];
                     break;
                 }
-            }                       
+            }
             /*Atualiza o arquivo*/
-            $this->articleUpdate = new ArticleModel();            
+            $this->articleUpdate = new ArticleModel();
             $this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
-
-            
         }
 
         $datas['msgs'] = [
@@ -205,7 +204,7 @@ class Build extends BaseController
         ];
 
         $dataCategory = $this->category->getArticleMain($category);
-        krsort($dataCategory);                
+        krsort($dataCategory);
 
         $data = [
             'erro' => '',
@@ -315,7 +314,7 @@ class Build extends BaseController
                 'resume' => $this->request->getPost('resume'),
                 'text' => $this->request->getPost('text'),
                 'image-main' => createSlug($this->request->getPost('title')) . '-01.jpg',
-                'category' => $this->request->getPost('category'),                
+                'category' => $this->request->getPost('category'),
                 'text-second' => $this->request->getPost('text-second'),
                 'image-text-second' => !empty($this->request->getPost('image-text-second')) ? createSlug($this->request->getPost('title')) . '-02.jpg' : '',
                 'quote' => $this->request->getPost('quote'),
@@ -326,9 +325,9 @@ class Build extends BaseController
                 'text-video' => $this->request->getPost('text-video'),
                 'image-gallery' => createImageGallery($this->request->getPost('image-gallery'), createSlug($this->request->getPost('title'))),
                 'font' => $this->request->getPost('font'),
-                'date' => !empty($this->request->getPost('date')) ? $this->request->getPost('date'): date('d/m/Y'),
+                'date' => !empty($this->request->getPost('date')) ? $this->request->getPost('date') : date('d/m/Y'),
                 'access' => !empty($this->request->getPost('access')) ? $this->request->getPost('access') : 1
-                
+
             );
 
             // extrai a informação do ficheiro
@@ -405,8 +404,8 @@ class Build extends BaseController
         ]);*/
         $val = $this->validate(
             [
-                'title'        => 'required|min_length[3]',
-                'link'         => 'required',
+                'title'        => 'required|min_length[3]',                
+                //'link'         => 'required',
                 //'image-main'         => 'required',
                 //'category'         => 'required',
                 //'text'         => 'required|min_length[20]',
@@ -421,10 +420,10 @@ class Build extends BaseController
                 'title'        => [
                     'required' => 'O campo TÍTULO tem preenchimento obrigatório!',
                     'min_length' => 'O campo TÍTULO precisar tem no mínimo 3 caracteres!'
-                ],
-                'link'        => [
+                ],               
+                /*'link'        => [
                     'required' => 'O campo LINK tem preenchimento obrigatório!'
-                ],
+                ],*/
                 /*'image-main'        => [
                     'required' => 'O campo IMAGEM PRINCIPAL tem preenchimento obrigatório!'
                 ],*/
@@ -447,15 +446,30 @@ class Build extends BaseController
             $blog['text'] = $this->request->getPost('text');
             $blog['image-main'] = $this->request->getPost('image-main');
             $blog['data_postagem'] = date('d/m/Y');*/
+            $arquivo = $this->request->getFile('arquivo');           
 
-            $dadosArticle = array(
-                'id' => generateId(10, false, false, true, false),
-                'title' => $this->request->getPost('title'),
-                'link' => $this->request->getPost('link'),
-                'date' => date('d/m/Y'),
-            );
+            $tipo = $arquivo->getMimeType();
 
-            // extrai a informação do ficheiro
+            if ($tipo !== "application/pdf") {
+
+                $datas['msgs'] = [
+                    'message' => '<i class="fa fa-exclamation-triangle"></i> Erro! Tipo de arquivo não permitido!',
+                    'alert' => 'danger',
+
+                ];
+            } else {                
+
+                if ($arquivo->isValid()) {
+                    $arquivo->move('./text/', $arquivo->getName());
+                    
+                    $dadosArticle = array(
+                        'id' => generateId(10, false, false, true, false),
+                        'title' => $this->request->getPost('title'),
+                        'link' => base_url() . '/text/' . $arquivo->getName(),
+                        'date' => date('d/m/Y'),
+                    );
+
+                     // extrai a informação do ficheiro
             $string = file_get_contents(APPPATH . 'Base/school.json');
             // faz o decode o json para uma variavel php que fica em array
             $json = json_decode($string, true);
@@ -472,6 +486,24 @@ class Build extends BaseController
             // fecha o ficheiro
             fclose($fp);
 
+        $datas['msgs'] = [
+            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo criado com sucesso!',
+            'alert' => 'success',
+
+        ];
+
+        
+                }
+            }
+
+           
+            //$filepath = base_url().'/assets/text/'.$arquivo->store();
+            //$data = [
+            //  'uploaded_fileinfo'=> new File($filepath)
+            //];
+
+
+           
             //mkdir('./assets/img/codo',0775,true);
             /*if(!is_dir('././assets/img/world/casa')){
                 mkdir('././assets/img/world/casa');
@@ -493,11 +525,6 @@ class Build extends BaseController
             //return view('/admin/blog/cadastrar-blog', $data);
         }
 
-        $datas['msgs'] = [
-            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo criado com sucesso!',
-            'alert' => 'success',
-
-        ];
 
         $data = [
             'erro' => ''

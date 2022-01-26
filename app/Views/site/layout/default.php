@@ -9,7 +9,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="shortcut icon" type="image/x-icon" href="<?= $favico; ?>">
    <!-- Site Title- -->
-   <title><?= $title; ?></title>
+   <title><?= esc($title); ?></title>
    <!-- CSS   ==================================================== -->
    <!-- CSS here -->
    <?php
