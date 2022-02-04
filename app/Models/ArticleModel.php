@@ -7,6 +7,15 @@ use Exception;
 
 class ArticleModel extends Model
 {
+    /**
+     * [Description for getArticleTitle]
+     *
+     * @param string $category
+     * @param string $article
+     * 
+     * @return array
+     * 
+     */
     public function getArticleTitle(string $category, string $article): array
     {
         $data = [];

@@ -58,9 +58,9 @@
         "title-video": "",
         "text-video": "",
         "image-gallery": "as-7-maravilhas-do-mundo-moderno-03.jpg;as-7-maravilhas-do-mundo-moderno-04.jpg;as-7-maravilhas-do-mundo-moderno-05.jpg;as-7-maravilhas-do-mundo-moderno-06.jpg;as-7-maravilhas-do-mundo-moderno-07.jpg;as-7-maravilhas-do-mundo-moderno-08.jpg;as-7-maravilhas-do-mundo-moderno-09.jpg;",
-        "font": "",
+        "font": "Tiberiogeo",
         "date": "16/06/2010",
-        "access": 9840
+        "access": 9842
     },
     {
         "id": "202201241659132817524063",
@@ -81,7 +81,7 @@
         "image-gallery": "",
         "font": "",
         "date": "29/03/2011",
-        "access": 11046
+        "access": 11047
     },
     {
         "id": "202201241715284633554920",

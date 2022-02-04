@@ -1,5 +1,4 @@
 <?= $this->extend('site/layout/default'); ?>
-
 <?= $this->section('content') ?>
 <!-- single post start -->
 <section class="single-post-wrapper post-layout-10">
@@ -37,7 +36,6 @@
                     <li><?= $dataArticle['title']; ?></li>
                 </ol>
                 <div class="ts-grid-box content-wrapper single-post">
-
                     <div class="post-content-area">
                         <div class="entry-content space-list">
                             <?= firstCapitulate($dataArticle['text']);
@@ -48,9 +46,7 @@
                             if ($dataArticle['image-gallery']) : ?>
                                 <div class="gallery-img">
                                     <?php
-
                                     $imageGallery = explode(';', trim($dataArticle['image-gallery']));
-
                                     for ($i = 0; $i < count($imageGallery); $i++) : ?>
                                         <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
                                             <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1 py-1">
@@ -63,10 +59,8 @@
                             <?php endif; ?>
                             <p><?= $dataArticle['text-second']; ?></p>
                             <div class="clearfix"></div>
-
                             <?php
                             if ($dataArticle['image-video']) : ?>
-
                                 <div class="post-video">
                                     <img class="img-fluid" src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $dataArticle['image-video']; ?>" alt="">
                                     <div class="post-video-content">
@@ -74,38 +68,33 @@
                                         <h3><a href=""><?= $dataArticle['title-video']; ?></a></h3>
                                     </div>
                                 </div>
-
                                 <p><?= $dataArticle['text-video']; ?></p>
                             <?php endif;  ?>
-
                         </div><!-- entry content end-->
                     </div><!-- post content area-->
                     <hr>
-                    <?php if(count($otherArticle) >= 2):?>
-                    <div class="post-navigation clearfix">
-                        <div class="post-next float-right">
-                            <?=anchorArticle(
-                                $otherArticle['category'],
-                                $otherArticle['slug'],'<img src="'.base_url().'/assets/img/'.$otherArticle['category'].'/'.$otherArticle['slug'].'/'.$otherArticle['slug'].'-01.jpg" alt="">
+                    <?php if (count($otherArticle) >= 2) : ?>
+                        <div class="post-navigation clearfix">
+                            <div class="post-next float-right">
+                                <?= anchorArticle(
+                                    $otherArticle['category'],
+                                    $otherArticle['slug'],
+                                    '<img src="' . base_url() . '/assets/img/' . $otherArticle['category'] . '/' . $otherArticle['slug'] . '/' . $otherArticle['slug'] . '-01.jpg" alt="">
                                 <span>Veja também</span>
-                                <p>'.$otherArticle["title"].'</p>');?>
-                            </a>
+                                <p>' . $otherArticle["title"] . '</p>'
+                                ); ?>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <?php endif;?>
-                </div>                
+                    <?php endif; ?>
+                </div>
             </div><!-- col end -->
-
             <div class="col-lg-3">
                 <?= view('site/side'); ?>
             </div>
-
-
-
             <!-- col end-->
         </div><!-- row end-->
     </div><!-- container-->
 </section><!-- single post end-->
-
 <!-- newslater start -->
 <?= $this->endSection(); ?>
