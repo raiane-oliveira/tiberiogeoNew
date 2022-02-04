@@ -2,12 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\WorldModel;
-use App\Models\BrazilModel;
+
 use App\Models\ArticleModel;
-use App\Models\GeographyModel;
 use App\Controllers\BaseController;
-use CodeIgniter\Files\File;
 
 class Build extends BaseController
 {
@@ -90,6 +87,7 @@ class Build extends BaseController
         }
         $article = new ArticleModel();
         $dataCategory = $article->getById($id, $category);
+        
 
         $data = array(
             'msgs' => $msg,
@@ -98,12 +96,14 @@ class Build extends BaseController
 
         );
 
+        $page = !$dataCategory['error'] ? 'buildEdit' : 'buildErro'; 
+
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('admin/buildEdit');
+        return $parser->render('admin/'.$page);
     }
     public function update()
     {

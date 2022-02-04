@@ -107,17 +107,16 @@ $javascript = [
                         <strong><?= $msgs['message']; ?></strong>
 
                     </div>
-
                     <div class="contact-box ts-grid-box">
                         <div class="clearfix">
-                            <h2 class="float-left"><span>EDITANDO ARTIGO [ <?=$dataCategory['id'];?> ]</span></h2>
+                            <h2 class="float-left"><span>EDITANDO ARTIGO [ <?= $dataCategory['id']; ?> ]</span></h2>
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         LISTAR ARTIGOS
                                     </button>
-                                    <?=buildButtonListCategory()?>
+                                    <?= buildButtonListCategory() ?>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +225,9 @@ $javascript = [
                             <?= form_close() ?>
                         </div><!-- grid box end -->
                     </div><!-- col end-->
-                </div><!-- row end-->
+
+
+                </div><!-- col end-->
             </div><!-- container end-->
     </section>
 

@@ -1,7 +1,15 @@
 <?php
 
 
-function toDataBr($data): String
+/**
+ * [Description for toDataBr]
+ *
+ * @param string $data
+ * 
+ * @return String
+ * 
+ */
+function toDataBr(string $data): String
 {
     if ($data == null) {
         return '--';
@@ -26,22 +34,19 @@ function toDateMsql(string $data): string
     return NULL;
 }
 
+
 /**
- * toDatePost
+ * [Description for toDatePost]
  *
- * @param  string $date
+ * @param string $date
+ * 
  * @return string
+ * 
  */
 function toDatePost(string $date): string
-{   $nDate = toDateMsql($date);
+{
+    $nDate = toDateMsql($date);
     return strftime('%d de %B, %Y', strtotime($nDate));
-    //return $date;    
-    /*if ($date == null)
-        return '--';
-
-    $date = explode("/", $date);
-    $jd = gregoriantojd($date[1], $date[0], $date[2]);
-    return  jdmonthname($jd, CAL_MONTH_GREGORIAN_LONG) . " " . $date[0] . ", " . $date[2];*/
 }
 
 /**
@@ -104,26 +109,30 @@ function createSlug(string $title): string
  * @return string
  */
 function anchorCategory(string $category, bool $style = false): string
-{   
-    $color = "";
+{
+    
     $dados = "";
-    if($category == 'world'):
-        $color = "orange";
-    elseif($category == 'brazil'):
-        $color = "blue";    
-    elseif($category == 'geography'):
-           $color = "green";
-    else:
-        $color = "blue-light";
-    endif; 
+    
+    $color = "blue-light";
 
-    if($style):
+    if ($category == 'world') :
+        $color = "orange";
+    endif;
+    if ($category == 'brazil') :
+        $color = "blue";
+    endif;
+    if ($category == 'geography') :
+        $color = "green";
+    endif;   
+
+
+    if ($style) :
         $dados = [
-            'class' => 'post-cat ts-'.$color.'-bg'
+            'class' => 'post-cat ts-' . $color . '-bg'
         ];
-    else:
+    else :
         $dados = [
-            'class' => $color.'-color'
+            'class' => $color . '-color'
         ];
     endif;
 
@@ -137,7 +146,7 @@ function anchorCategory(string $category, bool $style = false): string
  * @param  string $article
  * @return string
  */
-function anchorArticle(string $category, string $article, string $title = null):string
+function anchorArticle(string $category, string $article, string $title = null): string
 {
     $titleEnd = $title;
     return anchor('article/' . $category . '/' . $article, $titleEnd);
@@ -151,17 +160,16 @@ function anchorArticle(string $category, string $article, string $title = null):
  * @return string
  */
 function createQuote(string $quote, string $quoteAuthor): string
-{    
-    return  '<blockquote>'.$quote.' <cite>'.$quoteAuthor.'</cite></blockquote>';
+{
+    return  '<blockquote>' . $quote . ' <cite>' . $quoteAuthor . '</cite></blockquote>';
 }
 
-function defineSocial(string $name, string $slug, bool $title = null):string
+function defineSocial(string $name, string $slug, bool $title = null): string
 {
-    if(!$title){
-        return anchor('https://www.'.$name.'.com/'.$slug,'<i class="fa fa-'.$name.'"></i>', ['target'=>'_blank']);
+    if (!$title) {
+        return anchor('https://www.' . $name . '.com/' . $slug, '<i class="fa fa-' . $name . '"></i>', ['target' => '_blank']);
     }
-     return anchor('https://www.'.$name.'.com/'.$slug,'<i class="fa fa-'.$name.'"></i><span>'.$name.'</span>', ['target'=>'_blank']);
-    
+    return anchor('https://www.' . $name . '.com/' . $slug, '<i class="fa fa-' . $name . '"></i><span>' . $name . '</span>', ['target' => '_blank']);
 }
 
 /**
@@ -170,11 +178,10 @@ function defineSocial(string $name, string $slug, bool $title = null):string
  * @param  string $string
  * @return string
  */
-function firstUppercase (string $string): string
+function firstUppercase(string $string): string
 {
-    $s = mb_strtoupper(mb_substr($string,0,1));
-    return $s.mb_strtolower(mb_substr($string,1));
-
+    $s = mb_strtoupper(mb_substr($string, 0, 1));
+    return $s . mb_strtolower(mb_substr($string, 1));
 }
 
 /**
@@ -185,21 +192,24 @@ function firstUppercase (string $string): string
  */
 function firstCapitulate(string $string): string
 {
-    $stringCapitulate = mb_strtoupper(mb_substr($string,3,1));   
-    return '<span class="tie-dropcap">'.$stringCapitulate.'</span><p>'.mb_substr($string,4);
+    $stringCapitulate = mb_strtoupper(mb_substr($string, 3, 1));
+    return '<span class="tie-dropcap">' . $stringCapitulate . '</span><p>' . mb_substr($string, 4);
 }
 
+
 /**
- * generateId
+ * [Description for generateId]
  *
- * @param  int $tamanho
- * @param  bool $maiusculas
- * @param  bool $minusculas
- * @param  bool $numeros
- * @param  bool $simbolos
+ * @param int|null $tamanho
+ * @param bool|null $maiusculas
+ * @param bool|null $minusculas
+ * @param bool $numeros
+ * @param bool|null $simbolos
+ * 
  * @return string
+ * 
  */
-function generateId(int $tamanho = null, bool $maiusculas = null, bool $minusculas = null, bool $numeros, bool $simbolos = null):string
+function generateId(int $tamanho = null, bool $maiusculas = null, bool $minusculas = null, bool $numeros, bool $simbolos = null): string
 {
     $senha = '';
     $ma = "ABCDEFGHIJKLMNOPQRSTUVYXWZ"; // $ma contem as letras maiúsculas
@@ -207,58 +217,72 @@ function generateId(int $tamanho = null, bool $maiusculas = null, bool $minuscul
     $nu = "123456789012345"; // $nu contem os números
     $si = "!@#$%¨&*()_+="; // $si contem os símbolos
 
-    if ($maiusculas)
-    {
+    if ($maiusculas) {
         // se $maiusculas for "true", a variável $ma é embaralhada e adicionada para a variável $senha
         $senha .= str_shuffle($ma);
     }
 
-    if ($minusculas)
-    {
+    if ($minusculas) {
         // se $minusculas for "true", a variável $mi é embaralhada e adicionada para a variável $senha
         $senha .= str_shuffle($mi);
     }
 
-    if ($numeros)
-    {
+    if ($numeros) {
         // se $numeros for "true", a variável $nu é embaralhada e adicionada para a variável $senha
         $senha .= str_shuffle($nu);
     }
 
-    if ($simbolos)
-    {
+    if ($simbolos) {
         // se $simbolos for "true", a variável $si é embaralhada e adicionada para a variável $senha
         $senha .= str_shuffle($si);
     }
 
     // retorna a senha embaralhada com "str_shuffle" com o tamanho definido pela variável $tamanho
-    return date('YmdHis').substr(str_shuffle($senha), 0, $tamanho);
+    return date('YmdHis') . substr(str_shuffle($senha), 0, $tamanho);
 }
 
-function createImageGallery($images,$title){
-    if(empty($images)){
+
+
+/**
+ * [Description for createImageGallery]
+ *
+ * @param string $images
+ * @param string $title
+ * 
+ * @return string
+ * 
+ */
+function createImageGallery(string $images, string $title): string
+{
+    if (empty($images)) {
         return "";
     }
     $img = "";
-        
-    $image = explode(';',str_replace(" ","", $images));
-    
-    for($i = 0; $i < count($image); $i++){
-        $img .= $title.'-'.$image[$i].'.jpg;';
 
+    $image = explode(';', str_replace(" ", "", $images));
+
+    for ($i = 0; $i < count($image); $i++) {
+        $img .= $title . '-' . $image[$i] . '.jpg;';
     }
     return $img;
 }
 
-function buildButtonListCategory(){
 
-   $button = '<div class="dropdown-menu">'.
-        anchor('/build/category/world', 'MUNDO', ['class' => 'dropdown-item']).
-        anchor('/build/category/brazil', 'BRASIL', ['class' => 'dropdown-item']).
-        anchor('/build/category/geography', 'GEOGRAFIA', ['class' => 'dropdown-item']).
-        anchor('/build/category/curiosity', 'CURIOSIDADES', ['class' => 'dropdown-item']).
-        anchor('/build/category/variety', 'VARIEDADES', ['class' => 'dropdown-item']).
-    '</div>';
+/**
+ * buildButtonListCategory
+ *
+ * @return string
+ */
+function buildButtonListCategory(): string
+{
+
+    $button = '<div class="dropdown-menu">' .
+        anchor('/build/category/world', 'MUNDO', ['class' => 'dropdown-item']) .
+        anchor('/build/category/brazil', 'BRASIL', ['class' => 'dropdown-item']) .
+        anchor('/build/category/geography', 'GEOGRAFIA', ['class' => 'dropdown-item']) .
+        anchor('/build/category/curiosity', 'CURIOSIDADES', ['class' => 'dropdown-item']) .
+        anchor('/build/category/variety', 'VARIEDADES', ['class' => 'dropdown-item']) .
+        '</div>';
 
     return $button;
 }

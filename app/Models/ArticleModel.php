@@ -3,26 +3,42 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use Exception;
 
 class ArticleModel extends Model
-{    
+{
+
     /**
-     * updateArticle
+     * [Description for updateArticle]
      *
-     * @param  string $dados
-     * @param  string $category
+     * @param array $dados
+     * @param string $category
+     * 
      * @return void
+     * 
      */
-    public function updateArticle(array $dados, string $category):void{
+    public function updateArticle(array $dados, string $category): void
+    {
 
         $article = json_encode($dados, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        file_put_contents(APPPATH. 'Base/category-' . $category . '.json', $article);
-        
+        file_put_contents(APPPATH . 'Base/category-' . $category . '.json', $article);
     }
 
-    public function getArticle ($article, $category){
-        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');
-        $dataCategory = json_decode($jsonString, true); 
+    /**
+     * [Description for getArticle]
+     *
+     * @param string $article
+     * @param string $category
+     * 
+     * @return array
+     * 
+     */
+    public function getArticle(string $article, string $category): array
+    {
+        
+
+        $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+        $dataCategory = json_decode($jsonString, true);
 
         $dataArticle = [];
 
@@ -48,78 +64,97 @@ class ArticleModel extends Model
                 //$dataArticle['access'] = $dados['access'] + 1;
                 break;
             }
-        } 
+        }
         return $dataArticle;
     }
-
-        
     /**
-     * getById
+     * [Description for getById]
      *
-     * @param  string $id
-     * @param  string $category
+     * @param string $id
+     * @param string $category
+     * 
      * @return array
+     * 
      */
     public function getById(string $id, string $category): array
     {
-        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');                
-        $dataCategory = json_decode($jsonString, true);        
-
         $data = [];
-        foreach ($dataCategory as $item) {
-            if ($item['id'] === $id) {
-                $data['id'] = $item['id'];
-                $data['category'] = $item['category'];
-                $data['title'] = $item['title'];
-                $data['resume'] = $item['resume'];
-                $data['text'] = $item['text'];
-                $data['text-second'] = $item['text-second'];
-                $data['quote'] = $item['quote'];
-                $data['quote-author'] = $item['quote-author'];
-                $data['link-video'] = $item['link-video'];
-                $data['title-video'] = $item['title-video'];
-                $data['text-video'] = $item['text-video'];
-                $data['image-video'] = $item['image-video'];
-                $data['font'] = $item['font'];
-                break;
+
+        try {
+
+            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+
+            $dataCategory = json_decode($jsonString, true);
+
+
+            foreach ($dataCategory as $item) {
+                if ($item['id'] === $id) {
+                    $data['error'] = false;
+                    $data['message'] = '';
+                    $data['id'] = $item['id'];
+                    $data['category'] = $item['category'];
+                    $data['title'] = $item['title'];
+                    $data['resume'] = $item['resume'];
+                    $data['text'] = $item['text'];
+                    $data['text-second'] = $item['text-second'];
+                    $data['quote'] = $item['quote'];
+                    $data['quote-author'] = $item['quote-author'];
+                    $data['link-video'] = $item['link-video'];
+                    $data['title-video'] = $item['title-video'];
+                    $data['text-video'] = $item['text-video'];
+                    $data['image-video'] = $item['image-video'];
+                    $data['font'] = $item['font'];
+                    break;
+                }
+                $data['error'] = true;
+                $data['message'] = 'Artigo não encontrado!';
             }
+            return $data;
+        } catch (Exception $e) {
+
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+            return $data;
         }
-        return $data;
-        
-    }    
+    }
+
     /**
-     * getOtherArticle
+     * [Description for getOtherArticle]
      *
-     * @param  string $article
-     * @param  string $category
+     * @param string $article
+     * @param string $category
+     * 
      * @return array
+     * 
      */
     public function getOtherArticle(string $article, string $category): array
     {
-        $jsonString = file_get_contents(APPPATH. 'Base/category-'.$category.'.json');                
-        $dataCategory = json_decode($jsonString, true);        
-        shuffle($dataCategory);
         $data = [];
-        foreach ($dataCategory as $item) {
-            if ($item['slug'] !== $article) {
-                $data['id'] = $item['id'];
-                $data['slug'] = $item['slug'];
-                $data['category'] = $item['category'];
-                $data['title'] = $item['title'];
-                /*$data['resume'] = $item['resume'];
-                $data['text'] = $item['text'];
-                $data['text-second'] = $item['text-second'];
-                $data['quote'] = $item['quote'];
-                $data['quote-author'] = $item['quote-author'];
-                $data['link-video'] = $item['link-video'];
-                $data['title-video'] = $item['title-video'];
-                $data['text-video'] = $item['text-video'];
-                $data['image-video'] = $item['image-video'];
-                $data['font'] = $item['font'];*/
-                break;
+
+        try {
+
+            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $dataCategory = json_decode($jsonString, true);
+            shuffle($dataCategory);
+            
+            foreach ($dataCategory as $item) {
+                if ($item['slug'] !== $article) {
+                    $data['error'] = false;
+                    $data['message'] = '';
+                    $data['id'] = $item['id'];
+                    $data['slug'] = $item['slug'];
+                    $data['category'] = $item['category'];
+                    $data['title'] = $item['title'];                   
+                    break;
+                }
+                $data['error'] = true;
+                $data['message'] = 'Artigo não encontrado!';
             }
+            return $data;
+        } catch (Exception $e) {
+            $data['error'] = true;
+            $data['message'] = $e->getMessage();
+            return $data;
         }
-        return $data;
-        
     }
 }

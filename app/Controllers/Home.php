@@ -1,18 +1,18 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 use App\Models\VarietyModel;
 use App\Models\CuriosityModel;
 
 class Home extends BaseController
 {
-      
-    public function index()
-	{  
-        //$world =  new HomeModel();        
-        $dataCategoryWorld = $this->category->getArticleMain('world');
 
-        $dataCategoryBrazil = $this->category->getArticleMain('brazil');      
-        //$geography =  new HomeModel();        
+    public function index()
+    {
+
+        $dataCategoryWorld = $this->category->getArticleMain('world');
+        $dataCategoryBrazil = $this->category->getArticleMain('brazil');
         $dataCategoryGeography = $this->category->getArticleMain('geography');
         $dataCategoryGeographyFavorite = $dataCategoryGeography;
         shuffle($dataCategoryGeographyFavorite);
@@ -25,12 +25,12 @@ class Home extends BaseController
         $dataCategoryVariety = $variety->getAllVariety();
         krsort($dataCategoryVariety);
 
-        $arrayEmphasis = ['brazil','world','geography','curiosity','variety'];
+        $arrayEmphasis = ['brazil', 'world', 'geography', 'curiosity', 'variety'];
         shuffle($arrayEmphasis);
-        //$emphasis =  new HomeModel();        
+         
         $dataCategoryEmphasis = $this->category->getArticleMain(end($arrayEmphasis));
-        shuffle($dataCategoryEmphasis);       
-      
+        shuffle($dataCategoryEmphasis);
+
 
         $data = [
             "data_temperature" => $this->dataTemperature,
@@ -45,15 +45,14 @@ class Home extends BaseController
             "dataMenuWorld" => $this->menuWorld,
             "dataMenuBrazil" => $this->menuBrazil,
             "dataMenuGeography" => $this->menuGeography,
-        ];        
-	   
-      
-	    $parser = \Config\Services::renderer();
+        ];
+
+
+        $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-		return $parser->render('site/home/home');      
-	}	
-
+        return $parser->render('site/home/home');
+    }
 }

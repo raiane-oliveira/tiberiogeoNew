@@ -9,7 +9,15 @@ use App\Controllers\BaseController;
 class Category extends BaseController
 {
         
-    public function index($category)
+    /**
+     * [Description for index]
+     *
+     * @param string $category
+     * 
+     * @return string
+     * 
+     */
+    public function index(string $category): string
 	{         
 	   
 	    $dataCategory = $this->category->getArticleMain($category);

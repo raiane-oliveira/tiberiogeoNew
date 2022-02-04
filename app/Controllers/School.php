@@ -9,7 +9,13 @@ use App\Models\SchoolModel;
 
 class School extends BaseController
 {
-    public function index()
+    /**
+     * [Description for index]
+     *
+     * @return string
+     * 
+     */
+    public function index(): string
     {
         /*Define os favoritos*/
         $categoryFavorite = 'geography';

@@ -7,6 +7,14 @@ use CodeIgniter\Model;
 class BrazilModel extends Model
 {
 
+    /**
+     * [Description for getById]
+     *
+     * @param string $id
+     * 
+     * @return array
+     * 
+     */
     public function getById(string $id): array
     {
         $jsonString = file_get_contents(APPPATH . 'Base/category-brazil.json');
