@@ -14,6 +14,7 @@ class Home extends BaseController
         $dataCategoryWorld = $this->category->getArticleMain('world');
         $dataCategoryBrazil = $this->category->getArticleMain('brazil');
         $dataCategoryGeography = $this->category->getArticleMain('geography');
+        
         $dataCategoryGeographyFavorite = $dataCategoryGeography;
         shuffle($dataCategoryGeographyFavorite);
 

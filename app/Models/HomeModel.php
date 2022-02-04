@@ -17,16 +17,11 @@ class HomeModel extends Model
      * 
      */
     public function getArticleMain(string $category): array
-    {
-        $data = [];
-        try {
+    {       
             $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);          
             return $dataCategory;
-        } catch (Exception $e) {
-            $data['error'] = true;
-            return $data;
-        }
+                    
     }
 
 
