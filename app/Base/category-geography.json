@@ -18,7 +18,11 @@
         "text-video": "",
         "image-gallery": "urbanizacao-mundial-03.jpg; urbanizacao-mundial-04.jpg; urbanizacao-mundial-05.jpg; urbanizacao-mundial-06.jpg",
         "font": "Novo Tiberiogeo",
+<<<<<<< HEAD
         "access": 159
+=======
+        "access": 156
+>>>>>>> 0491de12bc8f78fb10401d91bd96b69349a5d5dc
     },
     {
         "id": "202201251844265639454022",
@@ -39,6 +43,10 @@
         "image-gallery": "",
         "font": "Tiberiogeo. A Geografia Levada a Sério.",
         "date": "27/05/2010",
+<<<<<<< HEAD
         "access": 8216
+=======
+        "access": 8215
+>>>>>>> 0491de12bc8f78fb10401d91bd96b69349a5d5dc
     }
 ]
