@@ -46,12 +46,12 @@ class Article extends BaseController
             $page = 'articles';
            
             /*Atualiza o arquivo*/
-            /*$this->articleUpdate = new ArticleModel();
-            $this->articleUpdate->updateAccesArticle($dataCategory['id'],$category);*/
+            $this->articleUpdate = new ArticleModel();
+            /*$this->articleUpdate->updateAccesArticle($dataCategory['id'],$category);*/
 
             /*Outro arquivo*/
             $otherArticle = $this->article->getOtherArticle($article, $category);
-
+            
             //$page = !$otherArticle['error'] ? 'articles' : 'articleErro'; 
             /*Define os favoritos*/
 

@@ -72,7 +72,7 @@
                         </div><!-- entry content end-->
                     </div><!-- post content area-->
                     <hr>
-                    <?php if (count($otherArticle) >= 2) : ?>
+                    <?php if (($otherArticle['error']) == false) : ?>
                         <div class="post-navigation clearfix">
                             <div class="post-next float-right">
                                 <?= anchorArticle(
