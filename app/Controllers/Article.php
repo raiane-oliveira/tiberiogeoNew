@@ -46,8 +46,8 @@ class Article extends BaseController
             $page = 'articles';
            
             /*Atualiza o arquivo*/
-            $this->articleUpdate = new ArticleModel();
-            $this->articleUpdate->updateAccesArticle($dataCategory['id'],$category);
+            /*$this->articleUpdate = new ArticleModel();
+            $this->articleUpdate->updateAccesArticle($dataCategory['id'],$category);*/
 
             /*Outro arquivo*/
             $otherArticle = $this->article->getOtherArticle($article, $category);
@@ -104,10 +104,11 @@ class Article extends BaseController
      */
     public function buildPdf(string $article, string $category)
     {
+       
 
         $this->article = new ArticleModel();
 
-        $dados = $this->article->getArticle($article, $category);
+        $dados = $this->article->getArticle($article, $category);    
 
         $v = view('site/outputPdf', $dados);
         $options = new Options();

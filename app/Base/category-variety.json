@@ -18,7 +18,7 @@
         "image-gallery": "",
         "font": "Guia do Estudante - Geografia + Enem 2011",
         "date": "15/03/2011",
-        "access": 8185
+        "access": 8186
     },
     {
         "id": "202201251924313017252849",
@@ -39,7 +39,7 @@
         "image-gallery": "",
         "font": "Silvestre",
         "date": "13/09/2010",
-        "access": 5610
+        "access": 5612
     },
     {
         "id": "202201251949372473941861",
@@ -60,7 +60,7 @@
         "image-gallery": "",
         "font": "Atualidades Vestibular - 2008",
         "date": "26/05/2010",
-        "access": 8614
+        "access": 8616
     },
     {
         "id": "202201252007413517024538",
@@ -72,8 +72,8 @@
         "category": "variety",
         "text-second": "<h3>O algodão colorido, a nova marca da cidade</h3><p> Se em meados do século passado, a principal atividade da cidade era a comercialização e exportação do algodão branco, que colocaram a cidade como a principal economia do interior do Nordeste, hoje essa cultura volta. </p><p>Desta vez, porém, com uma nova roupagem. A partir de pesquisas de 14 anos da Embrapa local, foi desenvolvido o algodão colorido através do melhoramento da espécie até se obter uma qualidade de algodão orgânico com a viabilidade comercial. </p><p>O algodão desenvolvido pela Embrapa já nasce colorido sem a presença de agrotóxicos, o que valoriza os produtos fabricados a partir dele, principalmente no mercado externo.</p><p>Para explorar este novo potencial foi criado em 2000 o Consórcio Natural fashion, formado por 8 empresas de confecção, tecelagem e artefatos com a participação de micro e pequenas empresas. O diferencial do algodão colorido tem feito da cidade um sucesso nas feiras de moda onde tem se apresentado.</p><p>Campina Grande é a única cidade do mundo a trabalhar com produção industrial de produtos e artefatos de algodão colorido. Outros países trabalham com algodão colorido, mas apenas de forma artesanal por não ter uma fibra tão resistente quanto a desenvolvida pela Embrapa.</p>",
         "image-text-second": "campina-grande-02.jpg",
-        "quote": "",
-        "quote-author": "",
+        "quote": "Minha Campina, o teu nome é um poema, tua beleza é nordestina, o teu roteiro é de cinema, não importa por onde ande, eu te amo Campina Grande, RAINHA DA BORBOREMA.",
+        "quote-author": "Guibson Medeiros",
         "image-video": "campina-grande-03.jpg",
         "link-video": "https://www.youtube.com/watch?v=ptiDl2gsFDo",
         "title-video": "Hino oficial de Campina Grande",
@@ -81,6 +81,6 @@
         "image-gallery": "campina-grande-04.jpg;campina-grande-05.jpg;campina-grande-06.jpg;campina-grande-07.jpg;campina-grande-08.jpg;",
         "font": "Tiberiogeo. A Geografia Levada a Sério.",
         "date": "30/11/2012",
-        "access": 7244
+        "access": 7249
     }
 ]

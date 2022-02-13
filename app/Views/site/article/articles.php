@@ -16,7 +16,6 @@
                             <?= $dataArticle['font']; ?>
                         </li>
                         <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataArticle['date']); ?></li>
-                        <li class=""><i class="fa fa-eye"></i>Acessos: <?= $dataArticle['access']; ?></li>
                         <li class="share-post">
                             <?= anchor('https://api.whatsapp.com/send?text=' . base_url() . '/article/' . $dataArticle['category'] . '/' . createSlug($dataArticle['slug'], ['target' => '_blank']), '<i class="fa fa-whatsapp" style="color:green"></i>', ['target' => '_blank', 'title' => 'Compartilhar no Whatsapp']); ?>
                         </li>
