@@ -69,7 +69,7 @@
                      <li><?=anchor('/','Home');?></li>
                      <li><?=anchor('/category/world','Mundo');?></li>
                      <li><?=anchor('/category/brazil','Brasil');?></li>
-                     <li><?=anchor('/category/Geography','Geografia');?></li>
+                     <li><?=anchor('/category/geography','Geografia');?></li>
                      <li><?=anchor('/school','Escola');?></li>                    
                   </ul>
                </div>
