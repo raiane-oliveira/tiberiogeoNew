@@ -194,6 +194,7 @@ class ArticleModel extends Model
                     $data['title-video'] = $item['title-video'];
                     $data['text-video'] = $item['text-video'];
                     $data['image-video'] = $item['image-video'];
+                    $data['image-gallery'] = $item['image-gallery'];
                     $data['font'] = $item['font'];
                     break;
                 }

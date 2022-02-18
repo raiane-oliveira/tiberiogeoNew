@@ -254,17 +254,36 @@ function generateId(int $tamanho = null, bool $maiusculas = null, bool $minuscul
  */
 function createImageGallery(string $images, string $title): string
 {
+    
     if (empty($images)) {
         return "";
     }
     $img = "";
-
+    
+    if(substr($images,-1) === ';'){
+        $images = substr($images,0,-1);    
+    }    
     $image = explode(';', str_replace(" ", "", $images));
 
     for ($i = 0; $i < count($image); $i++) {
         $img .= $title . '-' . $image[$i] . '.jpg;';
     }
     return $img;
+}
+
+function tratarImagemGallery(string $img)
+{
+    $result = explode('.jpg;', $img);
+    $result2 = '';
+    for($i = 0; $i < count($result)-1; $i++){
+        
+        $result2 .= substr($result[$i],-2,2).';';
+    }
+
+    //$result3 = explode('-', $result2)
+   
+    
+  return $result2;
 }
 
 

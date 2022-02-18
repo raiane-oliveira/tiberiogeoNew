@@ -199,6 +199,13 @@ $javascript = [
                                         <input value="<?= $dataCategory['title-video'] ?>" class="form-control form-control-name" name="title-video" id="title-video" placeholder="Digite o título do vídeo" type="text">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                               
+                                <div class="form-group">
+                                        <label>Img da galeria (*apenas o número da imagem separado por ";")</label>
+                                        <input class="form-control form-control-name" name="image-gallery" id="image-gallery" placeholder="Digite o nome da imagens, ex: 03;04" type="text" value="<?= tratarImagemGallery($dataCategory['image-gallery']) ?>">
+                                    </div>
+                                </div>
 
                             </div>
                             <div class="row">

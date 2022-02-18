@@ -87,6 +87,7 @@ class Build extends BaseController
         }
         $article = new ArticleModel();
         $dataCategory = $article->getById($id, $category);
+       
         
 
         $data = array(
@@ -186,7 +187,7 @@ class Build extends BaseController
                     $dataCategory[$key]['link-video'] = $this->request->getPost('link-video');
                     $dataCategory[$key]['title-video'] = $this->request->getPost('title-video');
                     $dataCategory[$key]['text-video'] = $this->request->getPost('text-video');
-                    $dataCategory[$key]['image-gallery'] = $dados['image-gallery'];
+                    $dataCategory[$key]['image-gallery'] = createImageGallery($this->request->getPost('image-gallery'), $dados['slug']);
                     $dataCategory[$key]['font'] = $this->request->getPost('font');
                     $dataCategory[$key]['access'] = $dados['access'];
                     break;

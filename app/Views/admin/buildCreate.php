@@ -238,8 +238,8 @@ $javascript = [
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Imagens da galeria (* separar com " ; ")</label>
-                                        <input class="form-control form-control-name" name="image-gallery" id="image-gallery" placeholder="Digite o nome da imagens" type="text" value="<?= old('image-gallery') ?>">
+                                        <label>Img da galeria (*apenas o número da imagem separado por ";")</label>
+                                        <input class="form-control form-control-name" name="image-gallery" id="image-gallery" placeholder="Digite o nome da imagens, ex: 03;04" type="text" value="<?= old('image-gallery') ?>">
                                     </div>
                                 </div>
 

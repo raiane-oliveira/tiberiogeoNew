@@ -11,10 +11,8 @@
                 </div>
             </div>
             <div class="col-md-8 align-self-center">
-                <div class="banner-imgr">
-                    <a href="index.html">
+                <div class="banner-imgr">                    
                         <img class="img-fluid" src="<?= base_url(); ?>/assets/images/banner/banner-header.png" alt="">
-                    </a>
                 </div>
             </div><!-- col end -->
         </div><!-- row  end -->
