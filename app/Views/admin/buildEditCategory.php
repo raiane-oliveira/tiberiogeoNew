@@ -144,6 +144,7 @@ $javascript = [
                           
                             <div class="row">   
                                 <div class="col-md-6">
+                                <label>Categoria</label>
                                 <select name="newCategory" class="form-control form-control-name">
                                         <option value="<?= $dataCategory['category'];?>"><?= toCategory($dataCategory['category']) ?></option>
                                         <?= buildOptionCategory($dataCategory['category']) ?>
