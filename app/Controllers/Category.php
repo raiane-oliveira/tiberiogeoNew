@@ -8,7 +8,7 @@ use App\Controllers\BaseController;
 
 class Category extends BaseController
 {
-        
+    public $categories = [];
     /**
      * [Description for index]
      *
@@ -57,4 +57,9 @@ class Category extends BaseController
 		return $parser->render('site/category/categories');
         
 	}
+
+    public function defineCategories(): array
+    {
+        return  $this->categories = ["world", "brazil", "geography", "curiosity", "variety"];
+    }
 }

@@ -153,12 +153,13 @@ $javascript = [
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Categoria</label>
-                                        <select name="category" class="form-control form-control-name">
-                                            <option value="world">MUNDO</option>
-                                            <option value="brazil">BRASIL</option>
-                                            <option value="geography">GEOGRAFIA</option>
-                                            <option value="curiosity">CURIOSIDADE</option>
-                                            <option value="variety">VARIEDADES</option>
+                                        <select name="category" class="form-control form-control-name" >
+                                            <option value="">Selecione ...</option>
+                                            <option value="world" <?= set_select('category', 'world', true) ?>>MUNDO</option>
+                                            <option value="brazil" <?= set_select('category', 'brazil', true) ?>>BRASIL</option>
+                                            <option value="geography" <?= set_select('category', 'geography', true) ?>>GEOGRAFIA</option>
+                                            <option value="curiosity" <?= set_select('category', 'curiosity', true) ?>>CURIOSIDADE</option>
+                                            <option value="variety" <?= set_select('category', 'variety', true) ?>>VARIEDADES</option>
                                         </select>
 
                                     </div>

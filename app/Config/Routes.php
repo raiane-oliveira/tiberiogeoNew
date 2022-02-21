@@ -46,6 +46,9 @@ $routes->get('/build/create', 'Build::create');
 $routes->get('/build/edit/(:any)/(:any)', 'Build::edit/$1/$2');
 $routes->post('/build/update', 'Build::update');
 $routes->post('/build/add', 'Build::add');
+$routes->get('/build/delete', 'Build::delete');
+$routes->get('/build/editCategory', 'Build::editCategory');
+$routes->post('/build/updateCategory', 'Build::updateCategory');
 
 $routes->get('/buildSchool', 'Build::buildSchool');
 $routes->post('/buildSchool/add', 'Build::addSchool');

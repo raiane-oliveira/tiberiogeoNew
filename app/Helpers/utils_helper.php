@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Category;
 
 /**
  * [Description for toDataBr]
@@ -110,9 +111,9 @@ function createSlug(string $title): string
  */
 function anchorCategory(string $category, bool $style = false): string
 {
-    
+
     $dados = "";
-    
+
     $color = "blue-light";
 
     if ($category == 'world') :
@@ -123,7 +124,7 @@ function anchorCategory(string $category, bool $style = false): string
     endif;
     if ($category == 'geography') :
         $color = "green";
-    endif;   
+    endif;
 
 
     if ($style) :
@@ -254,15 +255,15 @@ function generateId(int $tamanho = null, bool $maiusculas = null, bool $minuscul
  */
 function createImageGallery(string $images, string $title): string
 {
-    
+
     if (empty($images)) {
         return "";
     }
     $img = "";
-    
-    if(substr($images,-1) === ';'){
-        $images = substr($images,0,-1);    
-    }    
+
+    if (substr($images, -1) === ';') {
+        $images = substr($images, 0, -1);
+    }
     $image = explode(';', str_replace(" ", "", $images));
 
     for ($i = 0; $i < count($image); $i++) {
@@ -275,15 +276,15 @@ function tratarImagemGallery(string $img)
 {
     $result = explode('.jpg;', $img);
     $result2 = '';
-    for($i = 0; $i < count($result)-1; $i++){
-        
-        $result2 .= substr($result[$i],-2,2).';';
+    for ($i = 0; $i < count($result) - 1; $i++) {
+
+        $result2 .= substr($result[$i], -2, 2) . ';';
     }
 
     //$result3 = explode('-', $result2)
-   
-    
-  return $result2;
+
+
+    return $result2;
 }
 
 
@@ -304,4 +305,64 @@ function buildButtonListCategory(): string
         '</div>';
 
     return $button;
+}
+
+
+/**
+ * [Description for buildOptionCategory]
+ *
+ * @param string|null $category
+ * 
+ * @return string
+ * 
+ */
+function buildOptionCategory(string $category = null): string
+{
+    $options = "";
+    $categories = new Category();
+    $values = $categories->defineCategories();
+
+    for ($i = 0; $i < count($values); $i++) {
+
+        if (!empty($category) && $category !== $values[$i]) {
+            $options .= '<option value="' . $values[$i] . '">' . toCategory($values[$i]) . '</option>';
+        }
+    }
+    return $options;
+}
+
+function copyr($source, $dest)
+{
+   // COPIA UM ARQUIVO
+   if (is_file($source)) {
+      return copy($source, $dest);
+   }
+ 
+   // CRIA O DIRETÓRIO DE DESTINO
+   if (!is_dir($dest)) {
+      mkdir($dest);
+      chmod($dest, 0777);
+      echo "DIRET&Oacute;RIO $dest CRIADO<br />";
+   }
+ 
+   // FAZ LOOP DENTRO DA PASTA
+   $dir = dir($source);
+   while (false !== $entry = $dir->read()) {
+       
+      // PULA "." e ".."
+      if ($entry == '.' || $entry == '..') {
+         continue;
+      }
+ 
+      // COPIA TUDO DENTRO DOS DIRETÓRIOS
+      if ($dest !== "$source/$entry") {
+         copyr("$source/$entry", "$dest/$entry");   
+         chmod("$dest/$entry", 0777);      
+         echo "COPIANDO $entry de $source para $dest <br />";
+      }
+   }
+ 
+   $dir->close();
+   return true;
+ 
 }

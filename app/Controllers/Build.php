@@ -9,6 +9,7 @@ use App\Controllers\BaseController;
 class Build extends BaseController
 {
     public $erros = '';
+    public $alocacao = '';    
 
     public function index($category)
     {
@@ -23,6 +24,13 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
+        if(session()->get ('success')){           
+            $msg = [
+                'message'=>'<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo alterado com sucesso!',
+                'alert' => 'success'
+            ];
+        }
+        session()->destroy();
 
         $dataCategory = $this->category->getArticleMain($category);
         krsort($dataCategory);
@@ -98,6 +106,40 @@ class Build extends BaseController
         );
 
         $page = !$dataCategory['error'] ? 'buildEdit' : 'buildErro'; 
+
+        $parser = \Config\Services::renderer();
+        $parser->setData($this->style);
+        $parser->setData($data);
+        $parser->setData($this->dataHeader);
+        $parser->setData($this->javascript);
+        return $parser->render('admin/'.$page);
+    }
+    public function editCategory($id, $category)
+    {
+        $msg = [
+            'message' => '',
+            'alert' => ''
+        ];
+        if (session()->has('erro')) {
+            $this->erros = session('erro');
+            $msg = [
+                'message' => '<i class="fa fa-exclamation-triangle"></i> Opps! Erro(s) no preenchimento!',
+                'alert' => 'danger'
+            ];
+        }
+        $article = new ArticleModel();
+        $dataCategory = $article->getById($id, $category);
+       
+        
+
+        $data = array(
+            'msgs' => $msg,
+            'erro' => $this->erros,
+            'dataCategory' => $dataCategory,
+
+        );
+
+        $page = !$dataCategory['error'] ? 'buildEditCategory' : 'buildErro'; 
 
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
@@ -221,6 +263,110 @@ class Build extends BaseController
         $parser->setData($this->javascript);
         return $parser->render('admin/build');
     }
+    public function updateCategory()
+    {
+        if ($this->request->getMethod() !== 'post') {
+            return redirect()->to('/build');
+        }
+        /*$validated = $this->validate([
+            'imagem' => [
+                'rules'=> 'uploaded[imagem]',
+                'label' =>'imagem',
+                //'mime_in[imagem,image/jpg,image/jpeg,image/gif,image/png]',
+                //'max_size[imagem,4096]',
+            ],
+        ]);*/
+        $val = $this->validate(
+            [               
+                'newCategory' => 'equalCategory[category]',
+              
+            ],
+            [
+               'newCategory' =>[
+                      'equalCategory' => 'Ops! Categoria escolhida igual a anterior.'
+                  ]  
+                ],
+               
+        );
+       
+        //dd($val);
+        if(!$val){ 
+            return redirect()->back()->withInput()->with('erro', $this->validator);
+        } else {            
+            /*$blog['title'] = $this->request->getPost('title');
+            $blog['text'] = $this->request->getPost('text');
+            $blog['image-main'] = $this->request->getPost('image-main');
+            $blog['data_postagem'] = date('d/m/Y');*/
+
+            /*Busca o artigo*/
+            
+            $newCategory = $this->request->getPost('newCategory');
+            $category = $this->request->getPost('category');
+            $dataCategory = $this->category->getArticleMain($category);
+            $dataArticle = [];
+
+            foreach ($dataCategory as $key => $dados) {
+                if ($dados['id'] === $this->request->getPost('id')) {
+                    $dataArticle['id'] = $dados['id'];
+                    $dataArticle['slug'] = $dados['slug'];
+                    $dataArticle['title'] = $dados['title'];
+                    $dataArticle['category'] = $newCategory;
+                    $dataArticle['date'] = $dados['date'];
+                    $dataArticle['image-main'] = $dados['image-main'];
+                    $dataArticle['resume'] = $dados['resume'];
+                    $dataArticle['text'] = $dados['text'];
+                    $dataArticle['text-second'] = $dados['text-second'];
+                    $dataArticle['image-text-second'] = $dados['image-text-second'];
+                    $dataArticle['quote'] = $dados['quote'];
+                    $dataArticle['quote-author'] = $dados['quote-author'];
+                    $dataArticle['image-video'] = $dados['image-video'];
+                    $dataArticle['link-video'] = $dados['link-video'];
+                    $dataArticle['title-video'] = $dados['title-video'];
+                    $dataArticle['text-video'] = $dados['text-video'];
+                    $dataArticle['image-gallery'] = $dados['image-gallery'];
+                    $dataArticle['font'] = $dados['font'];
+                    $dataArticle['access'] = $dados['access'];
+                    break;
+                }
+            }         
+            /*Atualiza o arquivo*/
+            $this->articleUpdate = new ArticleModel();
+            $update = $this->articleUpdate->updateCategory($dataArticle,$category, $newCategory);
+           
+            //$this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
+            $delete = $this->articleUpdate->excluirArticle($this->request->getPost('id'), $category);
+            
+            session()->set([
+                'success' => true,                
+            ]);
+
+            return redirect()->to('build/category/'.$newCategory);
+        }
+
+        $datas['msgs'] = [
+            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo alterado com sucesso!',
+            'alert' => 'success',
+
+        ];
+
+      
+        /*$dataCategory = $this->category->getArticleMain($category);
+        krsort($dataCategory);
+
+        $data = [
+            'erro' => '',
+            "data" => $dataCategory,
+            'category' => $category
+        ];
+
+        $parser = \Config\Services::renderer();
+        $parser->setData($this->style);
+        $parser->setData($data);
+        $parser->setData($datas);
+        $parser->setData($this->dataHeader);
+        $parser->setData($this->javascript);
+        return $parser->render('admin/build');*/
+    }
     public function buildSchool()
     {
         $msg = [
@@ -282,6 +428,9 @@ class Build extends BaseController
                 ],
                 'resume'        => [
                     'required' => 'O campo RESUMO tem preenchimento obrigatório!'
+                ],
+                'category'        => [
+                    'required' => 'O campo CATEGORIA tem preenchimento obrigatório!'
                 ],
                 /*'image-main'        => [
                     'required' => 'O campo IMAGEM PRINCIPAL tem preenchimento obrigatório!'
@@ -389,6 +538,13 @@ class Build extends BaseController
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
         return $parser->render('admin/buildCreate');
+    }
+
+    public function delete(string $id, string $category)
+    {   
+        $this->alocacao =  new ArticleModel();       
+        $this->alocacao->excluirArticle($id, $category);
+
     }
     public function addSchool()
     {

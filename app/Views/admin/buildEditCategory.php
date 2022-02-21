@@ -103,69 +103,101 @@ $javascript = [
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
-                                <strong><?= $msgs['message']; ?></strong>
-                            </div>
+                    <div class=" border-left-<?= $msgs['alert'] ?> alert alert-show alert-<?= $msgs['alert'] ?>">
+                        <strong><?= $msgs['message']; ?></strong>
+
+                    </div>
                     <div class="contact-box ts-grid-box">
                         <div class="clearfix">
-                            <h2 class="float-left"><span>LISTAR ARTIGOS [ <?=toCategory($category); ?> ]</span>
-                            <p>QTDE :: <?=str_pad(count($data), 2, '0', STR_PAD_LEFT)?></p></h2>  
+                            <h2 class="float-left"><span>EDITANDO ARTIGO [ <?= $dataCategory['id']; ?> ]</span></h2>
                             <div class="float-right">
                                 <?= anchor('/build/create', 'CRIAR ARTIGO', ['class' => 'btn btn-primary']); ?>
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         LISTAR ARTIGOS
                                     </button>
-                                    <?=buildButtonListCategory()?>
+                                    <?= buildButtonListCategory() ?>
                                 </div>
                             </div>
-                          
-
                         </div>
-                        <!-- Example single danger button -->
-
                         <hr>
 
                         <?php
-                        echo form_open('/build/add', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
+                        echo form_open('/build/updateCategory', ['enctype' => 'multipart/form-data', 'role' => 'form', 'id' => 'contact-form']) ?>
 
                         <div class="error-container">
-                           
+
                             <div class="row">
-                                <div class="table">
-                                    <table class="table table-striped">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th>TÍTULO</th>
-                                                <th>IMAGEM</th>
-                                                <th>RESUMO</th>
-                                                <th class="text-center" colspan="2">AÇÃO</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            foreach ($data as $item) : ?>
-                                                <tr>
-                                                    <td><?= $item['title']; ?></td>
-                                                    <td><img src="<?= base_url(); ?>/assets/img/<?= $item['category']; ?>/<?= $item['slug']; ?>/<?= $item['image-main']; ?>" class="d-flex sidebar-img" /></td>
-                                                    <td><?=word_limiter($item['resume'],15,' ...'); ?></td>
-                                                    <td class="text-center"><?= anchor('build/edit/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Editar</span>'); ?></td>
-                                                    <td class="text-center"><?= anchor('build/editCategory/' . $item['id']. '/' .$item['category'], '<span class="btn btn-primary">Mudar categoria</span>'); ?></td>
-                                                </tr>
-                                            <?php endforeach; ?>                                                                                  
-                                        </tbody>
-                                    </table>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Título</label>
+                                        <input value="<?= $dataCategory['title'] ?>" disabled class="form-control form-control-name" name="" id="title" placeholder="Digite um título" type="text">
+                                        <input value="<?= $dataCategory['id'] ?>" class="form-control form-control-name" name="id" id="id" placeholder="Digite um título" type="hidden">
+                                        <input value="<?= $dataCategory['category'] ?>" class="form-control form-control-name" name="category" id="category" placeholder="Digite um título" type="hidden">
+                                    </div>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
+                                
                             </div>
-                        </div>
-                        <!-- Container end-->
-                        </footer>
-                        <!-- footer end -->
-                        <!-- javaScript Files	=============================================================================-->
-                        <?php
-                        foreach ($javascript['js'] as $path) : ?>
-                            <script src="<?= $path['path']; ?>"></script>
-                        <?php endforeach; ?>
+                           
+                          
+                            <div class="row">   
+                                <div class="col-md-6">
+                                <select name="newCategory" class="form-control form-control-name">
+                                        <option value="<?= $dataCategory['category'];?>"><?= toCategory($dataCategory['category']) ?></option>
+                                        <?= buildOptionCategory($dataCategory['category']) ?>
+                                    </select>
+                                    <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('newCategory') : ''; ?></span> 
+                                </div>                              
+                                
+                            </div>
+                            
+                            <div class="text-right"><br>
+                                <button class="btn btn-primary solid blank" type="submit">Salvar</button>
+
+                            </div>
+
+
+                            <?= form_close() ?>
+                        </div><!-- grid box end -->
+                    </div><!-- col end-->
+
+
+                </div><!-- col end-->
+            </div><!-- container end-->
+    </section>
+
+
+
+
+    <!-- newslater end -->
+    <!-- footer start -->
+    <footer class="ts-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-menu text-center">
+
+                    </div>
+                    <div class="copyright-text text-center">
+                        <p>&copy; <?= date('Y'); ?>, Tiberiogeo. All rights</p>
+                    </div>
+                </div>
+                <!-- col end -->
+            </div>
+            <!-- row end -->
+            <div id="back-to-top" class="back-to-top"><button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-up"></i></button></div>
+            <!-- Back to top end -->
+        </div>
+        <!-- Container end-->
+    </footer>
+    <!-- footer end -->
+    <!-- javaScript Files	=============================================================================-->
+    <?php
+    foreach ($javascript['js'] as $path) : ?>
+        <script src="<?= $path['path']; ?>"></script>
+    <?php endforeach; ?>
 </body>
 
 </html>
