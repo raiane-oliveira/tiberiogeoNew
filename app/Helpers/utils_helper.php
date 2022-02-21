@@ -74,6 +74,23 @@ function toCategory(string $category): string
     }
 }
 
+function defineColorCategory($category)
+{
+    switch ($category) {
+        case 'world':
+            return '#ff6e0d';
+        case 'brazil':
+            return '#007dff';
+        case 'geography';
+            return '#4ab106';
+        case 'variety';
+            return '#2c2c2c';
+        case 'curiosity';
+            return '#ab1129';
+        default:
+            return 'INDEFINIDO';
+    }
+}
 /**
  * createSlug
  *

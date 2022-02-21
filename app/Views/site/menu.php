@@ -30,7 +30,7 @@
                                                             <?= anchorArticle(
                                                                 $item['category'],
                                                                 $item['slug'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['slug'] . '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
@@ -39,11 +39,17 @@
                                                             </h3>
                                                         </div>
                                                     </div>
+                                                   
                                                 </div>
                                         <?php
                                             endif;
                                             $count++;
                                         endforeach; ?>
+                                         <div class="megamenu-panel-row active text-center">
+                                             <hr>
+                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-orange-bg']);?>
+                                         </div>
+                                        
                                     </div>
                                 </div>
                             </li>
@@ -63,7 +69,7 @@
                                                             <?= anchorArticle(
                                                                 $item['category'],
                                                                 $item['slug'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['slug'] . '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
@@ -77,6 +83,10 @@
                                             endif;
                                             $count++;
                                         endforeach; ?>
+                                        <div class="megamenu-panel-row active text-center">
+                                            <hr>
+                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-blue-bg']);?>
+                                         </div>
                                     </div>
                                 </div>
                             </li>
@@ -96,7 +106,7 @@
                                                             <?= anchorArticle(
                                                                 $item['category'],
                                                                 $item['slug'],
-                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/'.$item['slug']. '/' . $item['image-main'] . '" alt="">'
+                                                                '<img class="img-fluid" src="' . base_url() . '/assets/img/' . $item['category'] . '/' . $item['slug'] . '/' . $item['image-main'] . '" alt="">'
                                                             ); ?>
                                                         </div>
                                                         <div class="post-content">
@@ -110,23 +120,27 @@
                                             endif;
                                             $count++;
                                         endforeach; ?>
+                                        <div class="megamenu-panel-row active text-center">
+                                            <hr>
+                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-green-bg']);?>
+                                         </div>
                                     </div>
                                 </div>
                             </li>
                             <li><?= anchor('/school', "ESCOLA"); ?></li>
-                            <?php                             
-                            if(getEnv('CI_ENVIRONMENT') === 'development'): ?>
-                             <li>
-                            <?= anchor('#', "ADMIN"); ?>
-                                <ul class="nav-dropdown nav-submenu">
-                                    <li><?= anchor('/build/create', "CRIAR ARTIGO", ['target'=>'_blank']); ?></li>
-                                    <li><?= anchor('/buildSchool', "CRIAR ESCOLA", ['target'=>'_blank']); ?></li>
-                                </ul>    
-                            </li>
-                            <?php endif; ?>   
-                            
-                            
-                            
+                            <?php
+                            if (getEnv('CI_ENVIRONMENT') === 'development') : ?>
+                                <li>
+                                    <?= anchor('#', "ADMIN"); ?>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><?= anchor('/build/create', "CRIAR ARTIGO", ['target' => '_blank']); ?></li>
+                                        <li><?= anchor('/buildSchool', "CRIAR ESCOLA", ['target' => '_blank']); ?></li>
+                                    </ul>
+                                </li>
+                            <?php endif; ?>
+
+
+
                         </ul>
                         <!--nav menu end-->
                     </div>

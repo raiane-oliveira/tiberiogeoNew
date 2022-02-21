@@ -11,7 +11,7 @@
                 <div class="col-lg-8  mb-15">
                     <div class=" mb-30">
                         <div class="clearfix entry-cat-header">
-                            <h2 class="ts-title float-left"><?= toCategory($category); ?></h2>
+                            <h2 class="ts-tidtle float-left" style = "background: <?=defineColorCategory($category)?>; padding: 10px; color: white; font-size:16px"><?= toCategory($category); ?></h2>
                         </div>
                     </div>
                     <div class="post-list pagination__list">
