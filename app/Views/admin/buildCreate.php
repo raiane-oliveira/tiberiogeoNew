@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>
+
 <?php
 
 helper('form');
@@ -115,7 +116,7 @@ $javascript = [
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         LISTAR ARTIGOS
                                     </button>
-                                    <?=buildButtonListCategory()?>
+                                    <?= buildButtonListCategory() ?>
                                 </div>
 
                             </div>
@@ -151,15 +152,15 @@ $javascript = [
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('image-main') : ''; ?></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
+                                    <div class="form-group ">
                                         <label>Categoria</label>
-                                        <select name="category" class="form-control form-control-name" >
+                                        <select name="category" class="form-control form-control-name">
                                             <option value="">Selecione ...</option>
-                                            <option value="world" <?= set_select('category', 'world', true) ?>>MUNDO</option>
-                                            <option value="brazil" <?= set_select('category', 'brazil', true) ?>>BRASIL</option>
-                                            <option value="geography" <?= set_select('category', 'geography', true) ?>>GEOGRAFIA</option>
-                                            <option value="curiosity" <?= set_select('category', 'curiosity', true) ?>>CURIOSIDADE</option>
-                                            <option value="variety" <?= set_select('category', 'variety', true) ?>>VARIEDADES</option>
+                                            <option value="world" <?= set_select('category', 'world', false) ?>>MUNDO</option>
+                                            <option value="brazil" <?= set_select('category', 'brazil', false) ?>>BRASIL</option>
+                                            <option value="geography" <?= set_select('category', 'geography', false) ?>>GEOGRAFIA</option>
+                                            <option value="curiosity" <?= set_select('category', 'curiosity', false) ?>>CURIOSIDADE</option>
+                                            <option value="variety" <?= set_select('category', 'variety', false) ?>>VARIEDADES</option>
                                         </select>
 
                                     </div>
