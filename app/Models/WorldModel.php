@@ -16,7 +16,7 @@ class WorldModel extends Model
      */
     public function getById(string $id): array
     {
-        $jsonString = file_get_contents(APPPATH . 'Base/category-world.json');
+        $jsonString = file_get_contents(defineUrlDb().'category-world.json');
         $dataCategory = json_decode($jsonString, true);
 
         $data = [];

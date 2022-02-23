@@ -481,7 +481,7 @@ class Build extends BaseController
             );
 
             // extrai a informação do ficheiro
-            $string = file_get_contents(APPPATH . 'Base/category-' . $this->request->getPost('category') . '.json');
+            $string = file_get_contents(defineUrlDb().'category-' . $this->request->getPost('category') . '.json');
             // faz o decode o json para uma variavel php que fica em array
             $json = json_decode($string, true);
 
@@ -489,7 +489,7 @@ class Build extends BaseController
             $json[] = $dadosArticle;
 
             // abre o ficheiro em modo de escrita
-            $fp = fopen(APPPATH . 'Base/category-' . $this->request->getPost('category') . '.json', 'w');
+            $fp = fopen(defineUrlDb().'category-' . $this->request->getPost('category') . '.json', 'w');
             // escreve no ficheiro em json
             fwrite($fp, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             // fecha o ficheiro
@@ -627,7 +627,7 @@ class Build extends BaseController
                     );
 
                      // extrai a informação do ficheiro
-            $string = file_get_contents(APPPATH . 'Base/school.json');
+            $string = file_get_contents(defineUrlDb().'school.json');
             // faz o decode o json para uma variavel php que fica em array
             $json = json_decode($string, true);
 
@@ -637,7 +637,7 @@ class Build extends BaseController
             $json[$this->request->getPost('type')][] = $dadosArticle;
 
             // abre o ficheiro em modo de escrita
-            $fp = fopen(APPPATH . 'Base/school.json', 'w');
+            $fp = fopen(defineUrlDb().'school.json', 'w');
             // escreve no ficheiro em json
             fwrite($fp, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             // fecha o ficheiro

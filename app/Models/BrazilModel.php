@@ -17,7 +17,7 @@ class BrazilModel extends Model
      */
     public function getById(string $id): array
     {
-        $jsonString = file_get_contents(APPPATH . 'Base/category-brazil.json');
+        $jsonString = file_get_contents(defineUrlDb().'category-brazil.json');
         $dataCategory = json_decode($jsonString, true);
 
         $data = [];

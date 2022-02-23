@@ -103,6 +103,7 @@ class BaseController extends Controller
      */
     public $dataTemperature = [];   
 
+    
     /**
      * Constructor.
      */
@@ -118,7 +119,7 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
 
        
-
+        
         $date = new DateTime();
         $formatter = new IntlDateFormatter(
             'pt_BR',

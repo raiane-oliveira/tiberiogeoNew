@@ -18,7 +18,7 @@ class HomeModel extends Model
      */
     public function getArticleMain(string $category): array
     {       
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);          
             return $dataCategory;
                     
@@ -36,7 +36,7 @@ class HomeModel extends Model
     public function getMenu(string $category): array
     {
 
-        $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+        $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
         $dataCategory = json_decode($jsonString, true);
         return $dataCategory;
     }

@@ -22,7 +22,7 @@ class ArticleModel extends Model
 
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);
             //shuffle($dataCategory);            
             //dd($dataCategory);
@@ -77,7 +77,7 @@ class ArticleModel extends Model
         $data = [];
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);
 
             foreach ($dataCategory as $key => $dados) {
@@ -88,7 +88,7 @@ class ArticleModel extends Model
             }
 
             $article = json_encode($dataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-            file_put_contents(APPPATH . 'Base/category-' . $category . '.json', $article);
+            file_put_contents(defineUrlDb().'category-' . $category . '.json', $article);
             $data['error'] = false;
             $data['message'] = '';
             return $data;
@@ -112,7 +112,7 @@ class ArticleModel extends Model
     {
 
         $article = json_encode($dados, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-        file_put_contents(APPPATH . 'Base/category-' . $category . '.json', $article);
+        file_put_contents(defineUrlDb().'category-' . $category . '.json', $article);
     }
 
     /**
@@ -128,7 +128,7 @@ class ArticleModel extends Model
     {
 
 
-        $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+        $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
         $dataCategory = json_decode($jsonString, true);
 
         $dataArticle = [];
@@ -173,7 +173,7 @@ class ArticleModel extends Model
 
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
 
             $dataCategory = json_decode($jsonString, true);
 
@@ -225,7 +225,7 @@ class ArticleModel extends Model
 
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);
             shuffle($dataCategory);
 
@@ -256,7 +256,7 @@ class ArticleModel extends Model
         $data = [];
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $category . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
             $dataCategory = json_decode($jsonString, true);
             $newDataCategory = [];
             
@@ -277,7 +277,7 @@ class ArticleModel extends Model
            
           
             $article = json_encode($newDataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-            file_put_contents(APPPATH . 'Base/category-' . $category . '.json', $article);
+            file_put_contents(defineUrlDb().'category-' . $category . '.json', $article);
             
          
             $data['error'] = false;
@@ -295,14 +295,14 @@ class ArticleModel extends Model
         $data = [];
         try {
 
-            $jsonString = file_get_contents(APPPATH . 'Base/category-' . $newCategory . '.json');
+            $jsonString = file_get_contents(defineUrlDb().'category-' . $newCategory . '.json');
             $dataCategory = json_decode($jsonString, true);
            
              // aqui é onde adiciona a nova linha ao ao array assignment
             $dataCategory[] = $newDataCategory;            
 
             $article = json_encode($dataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-            file_put_contents(APPPATH . 'Base/category-' . $newCategory . '.json', $article);
+            file_put_contents(defineUrlDb().'category-' . $newCategory . '.json', $article);
             
             $urlBaseImage = '././assets/img/' . $newCategory . '/' . createSlug($newDataCategory['title']);
             $urlBaseImageAntigo = '././assets/img/' . $category . '/' . createSlug($newDataCategory['title']);
@@ -315,24 +315,24 @@ class ArticleModel extends Model
 
             //move($urlBaseImageAntigo,$urlBaseImage);
 
-            //$jsonString = file_get_contents(APPPATH . 'Base/category-' . $newCategory . '.json');
+            //$jsonString = file_get_contents(defineUrlDb().'category-' . $newCategory . '.json');
             //$dataCategory = json_decode($jsonString, true);
             
              // abre o ficheiro em modo de escrita
-             /*$fp = fopen(APPPATH . 'Base/category-' . $newCategory . '.json', 'w');
+             /*$fp = fopen(defineUrlDb().'category-' . $newCategory . '.json', 'w');
              // escreve no ficheiro em json
              fwrite($fp, json_encode($dataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
              // fecha o ficheiro
              fclose($fp);
 
-             $jsonString = file_get_contents(APPPATH . 'Base/category-' . $newCategory . '.json');
+             $jsonString = file_get_contents(defineUrlDb().'category-' . $newCategory . '.json');
              $dataCategory = json_decode($jsonString, true);
 
              dd($dataCategory);*/
  
             
             /*$article = json_encode($newDataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-            file_put_contents(APPPATH . 'Base/category-' . $newCategory . '.json', $article);*/
+            file_put_contents(defineUrlDb().'category-' . $newCategory . '.json', $article);*/
             $data['error'] = false;
             $data['message'] = '';
             return $data;

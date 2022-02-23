@@ -383,3 +383,7 @@ function copyr($source, $dest)
    return true;
  
 }
+
+function defineUrlDb(){
+   return APPPATH.'Base/';
+}

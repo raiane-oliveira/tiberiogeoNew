@@ -1,5 +1,5 @@
 <?= $this->extend('site/layout/default'); ?>
-<?= $this->section('content') ?>
+<?= $this->section('content') ; ?>
 <!-- single post start -->
 <section class="single-post-wrapper post-layout-10">
     <div class="container">
