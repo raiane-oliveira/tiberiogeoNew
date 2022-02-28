@@ -18,6 +18,11 @@
          padding: 5px 6px;
          font-weight: 600;
       }
+      .single-post p strong {
+         background: #fff9b5;
+         padding: 5px 6px;
+         font-weight: 600;
+      }
    </style>
    <?php
    foreach ($css as $path) : ?>
