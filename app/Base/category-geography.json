@@ -271,5 +271,26 @@
         "font": "Brasil Escola; Mundo Educação; Toda Matéria; Tiberiogeo",
         "date": "28/02/2022",
         "access": 1
+    },
+    {
+        "id": "202203021202446581052432",
+        "slug": "a-atmosfera",
+        "title": "A Atmosfera",
+        "resume": "A invisível esfera de gás que envolve a Terra e garante a existência de vida em nosso planeta e protege os seres vivos dos raios ultravioleta.",
+        "text": "<p>A atmosfera&nbsp;(do grego&nbsp;atmos: gases e&nbsp;sphaira: esfera) é uma camada de ar formada por uma mistura de gases que envolve a superfície terrestre, de forma a ser mantida ao redor do planeta em função da força da gravidade. Trata-se de um dos principais elementos responsáveis pela difusão e manutenção das formas de vida da Terra.</p>\r\n<p>Ela é composta predominantemente por nitrogênio, responsável por 78% de seu volume, somado a 21% de oxigênio e 1% de outros gases, como o argônio, o hélio, o neônio e o dióxido de carbono. Esses últimos, por serem menos abundantes, são também chamados de&nbsp;gases raros.</p>\r\n<h3>Camadas da atmosfera</h3>\r\n<p>Assim como o próprio Planeta Terra, a atmosfera é dividida em camadas: troposfera, estratosfera, mesosfera, termosfera e exosfera.&nbsp;</p>\r\n<p>A&nbsp;<strong>TROPOSFERA</strong>&nbsp;é a camada mais importante para os estudos geográficos e para as práticas humanas, pois é nela que se sucede a maioria dos fenômenos meteorológicos, como as chuvas e as variações de umidade. Sua extensão é de cerca de 15 km.</p>\r\n<p>Acima da Troposfera, encontra-se a&nbsp;<strong>ESTRATOSFERA</strong>, que se estende a até 50 km de altitude. Sua importância encontra-se no fato de abrigar a Camada de Ozônio, cuja composição tem a importância de filtrar os raios solares.</p>\r\n<p>A seguir vem a&nbsp;<strong>MESOSFERA</strong>, que se estende a até 80 km de altitude. Por se encontrar distante do calor médio da Terra e relativamente distante dos raios solares, é a camada que apresenta as menores temperaturas atmosféricas.</p>\r\n<p>Depois da Mesosfera vem a&nbsp;<strong>TERMOSFERA</strong>, que chega a atingir 500 km de altitude. Sua importância para o ser humano encontra-se no fato de abrigar gases ionizados que ajudam a refletir e propagar ondas de rádio.</p>\r\n<p>Após a termosfera até o espaço exterior, temos, por fim, a&nbsp;<strong>EXOSFERA</strong>, camada onde os satélites artificiais costumam se posicionar.</p>",
+        "image-main": "a-atmosfera-01.jpg",
+        "category": "geography",
+        "text-second": "<p>A densidade do ar diminui à medida que aumentamos a altitude, sendo que 50% dos gases e partículas em suspensão estão localizados nos primeiros 5 km.</p>\r\n<p> A atmosfera é fundamental para a manutenção da vida na Terra, pois:</p>\r\n<ul>\r\n    <li> É fonte de oxigênio, gás essencial para a vida;\r\n    </li>\r\n    <li>Regula a temperatura e o clima terrestre;\r\n    </li>\r\n    <li>É responsável pela distribuição da água no planeta (chuva);\r\n    </li>\r\n    <li>Protege a Terra das radiações cósmicas e dos meteoros.&nbsp;</li>\r\n    <li><br></li>\r\n</ul>\r\n\r\n<p>A atmosfera também é a responsável por vermos o céu azul durante o dia, pois suas partículas difundem predominantemente a radiação visível neste comprimento de onda.</p>\r\n<h3>Como a Atmosfera protege a Terra?\r\n</h3>\r\n<p>A atmosfera impede que grande parte dos meteoros que se aproximam da Terra cheguem em sua superfície. Muitos queimam com o atrito e o calor da atmosfera.</p>\r\n<p>A radiação ultravioleta é filtrada na camada de ozônio. Essa radiação é extremamente nociva para os seres vivos. Além disso, a atmosfera ainda regula a quantidade de radiação que chega e que é perdida pela superfície terrestre. </p>\r\n<p>Isso evita que o planeta apresente uma variação muito grande de temperatura.</p>",
+        "image-text-second": "a-atmosfera-02.jpg",
+        "quote": "Há vários critérios pelos quais podemos classificar a atmosfera. A divisão mais conhecida, feita de acordo com as variações de temperatura segundo a altitude, reparte a atmosfera em cinco camadas distintas",
+        "quote-author": "",
+        "image-video": "",
+        "link-video": "",
+        "title-video": "",
+        "text-video": "",
+        "image-gallery": "",
+        "font": "Toda Matéria; Brasil Escola",
+        "date": "02/03/2022",
+        "access": 1
     }
 ]
