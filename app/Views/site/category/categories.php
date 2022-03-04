@@ -1,6 +1,9 @@
 <?= $this->extend('site/layout/default'); ?>
 
-<?= $this->section('content') ?>
+<?= $this->section('content');
+header('Content-type: text/html; charset=utf8');
+setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
+ ?>
 
 <div class="body-inner-content category-layout-6">
     <!-- single post start -->
