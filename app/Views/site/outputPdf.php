@@ -1,7 +1,12 @@
+<?php
+header('Content-type: text/html; charset=utf8');
+setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="utf-8">
+     <link rel="shortcut icon" type="image/x-icon" href="http://tiberiogeo.com.br/assets/img/logo/autor.png">
 	<title>Tiberiogeo-A Geografia Levada a Sério!</title>
 	<style>
 		html,

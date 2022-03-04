@@ -1,4 +1,6 @@
 <?php
+header('Content-type: text/html; charset=utf8');
+setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
 echo $this->extend('site/layout/default');
 echo $this->section('content');
    echo view("site/home/section-main");

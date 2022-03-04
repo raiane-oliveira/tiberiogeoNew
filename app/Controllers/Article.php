@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Dompdf\Dompdf;
+//use Dompdf\Dompdf;
 use Dompdf\Options;
 use App\Models\ArticleModel;
 use App\Models\VarietyModel;
@@ -105,7 +105,6 @@ class Article extends BaseController
     public function buildPdf(string $article, string $category)
     {
        
-
         $this->article = new ArticleModel();
 
         $dados = $this->article->getArticle($article, $category);    
@@ -115,10 +114,10 @@ class Article extends BaseController
         $options->setChroot(__DIR__);
         $options->setIsRemoteEnabled(true);
 
-        $pdf = new Dompdf($options);
+        //$pdf = new Dompdf($options);
+        $pdf = new \Dompdf\Dompdf($options) ;
         $pdf->loadHtml($v);
         $pdf->render();
-        $pdf->stream(createSlug($article) . 'pdf', ['Attachment' => false]);
-        //$pdf->output();
+        $pdf->stream(createSlug($article),['attachment'=>'true']);    //$pdf->output();
     }
 }
