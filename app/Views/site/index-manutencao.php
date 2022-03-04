@@ -32,7 +32,7 @@
                     <div class="error-page text-center col ts-grid-box">
                         <div class="error-code">
                             <div class="header-logo text-center">
-                                <a href="http://localhost/tiberiogeo-new/public/index.php"><img src="http://localhost/tiberiogeo-new/public/assets/images/logo/logo-topo.png" alt="" width="450" /></a>                            </div>
+                                <img src="assets/images/logo/logo-topo.png" alt="" width="450" /></div>
                             <hr>
                         </div>
                         <div class="error-message">

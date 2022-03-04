@@ -1,60 +1,35 @@
 {
-    "exercicie": [
+    "exercicie": [       
+      
         {
-            "title": "O Espaço Geográfico e a Construção do Capitalismo",
-            "link": "http://www.tiberiogeo.com.br/texto/Atividade3Ano.pdf",
-            "date": "24/04/1977"
-        },
-        {
-            "id": "202201261749515074492332",
-            "title": "Casa vermelha",
-            "link": "http://localhost/tiberiogeo-new/public/text/RECEITAS LANCHES (1).pdf",
-            "date": "26/01/2021"
-        },
-        {
-            "id": "202202041616374136022314",
-            "title": "teste",
-            "link": "http://localhost/tiberiogeo-new/public/text/Carta proposta - Cleber Dos Santos.pdf",
-            "date": "04/02/2022"
+            "id": "",
+            "title": "",
+            "link": "",
+            "date": ""
         }
     ],
     "evidences": [
         {
-            "title": "A Ordem Mundial e a Globalização",
-            "link": "http://www.tiberiogeo.com.br/texto/OrdemMundialGlobalizacao_Slide_2.pdf",
-            "date": "24/04/1977"
-        },
-        {
-            "id": "202201211613126925374413",
-            "title": "Poupança da caixa",
-            "link": "Jose da silva",
-            "date": "21/01/2022"
+            "id": "",
+            "title": "",
+            "link": "",
+            "date": ""
         }
     ],
     "slide": [
         {
-            "id": "202201211605014103459172",
-            "title": "maria jose da silva",
-            "link": "silva",
-            "date": "21/01/2022"
+            "id": "",
+            "title": "",
+            "link": "",
+            "date": ""
         }
     ],
     "text": [
         {
-            "title": "Introdução à Geografia",
-            "link": "http://www.tiberiogeo.com.br/texto/IntroducaoGeogreafia_2020.pdf",
-            "date": "24/04/1977"
-        },
-        {
-            "title": "Formação do Território Brasileiro",
-            "link": "http://www.tiberiogeo.com.br/texto/FormacaoBrasil.pdf",
-            "date": "24/04/1977"
-        },
-        {
-            "id": "202201211608078401514256",
-            "title": "Cleber dos Santos Sousa",
-            "link": "PARA",
-            "date": "21/01/2022"
+            "id": "",
+            "title": "",
+            "link": "",
+            "date": ""
         }
     ]
 }
