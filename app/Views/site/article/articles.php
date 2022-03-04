@@ -1,7 +1,7 @@
 <?= $this->extend('site/layout/default'); ?>
-<?= $this->section('content') ; 
+<?= $this->section('content');
 header('Content-type: text/html; charset=utf8');
-setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
+setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
 ?>
 <!-- single post start -->
 <section class="single-post-wrapper post-layout-10">
@@ -48,8 +48,12 @@ setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
                             if ($dataArticle['image-gallery']) : ?>
                                 <div class="gallery-img">
                                     <?php
+
                                     $imageGallery = explode(';', trim($dataArticle['image-gallery']));
-                                    for ($i = 0; $i < count($imageGallery); $i++) : ?>
+
+                                    $totalImg = count($imageGallery) - 1;
+
+                                    for ($i = 0; $i < $totalImg; $i++) : ?>
                                         <a href="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" class="gallery-popup">
                                             <img src="<?= base_url(); ?>/assets/img/<?= $category; ?>/<?= $dataArticle['slug']; ?>/<?= $imageGallery[$i]; ?>" alt="" class="px-1 py-1">
                                         </a>

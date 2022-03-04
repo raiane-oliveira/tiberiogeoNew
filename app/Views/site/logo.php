@@ -5,7 +5,8 @@
                 <div class="header-logo">
                     <?php
                     $img = [
-                        'src' => base_url() . '/assets/images/logo/logo-topo.png'
+                        'src' => base_url() . '/assets/images/logo/logo-topo.png',
+                        'class'=>'img-fluid'
                     ];
                     echo anchor('/', img($img)); ?>
                 </div>
