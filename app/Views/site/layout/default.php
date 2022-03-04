@@ -7,6 +7,11 @@
    <!-- Mobile Specific Metas ================================-->
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="author" content="Tibério Mendonça de Lima" />
+   <meta name="keywords" content="Geografia, Atualidades, Mundo, Brasil, Paraíba, Novidades, Acontecimentos, Curiosidades geográficas, Temas para o ENEM" />
+   <meta name="description" content="Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES." />
+   <meta name="application-name" content="Tiberiogeo">
+ 
    <link rel="shortcut icon" type="image/x-icon" href="<?= $favico; ?>">
    <!-- Site Title- -->
    <title><?= esc($title); ?></title>
@@ -18,6 +23,7 @@
          padding: 5px 6px;
          font-weight: 600;
       }
+
       .single-post p strong {
          background: #fff9b5;
          padding: 5px 6px;
