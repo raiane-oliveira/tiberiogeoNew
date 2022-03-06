@@ -19,9 +19,14 @@ class Category extends BaseController
      */
     public function index(string $category): string
 	{         
+       
+        $page = 'site/category/categories';
 	   
 	    $dataCategory = $this->category->getArticleMain($category);
-        krsort($dataCategory);  
+        krsort($dataCategory);         
+        if (isset($dataCategory['error'])) {
+            $page = 'site/error404.php';
+        }
 
          /*Define os favoritos*/
          $categoryFavorite = 'geography';
@@ -54,7 +59,7 @@ class Category extends BaseController
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-		return $parser->render('site/category/categories');
+		return $parser->render($page);       
         
 	}
 

@@ -18,10 +18,18 @@ class HomeModel extends Model
      */
     public function getArticleMain(string $category): array
     {       
+        $dataCategory = [];
+
+        try {
             $jsonString = file_get_contents(defineUrlDb().'category-' . $category . '.json');
-            $dataCategory = json_decode($jsonString, true);          
+            $dataCategory = json_decode($jsonString, true);            
+            return $dataCategory;    
+        }
+        catch (Exception $e) {
+            $dataCategory['error'] = true;
+            $dataCategory['message'] = "Erro genérico";
             return $dataCategory;
-                    
+        }                
     }
 
 
