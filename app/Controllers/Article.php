@@ -86,7 +86,7 @@ class Article extends BaseController
 
           
         $dataHeader = [
-	        "title" => "TiberioGeo - ".$dataCategory['title'],
+	        "title" => "Tiberiogeo - ".$dataCategory['title'],
             "favico" => base_url()."/assets/img/logo/autor.png",
             "resume" => $dataCategory['resume'],
             "link" => $dataCategory['slug'],

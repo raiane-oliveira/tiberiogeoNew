@@ -1,11 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-   <?php 
-   $url = isset($category) ? base_url().'/article/'.$category.'/'.$link : base_url();
-   $image = isset($category) ? base_url().'/assets/img/'.$category.'/'.$link.'/'.$image : base_url();
-   ?>
+<head>   
    <!-- Basic Page Needs =====================================-->
    <meta charset="utf-8">
    <!-- Mobile Specific Metas ================================-->
@@ -15,12 +11,15 @@
    <meta name="keywords" content="Geografia, Atualidades, Mundo, Brasil, Paraíba, Novidades, Acontecimentos, Curiosidades geográficas, Temas para o ENEM" />
    <meta name="description" content="Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES." />
    <meta name="application-name" content="Site Tiberiogeo">
-   <meta property="og:title" content="<?= esc($title); ?>" />
-   <meta property="og:description" content="<?= isset($resume) ? esc($resume) : 'Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES.' ; ?>"/>
-   <meta property="og:url" content="<?=$url?>"/>
-   <meta property="og:image" content="<?=$image?>" />
+   <?php if (isset($resume)) : ?>
+      <meta property="og:title" content="<?= esc($title); ?>" />
+      <meta property="og:description" content="<?= isset($resume) ? esc($resume) : 'Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES.'; ?>" />
+      <meta property="og:url" content="<?= base_url() . '/article/' . $category . '/' . $link;?>" />
+      <meta property="og:image" content="<?= base_url() . '/assets/img/' . $category . '/' . $link . '/' . $image; ?>" />
+   <?php endif ?>
 
- 
+
+
    <link rel="shortcut icon" type="image/x-icon" href="<?= $favico; ?>">
    <!-- Site Title- -->
    <title><?= esc($title); ?></title>
