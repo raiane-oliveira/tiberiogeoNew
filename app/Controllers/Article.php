@@ -44,7 +44,7 @@ class Article extends BaseController
         if ($dataCategory['error'] == false) {
 
             $page = 'articles';
-           
+                       
             /*Atualiza o arquivo*/
             $this->articleUpdate = new ArticleModel();
             /*$this->articleUpdate->updateAccesArticle($dataCategory['id'],$category);*/
@@ -79,15 +79,25 @@ class Article extends BaseController
                 "dataMenuBrazil" => $this->menuBrazil,
                 "dataMenuGeography" => $this->menuGeography,
                 "dataCuriosity" => $dataCategoryCuriosity,
-                "dataVariety" => $dataCategoryVariety,
+                "dataVariety" => $dataCategoryVariety,               
                 //"cotacaoDolar" => $dataCotacao['bid']
             ];
         }
 
+          
+        $dataHeader = [
+	        "title" => "TiberioGeo - ".$dataCategory['title'],
+            "favico" => base_url()."/assets/img/logo/autor.png",
+            "resume" => $dataCategory['resume'],
+            "link" => $dataCategory['slug'],
+            "image" => $dataCategory['image-main'],
+            "category" => $dataCategory['category']
+            
+        ];
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
-        $parser->setData($this->dataHeader);
+        $parser->setData($dataHeader);
         $parser->setData($this->javascript);
         
         return $parser->render('site/article/' . $page);
