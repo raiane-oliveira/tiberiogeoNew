@@ -62,6 +62,21 @@ class ArticleModel extends Model
         }
     }
 
+    public function getArticleCurrent()
+    {
+        try {
+
+            $jsonString = file_get_contents(defineUrlDb().'categories.json');
+            $dataCategory = json_decode($jsonString, true);            
+            return $dataCategory;
+        } catch (Exception $e) {
+            $data['error'] = true;
+            $data['message'] = "Erro genérico";
+            return $data;
+        }
+
+    }
+
    
     /**
      * [Description for updateAccesArticle]

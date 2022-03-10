@@ -519,6 +519,20 @@ class Build extends BaseController
                 return view('/admin/blog/cadastrar-blog', $data);
             }*/
             //return view('/admin/blog/cadastrar-blog', $data);
+
+            $new = file_get_contents(defineUrlDb().'categories.json');
+            $json = json_decode($new, true);
+
+            // aqui é onde adiciona a nova linha ao ao array assignment
+            $json = $dadosArticle;
+
+            // abre o ficheiro em modo de escrita
+            $fp2 = fopen(defineUrlDb().'categories.json', 'w');
+            // escreve no ficheiro em json
+            fwrite($fp2, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+            // fecha o ficheiro
+            fclose($fp2);
+           
         }
 
         $datas['msgs'] = [

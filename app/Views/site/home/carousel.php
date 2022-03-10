@@ -1,43 +1,21 @@
 <div class="col-lg-8 col-md-12">
     <div id="featured-slider" class="owl-carousel ts-overlay-style ts-featured">
 
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/world/<?= $dataWorld['slug']; ?>/<?= $dataWorld['image-main']; ?>)">
-            <?= anchorCategory($dataWorld['category'], true); ?>
-            <?php //anchor('category/' . $dataWorld['category'], toCategory($dataWorld['category']), array('class' => 'post-cat ts-orange-bg')); 
-            ?>
-            <div class="overlay-post-content">
-                <div class="post-content">
-                    <h2 class="post-title lg">
-                        <?= anchorArticle($dataWorld['category'], $dataWorld['slug'], $dataWorld['title']); ?>
+        <?php
 
-                    </h2>
-                    <p class="text-white"><?= $dataWorld['resume']; ?></p>
-                    <ul class="post-meta-info">
-                        <li class="author">
-                            <?php
-                            $image = [
-                                'src' => base_url() . '/assets/images/avater/logo-avater.png',
-                            ];
-                            echo anchor('/', img($image) . 'Tiberiogeo'); ?>
-                        </li>
-                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataWorld['date']); ?></li>
+        $atual = $dataCurrent;?>
 
-                    </ul>
-                </div>
-            </div>
-            <!--/ Featured post end -->
-        </div>
         <!-- Item 1 end -->
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/brazil/<?= $dataBrazil['slug']; ?>/<?= $dataBrazil['image-main']; ?>)">
+        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/<?=$atual['category'];?>/<?= $atual['slug']; ?>/<?= $atual['image-main']; ?>)">
 
-            <?= anchorCategory($dataBrazil['category'], true); ?>
+            <?= anchorCategory($atual['category'], true); ?>
 
             <div class="overlay-post-content">
                 <div class="post-content">
                     <h2 class="post-title lg">
-                        <?= anchorArticle($dataBrazil['category'], $dataBrazil['slug'], $dataBrazil['title']); ?>
+                        <?= anchorArticle($atual['category'], $atual['slug'], $atual['title']); ?>
                     </h2>
-                    <p class="text-white"><?= $dataBrazil['resume']; ?></p>
+                    <p class="text-white"><?= $atual['resume']; ?></p>
                     <ul class="post-meta-info">
                         <li class="author">
                             <?php
@@ -46,38 +24,53 @@
                             ];
                             echo anchor('/', img($image) . 'Tiberiogeo'); ?>
                         </li>
-                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataBrazil['date']); ?></li>
+                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($atual['date']); ?></li>
                     </ul>
                 </div>
             </div>
             <!--/ Featured post end -->
         </div>
-        <!-- Item 2 end -->
-        <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/geography/<?= $dataGeography['slug']; ?>/<?= $dataGeography['image-main']; ?>)">
 
-            <?= anchorCategory($dataGeography['category'], true); ?>
 
-            <div class="overlay-post-content">
-                <div class="post-content">
-                    <h2 class="post-title lg">
-                        <?= anchorArticle($dataGeography['category'], $dataGeography['slug'], $dataGeography['title']); ?>
-                    </h2>
-                    <p class="text-white"><?= $dataGeography['resume']; ?></p>
-                    <ul class="post-meta-info">
-                        <li class="author">
-                            <?php
-                            $image = [
-                                'src' => base_url() . '/assets/images/avater/logo-avater.png',
-                            ];
-                            echo anchor('/', img($image) . 'Tiberiogeo'); ?>
-                        </li>
-                        <li><i class="fa fa-clock-o"></i> <?= toDatePost($dataGeography['date']); ?></li>
-                    </ul>
+        <?php
+        $categories = [
+            'world' => $dataWorld,
+            'brazil' => $dataBrazil,
+            'geography' => $dataGeography
+        ];
+
+        foreach ($categories as $category) :
+            if ($category['category'] != $atual['category']) :
+        ?>
+                <div class="item" style="background-image:url(<?= base_url(); ?>/assets/img/<?= $category['category']; ?>/<?= $category['slug']; ?>/<?= $category['image-main']; ?>)">
+                    <?= anchorCategory($category['category'], true); ?>
+                    <?php //anchor('category/' . $dataWorld['category'], toCategory($dataWorld['category']), array('class' => 'post-cat ts-orange-bg')); 
+                    ?>
+                    <div class="overlay-post-content">
+                        <div class="post-content">
+                            <h2 class="post-title lg">
+                                <?= anchorArticle($category['category'], $category['slug'], $category['title']); ?>
+
+                            </h2>
+                            <p class="text-white"><?= $category['resume']; ?></p>
+                            <ul class="post-meta-info">
+                                <li class="author">
+                                    <?php
+                                    $image = [
+                                        'src' => base_url() . '/assets/images/avater/logo-avater.png',
+                                    ];
+                                    echo anchor('/', img($image) . 'Tiberiogeo'); ?>
+                                </li>
+                                <li><i class="fa fa-clock-o"></i> <?= toDatePost($category['date']); ?></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/ Featured post end -->
                 </div>
-            </div>
-            <!--/ Featured post end -->
-        </div>
-        <!-- Item 3 end -->
+        <?php endif;
+        endforeach ?>
+
     </div>
     <!-- Featured owl carousel end-->
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\ArticleModel;
 use App\Models\VarietyModel;
 use App\Models\CuriosityModel;
 
@@ -10,6 +11,8 @@ class Home extends BaseController
 
     public function index()
     {
+        $articleCurrentCategory = new ArticleModel();
+        $ArticleCurrent = $articleCurrentCategory->getArticleCurrent();   
 
         $dataCategoryWorld = $this->category->getArticleMain('world');
         $dataCategoryBrazil = $this->category->getArticleMain('brazil');
@@ -46,6 +49,7 @@ class Home extends BaseController
             "dataMenuWorld" => $this->menuWorld,
             "dataMenuBrazil" => $this->menuBrazil,
             "dataMenuGeography" => $this->menuGeography,
+            'dataCurrent' =>  $ArticleCurrent,
         ];
 
 
