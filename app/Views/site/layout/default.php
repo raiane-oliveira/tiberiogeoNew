@@ -10,6 +10,8 @@
    <meta name="author" content="Tibério Mendonça de Lima" />
    <meta name="keywords" content="Geografia, Atualidades, Mundo, Brasil, Paraíba, Novidades, Acontecimentos, Curiosidades geográficas, Temas para o ENEM" />
    <meta name="description" content="Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES." />
+   <meta rel="canonical" href="https://tiberiogeo.com.br">
+   <meta name="robots" content="index, nofollow">
    <meta name="application-name" content="Site Tiberiogeo">
    <?php if (isset($resume)) : ?>
       <meta property="og:title" content="<?= esc($title); ?>" />

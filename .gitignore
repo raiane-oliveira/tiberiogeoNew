@@ -6,6 +6,8 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+*.htaccess
+public/.htaccess
 
 # OS X Thumbnails
 ._*
