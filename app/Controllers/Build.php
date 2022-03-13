@@ -636,7 +636,7 @@ class Build extends BaseController
                     $dadosArticle = array(
                         'id' => generateId(10, false, false, true, false),
                         'title' => $this->request->getPost('title'),
-                        'link' => base_url() . '/text/' . $arquivo->getName(),
+                        'link' => '/text/' . $arquivo->getName(),
                         'date' => date('d/m/Y'),
                     );
 
