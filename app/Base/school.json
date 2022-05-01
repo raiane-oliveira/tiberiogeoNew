@@ -7,14 +7,19 @@
             "date": "10/04/2022"
         }
     ],
-    "evidences": [
-            ],
+    "evidences": [],
     "slide": [
         {
             "id": "202204021838260359781243",
             "title": "A Construção do Espaço Geográfico e a Formação do Capitalismo",
             "link": "/text/ConstrucaoEspacoGeograficoGlobalizacao.pdf",
             "date": "02/04/2022"
+        },
+        {
+            "id": "202205011019554915684331",
+            "title": "A Velha e Nova Ordem Mundial",
+            "link": "/text/VelhaNovaOrdemMundial.pdf",
+            "date": "01/05/2022"
         }
     ],
     "text": [
