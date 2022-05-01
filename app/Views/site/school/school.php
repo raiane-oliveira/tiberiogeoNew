@@ -45,7 +45,7 @@
                                                 <a href="#" class="green-color"><?= $item['date']; ?></a>
                                             </span>
                                             <h4 class="post-title">
-                                                <?= anchor($item['link'], $item['title'], ['target' => '_blank']); ?>
+                                                <?= anchor(base_url().$item['link'], $item['title'], ['target' => '_blank']); ?>
                                             </h4>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                                 <a href="#" class="green-color"><?= $item['date']; ?></a>
                                             </span>
                                             <h4 class="post-title">
-                                                <?= anchor($item['link'], $item['title'], ['target' => '_blank']); ?>
+                                                <?= anchor(base_url().$item['link'], $item['title'], ['target' => '_blank']); ?>
                                             </h4>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                                 <a href="#" class="green-color"><?= $item['date']; ?></a>
                                             </span>
                                             <h4 class="post-title">
-                                                <?= anchor($item['link'], $item['title'], ['target' => '_blank']); ?>
+                                                <?= anchor(base_url().$item['link'], $item['title'], ['target' => '_blank']); ?>
                                             </h4>
                                         </div>
                                     </div>
