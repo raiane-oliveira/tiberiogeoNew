@@ -7,6 +7,7 @@ helper('form');
 $style = [
     "css" => [
         //["path" => base_url()."/assets/css/uikit.min.css"],
+        ["path" => base_url() . "/assets/css/jodit.es2018.min.css"],
         ["path" => base_url() . "/assets/css/bootstrap.min.css"],
         ["path" => base_url() . "/assets/css/font-awesome.min.css"],
         ["path" => base_url() . "/assets/css/animate.css"],
@@ -18,7 +19,7 @@ $style = [
         ["path" => base_url() . "/assets/css/style.css"],
         ["path" => base_url() . "/assets/css/colors/color-0.css"],
         ["path" => base_url() . "/assets/css/responsive.css"],
-        //["path" => base_url() . "/assets/css/jodit.es2018.min.css"],
+       
 
     ],
 ];
@@ -30,8 +31,10 @@ $dataDefault = [
 ];
 $javascript = [
     "js" => [
+        ["path" => base_url() . "/assets/js/jodit.es2018.min.js"],
         //["path"=> base_url()."/assets/js/jquery.min.js"],
-        ["path" => "//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"],
+        //["path" => "//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"],
+        ["path" => base_url() . "/assets/js/jquery-1.12.4.min.js"],
         ["path" => base_url() . "/assets/js/navigation.js"],
         //["path"=> base_url()."/assets/js/uikit.min.js"],
         //["path"=> base_url()."/assets/js/uikit-icons.js"],
@@ -43,7 +46,7 @@ $javascript = [
         ["path" => base_url() . "/assets/js/smoothscroll.js"],
         ["path" => base_url() . "/assets/js/main.js"],
         ["path" => base_url() . "/assets/js/my.js"],
-        //["path" => base_url() . "/assets/js/jodit.es2018.min.js"],
+        
 
     ]
 ];
