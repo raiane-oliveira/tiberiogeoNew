@@ -12,7 +12,11 @@ class Home extends BaseController
     public function index()
     {
         $articleCurrentCategory = new ArticleModel();
-        $ArticleCurrent = $articleCurrentCategory->getArticleCurrent();   
+        $ArticleCurrentFinal = $articleCurrentCategory->getArticleCurrent();   
+       
+        $endArticleCategory = new ArticleModel();
+        $ArticleCurrent = $endArticleCategory->getById(
+            $ArticleCurrentFinal['id'],$ArticleCurrentFinal['category']);
 
         $dataCategoryWorld = $this->category->getArticleMain('world');
         $dataCategoryBrazil = $this->category->getArticleMain('brazil');

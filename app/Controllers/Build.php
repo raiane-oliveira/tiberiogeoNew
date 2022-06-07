@@ -114,6 +114,40 @@ class Build extends BaseController
         $parser->setData($this->javascript);
         return $parser->render('admin/'.$page);
     }
+    public function deleteArticle($id, $category)
+    {
+        $msg = [
+            'message' => '',
+            'alert' => ''
+        ];
+        if (session()->has('erro')) {
+            $this->erros = session('erro');
+            $msg = [
+                'message' => '<i class="fa fa-exclamation-triangle"></i> Opps! Erro(s) no preenchimento!',
+                'alert' => 'danger'
+            ];
+        }
+        $article = new ArticleModel();
+        $dataCategory = $article->getById($id, $category);
+       
+        
+
+        $data = array(
+            'msgs' => $msg,
+            'erro' => $this->erros,
+            'dataCategory' => $dataCategory,
+
+        );
+
+        $page = !$dataCategory['error'] ? 'buildDelete' : 'buildErro'; 
+
+        $parser = \Config\Services::renderer();
+        $parser->setData($this->style);
+        $parser->setData($data);
+        $parser->setData($this->dataHeader);
+        $parser->setData($this->javascript);
+        return $parser->render('admin/'.$page);
+    }
     public function editCategory($id, $category)
     {
         $msg = [
@@ -147,6 +181,27 @@ class Build extends BaseController
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
         return $parser->render('admin/'.$page);
+    }
+
+    public function del(){
+        if ($this->request->getMethod() !== 'post') {
+            return redirect()->to('/build');
+        }
+
+        /*Busca o artigo*/
+        $category = $this->request->getPost('category');
+        
+        /*Atualiza o arquivo*/
+        $this->articleUpdate = new ArticleModel();
+        
+        //$this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
+        $delete = $this->articleUpdate->excluirArticle($this->request->getPost('id'), $category);
+        
+        session()->set([
+            'success' => true,                
+        ]);
+
+        return redirect()->to('build/category/'.$category);
     }
     public function update()
     {
@@ -524,7 +579,11 @@ class Build extends BaseController
             $json = json_decode($new, true);
 
             // aqui é onde adiciona a nova linha ao ao array assignment
-            $json = $dadosArticle;
+            $dadosArticleNew = [
+                'id' => $dadosArticle['id'],
+                'category'=> $dadosArticle['category']
+            ];
+            $json[] = $dadosArticleNew;
 
             // abre o ficheiro em modo de escrita
             $fp2 = fopen(defineUrlDb().'categories.json', 'w');

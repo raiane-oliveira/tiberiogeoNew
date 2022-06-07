@@ -44,9 +44,11 @@ $routes->get('/build', 'Build::index');
 $routes->get('/build/category/(:any)', 'Build::index/$1');
 $routes->get('/build/create', 'Build::create');
 $routes->get('/build/edit/(:any)/(:any)', 'Build::edit/$1/$2');
+$routes->get('/build/delete/(:any)/(:any)', 'Build::deleteArticle/$1/$2');
 $routes->post('/build/update', 'Build::update');
 $routes->post('/build/add', 'Build::add');
 $routes->get('/build/delete', 'Build::delete');
+$routes->post('/build/delArticle', 'Build::del');
 $routes->get('/build/editCategory', 'Build::editCategory');
 $routes->post('/build/updateCategory', 'Build::updateCategory');
 

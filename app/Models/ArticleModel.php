@@ -68,7 +68,9 @@ class ArticleModel extends Model
 
             $jsonString = file_get_contents(defineUrlDb().'categories.json');
             $dataCategory = json_decode($jsonString, true);            
-            return $dataCategory;
+            
+            return end($dataCategory);
+
         } catch (Exception $e) {
             $data['error'] = true;
             $data['message'] = "Erro genérico";
@@ -197,7 +199,10 @@ class ArticleModel extends Model
                 if ($item['id'] === $id) {
                     $data['error'] = false;
                     $data['message'] = '';
+                    $data['date'] = $item['date'];
                     $data['id'] = $item['id'];
+                    $data['slug'] = $item['slug'];
+                    $data['image-main'] = $item['image-main'];
                     $data['category'] = $item['category'];
                     $data['title'] = $item['title'];
                     $data['resume'] = $item['resume'];
@@ -282,18 +287,34 @@ class ArticleModel extends Model
                     //break;
                 } else{
                     unset($dataCategory[$key]);
-                }
-              
-               
-                
+                }                
             }
-            
 
-           
-          
             $article = json_encode($newDataCategory, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
             file_put_contents(defineUrlDb().'category-' . $category . '.json', $article);
             
+
+            $jsonStringAtual = file_get_contents(defineUrlDb().'categories.json');
+            $dataCategoryAtual = json_decode($jsonStringAtual, true);
+            //dd($dataCategoryAtual);
+
+            $newDataCategoryAtual = [];
+
+            foreach ($dataCategoryAtual as $key => $dados) {
+                
+                if ($dados['id'] !== $id) {    
+                    $newDataCategoryAtual[] = $dataCategoryAtual[$key];
+                    //break;
+                } else{
+                    unset($dataCategoryAtual[$key]);
+                }                
+            }
+
+        
+            $articleAtual = json_encode($dataCategoryAtual, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            file_put_contents(defineUrlDb().'categories.json', $articleAtual);
+            
+
          
             $data['error'] = false;
             $data['message'] = '';
@@ -307,6 +328,7 @@ class ArticleModel extends Model
 
     public function updateCategory($newDataCategory,$category, $newCategory)
     {
+
         $data = [];
         try {
 
@@ -326,7 +348,25 @@ class ArticleModel extends Model
                 $h = mkdir($urlBaseImage);
                 chmod($urlBaseImage, 0777);
             }
-            copyr($urlBaseImageAntigo, $urlBaseImage);           
+            copyr($urlBaseImageAntigo, $urlBaseImage);        
+            
+            $jsonStringAtual = file_get_contents(defineUrlDb().'categories.json');
+            $dataCategoryAtual = json_decode($jsonStringAtual, true);
+            //dd($dataCategoryAtual);
+
+            foreach ($dataCategoryAtual as $key => $dados) {
+                if ($dados['id'] === $newDataCategory['id']) {
+                    $dataCategoryAtual[$key]['category'] = $newCategory;
+                    break;
+                }
+            }
+
+        
+            $articleAtual = json_encode($dataCategoryAtual, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+            file_put_contents(defineUrlDb().'categories.json', $articleAtual);
+            
+
+            
 
             //move($urlBaseImageAntigo,$urlBaseImage);
 
