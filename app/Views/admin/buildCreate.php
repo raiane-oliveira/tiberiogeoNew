@@ -19,7 +19,7 @@ $style = [
         ["path" => base_url() . "/assets/css/style.css"],
         ["path" => base_url() . "/assets/css/colors/color-0.css"],
         ["path" => base_url() . "/assets/css/responsive.css"],
-       
+
 
     ],
 ];
@@ -46,7 +46,8 @@ $javascript = [
         ["path" => base_url() . "/assets/js/smoothscroll.js"],
         ["path" => base_url() . "/assets/js/main.js"],
         ["path" => base_url() . "/assets/js/my.js"],
-        
+        ["path" => base_url() . "/assets/ckeditor/ckeditor.js"],
+
 
     ]
 ];
@@ -174,7 +175,7 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 01</label>
-                                        <textarea class="form-control form-control-message textarea" name="text" id="text" placeholder="" rows="5"><?= old('text') ?></textarea>
+                                        <textarea class="form-control form-control-message" name="text" id="text" placeholder="" rows="5"><?= old('text') ?></textarea>
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('text') : ''; ?></span>
                                 </div>
@@ -184,7 +185,7 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 02</label>
-                                        <textarea class="form-control form-control-message textarea" name="text-second" id="text-second" placeholder="" rows="5"><?= old('text-second') ?></textarea>
+                                        <textarea class="form-control form-control-message" name="text-second" id="text-second" placeholder="" rows="5"><?= old('text-second') ?></textarea>
                                     </div>
                                 </div>
 
@@ -310,6 +311,52 @@ $javascript = [
     foreach ($javascript['js'] as $path) : ?>
         <script src="<?= $path['path']; ?>"></script>
     <?php endforeach; ?>
+
+
+
+    <script>
+        CKEDITOR.replace('text', {
+            toolbar: [
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', '-', 'RemoveFormat']
+                }, {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList']
+                },
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format']
+                },
+                {
+                    name: 'document',
+                    items: ['Source', '-', 'Undo', 'Redo']
+                },
+
+            ]
+            });
+        CKEDITOR.replace('text-second', {
+            toolbar: [
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', '-', 'RemoveFormat']
+                }, {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList']
+                },
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format']
+                },
+                {
+                    name: 'document',
+                    items: ['Source', '-', 'Undo', 'Redo']
+                },
+
+            ]
+            });
+    </script>
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>
+<!DOCTYPE html>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jodit/3.11.2/jodit.es2018.min.js"></script>-->
 <?php
 
 helper('form');
@@ -42,12 +43,12 @@ $javascript = [
         ["path" => base_url() . "/assets/js/smoothscroll.js"],
         ["path" => base_url() . "/assets/js/main.js"],
         ["path" => base_url() . "/assets/js/my.js"],
+        ["path" => base_url() . "/assets/ckeditor/ckeditor.js"],
         //["path" => base_url() . "/assets/js/jodit.es2018.min.js"],
 
     ]
 ];
 ?>
-<!doctype html>
 <html lang="pt-br">
 
 <head>
@@ -149,7 +150,7 @@ $javascript = [
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Texto 01</label>
-                                        <textarea class="form-control form-control-message" name="text" id="text" placeholder="" rows="5"><?= $dataCategory['text'] ?></textarea>
+                                        <textarea class="form-control form-control-message textareas" name="text" id="text" placeholder="" rows="5"><?= $dataCategory['text'] ?></textarea>
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('text') : ''; ?></span>
                                 </div>
@@ -268,6 +269,52 @@ $javascript = [
     foreach ($javascript['js'] as $path) : ?>
         <script src="<?= $path['path']; ?>"></script>
     <?php endforeach; ?>
+    
+    
+                <script>
+                        CKEDITOR.replace( 'text', {
+            toolbar: [
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', '-', 'RemoveFormat']
+                }, {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList']
+                },
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format']
+                },
+                {
+                    name: 'document',
+                    items: ['Source', '-', 'Undo', 'Redo']
+                },
+
+            ]
+            } );
+                        CKEDITOR.replace( 'text-second', {
+            toolbar: [
+                {
+                    name: 'basicstyles',
+                    items: ['Bold', '-', 'RemoveFormat']
+                }, {
+                    name: 'paragraph',
+                    items: ['NumberedList', 'BulletedList']
+                },
+                {
+                    name: 'styles',
+                    items: ['Styles', 'Format']
+                },
+                {
+                    name: 'document',
+                    items: ['Source', '-', 'Undo', 'Redo']
+                },
+
+            ]
+            } );
+                </script>
+
+    
 </body>
 
 </html>
