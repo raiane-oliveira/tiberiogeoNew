@@ -18,7 +18,7 @@
                 <div class="banner-imgr">
                     <?php
                     $dir = '././assets/images/banner/banner-top/';
-                                        
+
                     $banner = [];
 
                     if (is_dir($dir)) {
@@ -34,8 +34,13 @@
                         }
                     }
                     shuffle($banner);
+
+                    if (!isset($_COOKIE['banner'])) {
+                        setcookie("banner", end($banner), time() + (60 * 10));
+                    }
+
                     ?>
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/images/banner/banner-top/<?= end($banner) ?>" alt="">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/images/banner/banner-top/<?= $_COOKIE['banner'] ?>" alt="">
                 </div>
             </div><!-- col end -->
         </div><!-- row  end -->
