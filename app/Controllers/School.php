@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\VarietyModel;
 use App\Models\CuriosityModel;
 use App\Controllers\BaseController;
+use App\Models\ArticleModel;
 use App\Models\SchoolModel;
 
 class School extends BaseController
@@ -30,7 +31,9 @@ class School extends BaseController
 
         $school = new SchoolModel();
         $datas = $school->getSchool();
-      
+
+        $allArticle = new ArticleModel();
+        $articleAll = $allArticle->getAllArticles();
 
         $data = [
 
@@ -43,6 +46,7 @@ class School extends BaseController
             "dataGeographyFavorite" => $dataCategoryGeography,
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,
+            "dataArticlesAll" => $articleAll
         ];
 
 

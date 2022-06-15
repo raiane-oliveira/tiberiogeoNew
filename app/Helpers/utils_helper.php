@@ -118,6 +118,10 @@ function createSlug(string $title): string
 }
 
 
+function defineColorWord(){
+    return 'orange';
+}
+
 
 /**
  * anchorCategory
@@ -141,7 +145,13 @@ function anchorCategory(string $category, bool $style = false): string
     endif;
     if ($category == 'geography') :
         $color = "green";
-    endif;
+    endif;   
+    if ($category == 'variety') :
+        $color = "black";
+    endif;   
+    if ($category == 'curiosity') :
+        $color = "bordo";
+    endif;   
 
 
     if ($style) :
@@ -150,7 +160,8 @@ function anchorCategory(string $category, bool $style = false): string
         ];
     else :
         $dados = [
-            'class' => $color . '-color'
+            'class' => 'ts-'.$color . '-bg p-1 text-white font-weight-bold',
+            
         ];
     endif;
 
