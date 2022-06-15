@@ -3,6 +3,7 @@
 header('Content-type: text/html; charset=utf8');
 setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
 ?>
+
 <!-- single post start -->
 <section class="single-post-wrapper post-layout-10">
     <div class="container">
