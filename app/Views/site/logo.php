@@ -27,7 +27,6 @@
                             while (($file = readdir($dh)) !== false) {
                                 if ($file != "." && $file != "..") {
                                     $banner[] = $file;
-                                    //echo "filename: $file : filetype: " . filetype($dir . $file) . "\n";
                                 }
                             }
                             closedir($dh);
@@ -36,11 +35,18 @@
                     shuffle($banner);
 
                     if (!isset($_COOKIE['banner'])) {
-                        setcookie("banner", end($banner), time() + (60 * 10));
+                        setcookie(
+                            "banner",
+                            end($banner),
+                            time() + (60 * 10),
+                            "",
+                            "",
+                            true,
+                            true
+                        );
                     }
-
                     ?>
-                    <img class="img-fluid" src="<?= base_url(); ?>/assets/images/banner/banner-top/<?= $_COOKIE['banner'] ?>" alt="">
+                    <img class="img-fluid" src="<?= base_url(); ?>/assets/images/banner/banner-top/<?= isset($_COOKIE['banner']) ? $_COOKIE['banner'] : "banner-header.png" ?>" alt="">
                 </div>
             </div><!-- col end -->
         </div><!-- row  end -->
