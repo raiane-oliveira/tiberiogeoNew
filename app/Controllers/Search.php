@@ -13,8 +13,11 @@ class Search extends BaseController
         $wordInput = $this->request->getPost('search');
         $nomeBuscado = tratarSentenca($wordInput);
 
-        if ($this->request->getMethod() !== 'post' || 
-        empty($wordInput) || (strlen($nomeBuscado) < 3)) {
+        if (
+            $this->request->getMethod() !== 'post' ||
+            empty($wordInput) ||
+            (strlen($nomeBuscado) < 3)
+        ) {
             return redirect()->to('/');
         }
 
@@ -22,7 +25,7 @@ class Search extends BaseController
 
         $parser = \Config\Services::renderer();
         // Essa variável pode vir de um $_POST ou de outras formas
-
+       
         // abre o arquivo json
         $ficheiroGeo = file_get_contents(defineUrlDb() . 'category-geography.json');
         $ficheiroWor = file_get_contents(defineUrlDb() . 'category-world.json');
@@ -31,70 +34,30 @@ class Search extends BaseController
         $ficheiroVar = file_get_contents(defineUrlDb() . 'category-variety.json');
 
 
-        $dataGeo = json_decode($ficheiroGeo, true);
-        $dataWor = json_decode($ficheiroWor, true);
-        $dataBra = json_decode($ficheiroBra, true);
-        $dataCur = json_decode($ficheiroCur, true);
-        $dataVar = json_decode($ficheiroVar, true);
+        $data = json_encode(
 
+            array_merge(
+                json_decode($ficheiroGeo, true),
+                json_decode($ficheiroWor, true),
+                json_decode($ficheiroBra, true),
+                json_decode($ficheiroCur, true),
+                json_decode($ficheiroVar, true),
+            )
+        );    
 
-        // converte em objeto
-
-
-        // seta mensagem defaul
-        $msg = 'Ops! Nenhum artigo encontrado!';
-
+        $datas = json_decode($data, true);
+     
         //percorre todos os elementos e procura pelo nomeBuscado
 
         $resultado = [];
 
-
-        foreach ($dataGeo as $key => $value) {
+        foreach ($datas as $key => $value) {
             $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $msg = 'Encontrado na lista!';
+            if (strpos($pv, $nomeBuscado) == !false) {              
 
                 $resultado[] = $value;
             }
         }
-        foreach ($dataWor as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $msg = 'Encontrado na lista!';
-
-                $resultado[] = $value;
-            }
-        }
-        foreach ($dataBra as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $msg = 'Encontrado na lista!';
-
-                $resultado[] = $value;
-            }
-        }
-        foreach ($dataVar as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $msg = 'Encontrado na lista!';
-
-                $resultado[] = $value;
-            }
-        }
-        foreach ($dataCur as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $msg = 'Encontrado na lista!';
-
-                $resultado[] = $value;
-            }
-        }
-        // imprime se encontrou ou não
 
         $total =  count($resultado);
 
