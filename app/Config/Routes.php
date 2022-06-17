@@ -55,6 +55,9 @@ $routes->post('/build/updateCategory', 'Build::updateCategory');
 $routes->get('/buildSchool', 'Build::buildSchool');
 $routes->post('/buildSchool/add', 'Build::addSchool');
 
+
+$routes->post('/search', 'Search::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

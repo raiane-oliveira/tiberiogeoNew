@@ -39,17 +39,17 @@
                                                             </h3>
                                                         </div>
                                                     </div>
-                                                   
+
                                                 </div>
                                         <?php
                                             endif;
                                             $count++;
                                         endforeach; ?>
-                                         <div class="megamenu-panel-row active text-center">
-                                             <hr>
-                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-orange-bg']);?>
-                                         </div>
-                                        
+                                        <div class="megamenu-panel-row active text-center">
+                                            <hr>
+                                            <?= anchor('/category/' . $item['category'], '+ ' . toCategory($item['category']) . '</span>', ['class' => 'post-cat ts-orange-bg']); ?>
+                                        </div>
+
                                     </div>
                                 </div>
                             </li>
@@ -85,8 +85,8 @@
                                         endforeach; ?>
                                         <div class="megamenu-panel-row active text-center">
                                             <hr>
-                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-blue-bg']);?>
-                                         </div>
+                                            <?= anchor('/category/' . $item['category'], '+ ' . toCategory($item['category']) . '</span>', ['class' => 'post-cat ts-blue-bg']); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -122,8 +122,8 @@
                                         endforeach; ?>
                                         <div class="megamenu-panel-row active text-center">
                                             <hr>
-                                             <?=anchor('/category/'.$item['category'], '+ '. toCategory($item['category']).'</span>', ['class'=>'post-cat ts-green-bg']);?>
-                                         </div>
+                                            <?= anchor('/category/' . $item['category'], '+ ' . toCategory($item['category']) . '</span>', ['class' => 'post-cat ts-green-bg']); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -141,9 +141,27 @@
 
 
 
+
+                        </ul>
+                        <ul class="right-menu align-to-right">
+                            <li class="header-search">
+                                <div class="nav-search">
+                                    <div class="nav-search-button"><i class="icon icon-search"></i></div>
+                                    <?php 
+                                    echo form_open('/search') ?>
+
+                                        <span class="nav-search-close-button" tabindex="0">✕</span>
+                                        <span class="nav-search-close-button" tabindex="0">✕</span>
+                                        <div class="nav-search-inner">
+                                            <input type="search" name="search" placeholder="Digite uma palavra ...">
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
                         </ul>
                         <!--nav menu end-->
                     </div>
+
                 </nav>
                 <!-- nav end-->
             </div>

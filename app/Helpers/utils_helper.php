@@ -395,6 +395,52 @@ function copyr($source, $dest)
  
 }
 
+/**
+ * Method defineUrlDb
+ *
+ * @return void
+ */
 function defineUrlDb(){
    return APPPATH.'Base/';
+}
+
+/**
+ * Method tratarSentenca
+ *
+ * @param string $sentenca [explicite description]
+ *
+ * @return string
+ */
+function tratarSentenca(string $sentenca): string
+{
+    $string = explode(" ",$sentenca);
+    return mb_strtolower(tratarPalavras($string[0]));
+
+}
+
+function writeZeroLeft(Int $number){
+
+    if($number < 9){
+        return '0'.$number;
+    }
+    return $number;
+
+}
+
+function tratarPalavras($string)
+{
+    return preg_replace(array(
+        "/(á|à|ã|â|ä)/",
+        "/(Á|À|Ã|Â|Ä)/",
+        "/(é|è|ê|ë)/",
+        "/(É|È|Ê|Ë)/",
+        "/(í|ì|î|ï)/",
+        "/(Í|Ì|Î|Ï)/",
+        "/(ó|ò|õ|ô|ö)/",
+        "/(Ó|Ò|Õ|Ô|Ö)/",
+        "/(ú|ù|û|ü)/",
+        "/(Ú|Ù|Û|Ü)/",
+        "/(ñ)/",
+        "/(Ñ)/",
+        "/(Ç)/"), explode(" ", "a A e E i I o O u U n N C"), mb_strtoupper($string));
 }
