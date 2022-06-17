@@ -10,7 +10,8 @@
                     <div class="post-list-item widgets">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a  href="#exercise" aria-controls="exercise" role="tab" data-toggle="tab" aria-selected="false"><i class="fa fa-list-alt"></i> Exercícios</a></li>
+                            <li role="presentation"><a  href="#exercise" aria-controls="exercise" role="tab" data-toggle="tab" aria-selected="false" title="Exercícios"><i class="fa fa-list-alt"></i> Exerc.</a></li>
+                            
                             <li role="presentation"><a href="#evidences" aria-controls="evidences" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-text-o"></i> Provas</a></li>
                             <li role="presentation"><a href="#slide" aria-controls="slide" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-powerpoint-o"></i> Slide</a></li>
                             <li role="presentation"><a href="#text" aria-controls="text" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-text"></i> Textos</a></li>
@@ -132,7 +133,6 @@
 
             <div class="col-lg-4">
                 <div class="right-sidebar-1">
-
                     <?= view('site/side-category'); ?>
                 </div>
 

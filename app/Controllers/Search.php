@@ -10,8 +10,11 @@ class Search extends BaseController
 {
     public function index()
     {
+        $wordInput = $this->request->getPost('search');
+        $nomeBuscado = tratarSentenca($wordInput);
 
-        if ($this->request->getMethod() !== 'post') {
+        if ($this->request->getMethod() !== 'post' || 
+        empty($wordInput) || (strlen($nomeBuscado) < 3)) {
             return redirect()->to('/');
         }
 
@@ -20,11 +23,6 @@ class Search extends BaseController
         $parser = \Config\Services::renderer();
         // Essa variável pode vir de um $_POST ou de outras formas
 
-        $wordInput = $this->request->getPost('search');
-
-        $nomeBuscado = tratarSentenca($wordInput);
-     
-
         // abre o arquivo json
         $ficheiroGeo = file_get_contents(defineUrlDb() . 'category-geography.json');
         $ficheiroWor = file_get_contents(defineUrlDb() . 'category-world.json');
@@ -32,16 +30,16 @@ class Search extends BaseController
         $ficheiroCur = file_get_contents(defineUrlDb() . 'category-curiosity.json');
         $ficheiroVar = file_get_contents(defineUrlDb() . 'category-variety.json');
 
-        
+
         $dataGeo = json_decode($ficheiroGeo, true);
         $dataWor = json_decode($ficheiroWor, true);
         $dataBra = json_decode($ficheiroBra, true);
         $dataCur = json_decode($ficheiroCur, true);
         $dataVar = json_decode($ficheiroVar, true);
 
-       
+
         // converte em objeto
-      
+
 
         // seta mensagem defaul
         $msg = 'Ops! Nenhum artigo encontrado!';
@@ -49,10 +47,10 @@ class Search extends BaseController
         //percorre todos os elementos e procura pelo nomeBuscado
 
         $resultado = [];
-       
-       
+
+
         foreach ($dataGeo as $key => $value) {
-            $pv = "tiberiogeo ". mb_strtolower(tratarPalavras($value['title']));
+            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
             if (strpos($pv, $nomeBuscado) == !false) {
 
                 $msg = 'Encontrado na lista!';
@@ -61,7 +59,7 @@ class Search extends BaseController
             }
         }
         foreach ($dataWor as $key => $value) {
-            $pv = "tiberiogeo ". mb_strtolower(tratarPalavras($value['title']));
+            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
             if (strpos($pv, $nomeBuscado) == !false) {
 
                 $msg = 'Encontrado na lista!';
@@ -70,7 +68,7 @@ class Search extends BaseController
             }
         }
         foreach ($dataBra as $key => $value) {
-            $pv = "tiberiogeo ". mb_strtolower(tratarPalavras($value['title']));
+            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
             if (strpos($pv, $nomeBuscado) == !false) {
 
                 $msg = 'Encontrado na lista!';
@@ -79,7 +77,7 @@ class Search extends BaseController
             }
         }
         foreach ($dataVar as $key => $value) {
-            $pv = "tiberiogeo ". mb_strtolower(tratarPalavras($value['title']));
+            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
             if (strpos($pv, $nomeBuscado) == !false) {
 
                 $msg = 'Encontrado na lista!';
@@ -88,14 +86,14 @@ class Search extends BaseController
             }
         }
         foreach ($dataCur as $key => $value) {
-            $pv = "tiberiogeo ". mb_strtolower(tratarPalavras($value['title']));
+            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
             if (strpos($pv, $nomeBuscado) == !false) {
 
                 $msg = 'Encontrado na lista!';
 
                 $resultado[] = $value;
             }
-        }     
+        }
         // imprime se encontrou ou não
 
         $total =  count($resultado);
@@ -116,7 +114,7 @@ class Search extends BaseController
         $data = [
             "dataCategory" => $resultado,
             "word" => $nomeBuscado,
-            "wordInput" => $wordInput,            
+            "wordInput" => $wordInput,
             "data_temperature" => $this->dataTemperature,
             "date_now" => $this->dateNow,
             "dataMenuWorld" => $this->menuWorld,

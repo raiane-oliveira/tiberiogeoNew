@@ -145,15 +145,18 @@
                         </ul>
                         <ul class="right-menu align-to-right">
                             <li class="header-search">
+                                <div id="load">       
+                                    <div id="loader"></div>                            
+                                </div>
                                 <div class="nav-search">
                                     <div class="nav-search-button"><i class="icon icon-search"></i></div>
                                     <?php 
-                                    echo form_open('/search') ?>
+                                    echo form_open('/search', ['onsubmit'=> 'carregar()']) ?>
 
                                         <span class="nav-search-close-button" tabindex="0">✕</span>
                                         <span class="nav-search-close-button" tabindex="0">✕</span>
                                         <div class="nav-search-inner">
-                                            <input type="search" name="search" placeholder="Digite uma palavra ...">
+                                            <input type="search" name="search" placeholder="Digite uma palavra ..." >
                                         </div>
                                     </form>
                                 </div>

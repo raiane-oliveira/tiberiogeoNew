@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>   
+<head>
    <!-- Basic Page Needs =====================================-->
    <meta charset="utf-8">
    <!-- Mobile Specific Metas ================================-->
@@ -16,7 +16,7 @@
    <?php if (isset($resume)) : ?>
       <meta property="og:title" content="<?= esc($title); ?>" />
       <meta property="og:description" content="<?= isset($resume) ? esc($resume) : 'Tiberiogeo - é um site direcionado aos estudantes em geral e que curtem GEOGRAFIA e ATUALIDADES.'; ?>" />
-      <meta property="og:url" content="<?= base_url() . '/article/' . $category . '/' . $link;?>" />
+      <meta property="og:url" content="<?= base_url() . '/article/' . $category . '/' . $link; ?>" />
       <meta property="og:image" content="<?= base_url() . '/assets/img/' . $category . '/' . $link . '/' . $image; ?>" />
    <?php endif ?>
 
@@ -39,6 +39,38 @@
          padding: 5px 6px;
          font-weight: 600;
       }
+
+      .load {
+         position: fixed;
+         left: 0;
+         top: 0;
+         z-index: 999999;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background: rgba(0, 0, 0, 0.4);
+      }
+
+
+      .loader {
+         animation: is-rotating 1s infinite;
+         border: 6px solid #e5e5e5;
+         border-radius: 50%;
+         border-top-color: #51d4db;
+         height: 50px;
+         width: 50px;
+         display: flex;
+
+      }
+
+      @keyframes is-rotating {
+         to {
+            transform: rotate(1turn);
+         }
+      }     
+      
    </style>
    <?php
    foreach ($css as $path) : ?>
@@ -120,6 +152,14 @@
    foreach ($js as $path) : ?>
       <script src="<?= $path['path']; ?>"></script>
    <?php endforeach; ?>
+
+   <script>
+      function carregar() {
+         $("#load").addClass("load");
+         $("#loader").addClass("loader");
+
+      }
+   </script>
 </body>
 
 </html>
