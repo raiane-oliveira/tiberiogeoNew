@@ -57,6 +57,7 @@ $routes->post('/buildSchool/add', 'Build::addSchool');
 
 
 $routes->post('/search', 'Search::index');
+$routes->get('/search/(:any)', 'Search::cloud/$1');
 
 /*
  * --------------------------------------------------------------------

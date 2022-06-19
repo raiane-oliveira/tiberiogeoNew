@@ -8,3 +8,4 @@
         <li><?= anchor('/category/variety', 'VARIEDADES <span class="ts-black-bg">' . str_pad(count($dataVariety), 2, '0', STR_PAD_LEFT). '</span>'); ?></li>
     </ul>
 </div><!-- widgets end-->
+<?=view('site/side-cloud');?>
