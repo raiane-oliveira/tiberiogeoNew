@@ -4,8 +4,10 @@
     <?php
     $cloudWord = [
         'Água', 'Clima', 'Brasil', 'Planeta','Geografia','Geopolítica',
-        'Fuso','Mundo','Crise'
+        'Fuso','Mundo','Crise','Ucrânia','OTAN'
     ];   
+
+    $cloudWords = shuffle($cloudWord);   
 
     ?>
     <ul>

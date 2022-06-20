@@ -25,68 +25,11 @@ class Search extends BaseController
 
         $page = 'resultErro';
 
-
-
         $parser = \Config\Services::renderer();
-        // Essa variável pode vir de um $_POST ou de outras formas
-
-        // abre o arquivo json
-        $ficheiroGeo = file_get_contents(defineUrlDb() . 'category-geography.json');
-        $ficheiroWor = file_get_contents(defineUrlDb() . 'category-world.json');
-        $ficheiroBra = file_get_contents(defineUrlDb() . 'category-brazil.json');
-        $ficheiroCur = file_get_contents(defineUrlDb() . 'category-curiosity.json');
-        $ficheiroVar = file_get_contents(defineUrlDb() . 'category-variety.json');
-
-
-        /*$categories = new Category();
-        $values = $categories->defineCategories();
-        */
-
-        $data = json_encode(
-
-            array_merge(
-                json_decode($ficheiroGeo, true),
-                json_decode($ficheiroWor, true),
-                json_decode($ficheiroBra, true),
-                json_decode($ficheiroCur, true),
-                json_decode($ficheiroVar, true),
-            )
-        );
-
-        $datas = json_decode($data, true);
-
-        reset($datas);
-        //percorre todos os elementos e procura pelo nomeBuscado
-        //dd($datas);
-        $resultado = [];
-
-        /*while(key($datas) !== null){
-
-            $key = key($datas);
-           
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras(current($datas['title'])));
-            if (strpos($pv, $nomeBuscado) == !false) {              
-
-                $resultado[] = $datas;
-            }
-            
-            next($datas);
-
-        }*/
-
-        foreach ($datas as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, $nomeBuscado) == !false) {
-
-                $resultado[] = $value;
-            }
-        }
-
-
-
-        //dd($resultado);
+        
+        $resultado = $this->defieArticlesSearch($nomeBuscado);
+        
         $total =  count($resultado);
-
 
         /*Define os favoritos*/
         $categoryFavorite = 'geography';
@@ -95,10 +38,8 @@ class Search extends BaseController
         $curiosity =  new CuriosityModel();
         $dataCategoryCuriosity = $curiosity->getAllCuriosities();
 
-
         $variety =  new VarietyModel();
         $dataCategoryVariety = $variety->getAllVariety();
-
 
         $data = [
             "dataCategory" => $resultado,
@@ -135,46 +76,9 @@ class Search extends BaseController
         $page = 'resultErro';
 
         $parser = \Config\Services::renderer();
-        // Essa variável pode vir de um $_POST ou de outras formas
-
-        // abre o arquivo json
-        $ficheiroGeo = file_get_contents(defineUrlDb() . 'category-geography.json');
-        $ficheiroWor = file_get_contents(defineUrlDb() . 'category-world.json');
-        $ficheiroBra = file_get_contents(defineUrlDb() . 'category-brazil.json');
-        $ficheiroCur = file_get_contents(defineUrlDb() . 'category-curiosity.json');
-        $ficheiroVar = file_get_contents(defineUrlDb() . 'category-variety.json');
-
-        $data = json_encode(
-
-            array_merge(
-                json_decode($ficheiroGeo, true),
-                json_decode($ficheiroWor, true),
-                json_decode($ficheiroBra, true),
-                json_decode($ficheiroCur, true),
-                json_decode($ficheiroVar, true),
-            )
-        );
-
-        $datas = json_decode($data, true);
-
-        reset($datas);
-
-        $resultado = [];
-
-        foreach ($datas as $key => $value) {
-            $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
-            if (strpos($pv, tratarSentenca($word)) == !false) {
-
-                $resultado[] = $value;
-            }
-        }
-
-
-
-        //dd($resultado);
-        $total =  count($resultado);
-
-
+        
+        $resultado = $this->defieArticlesSearch(tratarSentenca($word));       
+        
         /*Define os favoritos*/
         $categoryFavorite = 'geography';
         $dataCategoryGeography = $this->category->getArticleMain($categoryFavorite);
@@ -217,5 +121,44 @@ class Search extends BaseController
         }
 
         return $parser->render('site/search/' . $page);
+    }
+
+    private function defieArticlesSearch(string $wordSearch): array
+    {   
+         
+          $ficheiroGeo = file_get_contents(defineUrlDb() . 'category-geography.json');
+          $ficheiroWor = file_get_contents(defineUrlDb() . 'category-world.json');
+          $ficheiroBra = file_get_contents(defineUrlDb() . 'category-brazil.json');
+          $ficheiroCur = file_get_contents(defineUrlDb() . 'category-curiosity.json');
+          $ficheiroVar = file_get_contents(defineUrlDb() . 'category-variety.json');
+      
+          $data = json_encode(
+  
+              array_merge(
+                  json_decode($ficheiroGeo, true),
+                  json_decode($ficheiroWor, true),
+                  json_decode($ficheiroBra, true),
+                  json_decode($ficheiroCur, true),
+                  json_decode($ficheiroVar, true),
+              )
+          );
+  
+          $datas = json_decode($data, true);
+          
+    
+          reset($datas);
+         
+          $resultado = [];  
+         
+          foreach ($datas as $key => $value) {
+              $pv = "tiberiogeo " . mb_strtolower(tratarPalavras($value['title']));
+             
+              if (strpos($pv, $wordSearch) == !false) {  
+                  $resultado[] = $value;
+              }
+          }     
+          
+          return $resultado;
+
     }
 }
