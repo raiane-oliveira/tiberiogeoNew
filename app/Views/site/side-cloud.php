@@ -4,7 +4,7 @@
     <?php
     $cloudWord = [
         'Água', 'Clima', 'Brasil', 'Planeta','Geografia','Geopolítica',
-        'Fuso','Mundo','Crise','Ucrânia','OTAN'
+        'Fuso','Mundo','Crise','Ucrânia','OTAN','Mundo','Solos','Atmosfera'
     ];   
 
     $cloudWords = shuffle($cloudWord);   
@@ -13,7 +13,7 @@
     <ul>
         <?php
         array_map(function($word){
-            echo '<li>'.anchor('/search/'.$word,$word).'</li>';
+            echo '<li class="p-1">'.anchor('/search/'.$word,$word).'</li>';
         },$cloudWord);
         ?>        
        

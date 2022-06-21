@@ -28,10 +28,10 @@
                 endif;
                 $count++;
             endforeach; ?>
-          <div class="text-center">
+            <div class="text-center">
                 <?= anchor('/category/geography', '+ GEOGRAFIA'); ?>
-            </div>  
+            </div>
         </div>
         <!--ts-grid-box end -->
     </div>
-    </div><!-- widgets end-->
+</div><!-- widgets end-->

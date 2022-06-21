@@ -63,8 +63,10 @@ setlocale(LC_ALL,'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
                     <div class="right-sidebar-1">        
                     <?=view('site/side-favorite');?>
                     <?=view('site/side-category');?>
+                    
                               </div>
                 </div>
+                
             </div><!-- row end-->
         </div>
 
