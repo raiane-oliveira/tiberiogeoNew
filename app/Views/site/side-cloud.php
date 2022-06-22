@@ -25,7 +25,7 @@
         $a = explode(" ", $tag['title']);
         foreach ($a as $b) {
             if (strlen($b) > 4 && $count < 10) {
-                $ab[] = $b;              
+                $ab[] = firstUppercase($b);              
             }
         }
         $count++;
@@ -34,7 +34,7 @@
     }
 
     $ab =  array_unique($ab);
-    
+
     shuffle($ab);
 
 
