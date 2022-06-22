@@ -54,6 +54,7 @@ class Home extends BaseController
             "dataMenuBrazil" => $this->menuBrazil,
             "dataMenuGeography" => $this->menuGeography,
             'dataCurrent' =>  $ArticleCurrent,
+            'tagCloud' => $this->tagCloud,
         ];
 
 

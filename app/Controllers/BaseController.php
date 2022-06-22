@@ -11,6 +11,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Controllers\Category;
 
 /**
  * Class BaseController
@@ -102,6 +103,13 @@ class BaseController extends Controller
      * @var array
      */
     public $dataTemperature = [];
+    
+    /**
+     * tagCloud
+     *
+     * @var array
+     */
+    public $tagCloud = [];
 
 
     /**
@@ -206,5 +214,39 @@ class BaseController extends Controller
         $this->menuGeography = $this->category->getMenu('geography');
         krsort($this->menuGeography);
         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+
+
+        /*Prepara a cloud tag*/
+
+        $categories = new Category();
+        $values = $categories->defineCategories();
+
+        shuffle($values);
+
+        $categoryEnd = reset($values);
+
+        $category = file_get_contents(defineUrlDb() . 'category-' . $categoryEnd . '.json');
+
+        $jsonCategory = json_decode($category, true);
+
+        $arrayTags = [];
+        //$cloudWord = [];
+        $count = 1;
+
+        foreach ($jsonCategory as $tag) {
+            $word = explode(" ", $tag['title']);
+            foreach ($word as $wordCloud) {
+                if (strlen($wordCloud) > 4) {
+                    $arrayTags[] = removeCharacterSpecial(firstUppercase($wordCloud));                    
+                }
+            }
+        }
+
+        $arrayTags =  array_unique($arrayTags);
+
+        shuffle($arrayTags);
+        
+        $this->tagCloud = $arrayTags;
+       
     }
 }

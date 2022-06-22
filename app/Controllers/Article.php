@@ -79,7 +79,8 @@ class Article extends BaseController
                 "dataMenuBrazil" => $this->menuBrazil,
                 "dataMenuGeography" => $this->menuGeography,
                 "dataCuriosity" => $dataCategoryCuriosity,
-                "dataVariety" => $dataCategoryVariety,               
+                "dataVariety" => $dataCategoryVariety,     
+                'tagCloud' => $this->tagCloud,          
                 //"cotacaoDolar" => $dataCotacao['bid']
             ];
         }

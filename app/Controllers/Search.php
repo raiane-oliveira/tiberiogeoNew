@@ -53,6 +53,7 @@ class Search extends BaseController
             "dataGeographyFavorite" => $dataCategoryGeography,
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,
+            'tagCloud' => $this->tagCloud,
         ];
 
 
@@ -103,6 +104,7 @@ class Search extends BaseController
             "dataGeographyFavorite" => $dataCategoryGeography,
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,
+            'tagCloud' => $this->tagCloud,
         ];
 
 

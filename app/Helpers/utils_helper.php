@@ -418,6 +418,13 @@ function tratarSentenca(string $sentenca): string
     return mb_strtolower(tratarPalavras($string[0]));
 }
 
+/**
+ * Method writeZeroLeft
+ *
+ * @param Int $number [explicite description]
+ *
+ * @return void
+ */
 function writeZeroLeft(Int $number)
 {
 
@@ -444,4 +451,12 @@ function tratarPalavras($string)
         "/(Ñ)/",
         "/(Ç)/"
     ), explode(" ", "a A e E i I o O u U n N C"), mb_strtoupper($string));
+}
+
+function removeCharacterSpecial(string $string)
+{
+    return preg_replace([
+        '/(,)/'
+    ], '', $string);
+
 }
