@@ -189,7 +189,7 @@ class BaseController extends Controller
         if (getEnv('CI_ENVIRONMENT') != 'development') :
             $urlTempIp = 'https://api.hgbrasil.com/weather?key=acca0bf5&user_ip=remote';
             $urlTempCampinaGrande = 'https://api.hgbrasil.com/weather?format=json-cors&key=acca0bf5&woeid=455848';
-            $this->dataTemperature = json_decode(file_get_contents($urlTempIp), true); // Recebe os dados da API
+            $this->dataTemperature = json_decode(file_get_contents($urlTempCampinaGrande), true); // Recebe os dados da API
         //$dataCotacao = json_decode(file_get_contents('https://economia.awesomeapi.com.br/json/USD-BRL'), true);
         endif;
         /*if(json_last_error()!= 0 ){
