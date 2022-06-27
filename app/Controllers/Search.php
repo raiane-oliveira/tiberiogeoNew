@@ -10,7 +10,7 @@ class Search extends BaseController
 {
     public function index()
     {
-       
+               
         if (
             $this->request->getMethod() !== 'post' ||
             empty($this->request->getPost('search') )||

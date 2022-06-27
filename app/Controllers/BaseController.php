@@ -233,10 +233,16 @@ class BaseController extends Controller
         //$cloudWord = [];
         $count = 1;
 
+        $wordNotPermitide = [
+            'Para','Ante','Após','Contra','Entre','Sobre','Trás','Fora','Aquele',
+            'Abaixo','Acima','Mais','Como'
+        ];
+
         foreach ($jsonCategory as $tag) {
             $word = explode(" ", $tag['title']);
             foreach ($word as $wordCloud) {
-                if (strlen($wordCloud) > 4) {
+                if (strlen($wordCloud) > 4 &&
+                    !in_array($wordCloud,$wordNotPermitide)) {
                     $arrayTags[] = removeCharacterSpecial(firstUppercase($wordCloud));                    
                 }
             }
