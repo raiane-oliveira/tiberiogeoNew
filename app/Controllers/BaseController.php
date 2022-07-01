@@ -171,7 +171,7 @@ class BaseController extends Controller
         ];
 
         $this->dataHeader = [
-            "title" => "TiberioGeo - A Geografia Levada a Sério!",
+            "title" => "Tiberiogeo - A Geografia Levada a Sério!",
             "favico" => base_url() . "/assets/img/logo/autor.png",
 
         ];
