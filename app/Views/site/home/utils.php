@@ -45,7 +45,7 @@
                                     <h3 class="post-title">
                                         <?= anchor('https://www.thetruesize.com/#?borders=1~!MTc0NTc2MjI.Mjg0MDEyMw*MjIzMTI5OTE(ODgxMjk5MQ~!CONTIGUOUS_US*NTE1MDMzNA.MjAzMDQyMTY(MTc1)Mg~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)MA~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)MQ', 'The true Size', ['target' => '_blank']); ?>
                                     </h3>
-                                    <p><?=character_limiter('Mostra o tamanho real do países de acordo com a projeção cartográfica adotada.',80,' [...]');?>
+                                    <p><?=character_limiter('Mostra o tamanho real dos países de acordo com a projeção cartográfica adotada.',80,' [...]');?>
                                     <?= anchor('https://www.thetruesize.com/#?borders=1~!MTc0NTc2MjI.Mjg0MDEyMw*MjIzMTI5OTE(ODgxMjk5MQ~!CONTIGUOUS_US*NTE1MDMzNA.MjAzMDQyMTY(MTc1)Mg~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)MA~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)MQ', 'Veja mais', ['target' => '_blank']); ?>
                                     </p>
 
