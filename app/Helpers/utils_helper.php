@@ -456,7 +456,7 @@ function tratarPalavras($string)
 function removeCharacterSpecial(string $string)
 {
     return preg_replace([
-        '/(,)/'
+        '/(,|;|:)/'
     ], '', $string);
 
 }

@@ -185,15 +185,18 @@
     },
     {
         "id": "202206170801542973318652",
-        "category": "world"    
-    },    
+        "category": "world"
+    },
     {
         "id": "202206261231116543247811",
         "category": "geography"
     },
     {
         "id": "202206261456058295041351",
-        "category": "world"    
+        "category": "world"
+    },
+    {
+        "id": "202207171818545440596317",
+        "category": "curiosity"
     }
-    
 ]

@@ -514,21 +514,21 @@ class Build extends BaseController
 
             $dadosArticle = array(
                 'id' => generateId(10, false, false, true, false),
-                'slug' => createSlug($this->request->getPost('title')),
+                'slug' => removeCharacterSpecial(createSlug($this->request->getPost('title'))),
                 'title' => $this->request->getPost('title'),
                 'resume' => $this->request->getPost('resume'),
                 'text' => $this->request->getPost('text'),
-                'image-main' => createSlug($this->request->getPost('title')) . '-01.jpg',
+                'image-main' => removeCharacterSpecial(createSlug($this->request->getPost('title'))) . '-01.jpg',
                 'category' => $this->request->getPost('category'),
                 'text-second' => $this->request->getPost('text-second'),
-                'image-text-second' => !empty($this->request->getPost('image-text-second')) ? createSlug($this->request->getPost('title')) . '-02.jpg' : '',
+                'image-text-second' => !empty($this->request->getPost('image-text-second')) ? removeCharacterSpecial(createSlug($this->request->getPost('title'))) . '-02.jpg' : '',
                 'quote' => $this->request->getPost('quote'),
                 'quote-author' => $this->request->getPost('quote-author'),
                 'image-video' => $this->request->getPost('image-video'),
                 'link-video' => $this->request->getPost('link-video'),
                 'title-video' => $this->request->getPost('title-video'),
                 'text-video' => $this->request->getPost('text-video'),
-                'image-gallery' => createImageGallery($this->request->getPost('image-gallery'), createSlug($this->request->getPost('title'))),
+                'image-gallery' => createImageGallery($this->request->getPost('image-gallery'), removeCharacterSpecial(createSlug($this->request->getPost('title')))),
                 'font' => $this->request->getPost('font'),
                 'date' => !empty($this->request->getPost('date')) ? $this->request->getPost('date') : date('d/m/Y'),
                 'access' => !empty($this->request->getPost('access')) ? $this->request->getPost('access') : 1
@@ -556,7 +556,7 @@ class Build extends BaseController
             }*/
             //$path='./assets/public/package/'.$package_id;
 
-            $urlBaseImage = '././assets/img/' . $this->request->getPost('category') . '/' . createSlug($this->request->getPost('title'));
+            $urlBaseImage = '././assets/img/' . $this->request->getPost('category') . '/' . removeCharacterSpecial(createSlug($this->request->getPost('title')));
             //dd($urlBaseImage);
             if (!is_dir($urlBaseImage)) {
                 $h = mkdir($urlBaseImage);
