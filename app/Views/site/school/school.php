@@ -14,8 +14,8 @@
                             
                             <li role="presentation"><a href="#evidences" aria-controls="evidences" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-text-o"></i> Provas</a></li>
                             <li role="presentation"><a href="#slide" aria-controls="slide" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-powerpoint-o"></i> Slide</a></li>
-                            <li role="presentation"><a href="#text" aria-controls="text" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-text"></i> Textos</a></li>
-                            <li role="presentation"><a class="active" href="#article" aria-controls="text" role="tab" data-toggle="tab" aria-selected="true"><i class="fa fa-file-pdf-o"></i> Artigos</a></li>
+                            <li role="presentation"><a href="#text" aria-controls="text" role="tab" data-toggle="tab" class="active" aria-selected="true"><i class="fa fa-file-text"></i> Textos</a></li>
+                            <li role="presentation"><a class="" href="#article" aria-controls="text" role="tab" data-toggle="tab" aria-selected="false"><i class="fa fa-file-pdf-o"></i> Artigos</a></li>
                         </ul><!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="exercise">
@@ -76,7 +76,7 @@
                                 <?php endforeach; ?>
                             </div>
                             <!--ts-grid-box end -->
-                            <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="text">
+                            <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list active" id="text">
                                 <?php
                                 krsort($dataSchool['text']);
                                 foreach ($dataSchool['text'] as $item) : ?>
@@ -95,7 +95,7 @@
                             </div>
                             <!--ts-grid-box end -->
                             <!--ts-grid-box end -->
-                            <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list active" id="article">
+                            <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="article">
                                 <?php
                                 arsort($dataArticlesAll);
                                 foreach ($dataArticlesAll as $key => $item) :
