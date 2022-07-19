@@ -51,6 +51,7 @@ class Category extends BaseController
             "dataGeographyFavorite" => $dataCategoryGeography,
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,
+            'tagCloud' => $this->tagCloud,
         ];       
 	 
 	    

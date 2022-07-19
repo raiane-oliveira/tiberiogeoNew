@@ -11,6 +11,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Controllers\Category;
 
 /**
  * Class BaseController
@@ -102,6 +103,13 @@ class BaseController extends Controller
      * @var array
      */
     public $dataTemperature = [];
+    
+    /**
+     * tagCloud
+     *
+     * @var array
+     */
+    public $tagCloud = [];
 
 
     /**
@@ -163,7 +171,7 @@ class BaseController extends Controller
         ];
 
         $this->dataHeader = [
-            "title" => "TiberioGeo - A Geografia Levada a Sério!",
+            "title" => "Tiberiogeo - A Geografia Levada a Sério!",
             "favico" => base_url() . "/assets/img/logo/autor.png",
 
         ];
@@ -181,7 +189,7 @@ class BaseController extends Controller
         if (getEnv('CI_ENVIRONMENT') != 'development') :
             $urlTempIp = 'https://api.hgbrasil.com/weather?key=acca0bf5&user_ip=remote';
             $urlTempCampinaGrande = 'https://api.hgbrasil.com/weather?format=json-cors&key=acca0bf5&woeid=455848';
-            $this->dataTemperature = json_decode(file_get_contents($urlTempIp), true); // Recebe os dados da API
+            $this->dataTemperature = json_decode(file_get_contents($urlTempCampinaGrande), true); // Recebe os dados da API
         //$dataCotacao = json_decode(file_get_contents('https://economia.awesomeapi.com.br/json/USD-BRL'), true);
         endif;
         /*if(json_last_error()!= 0 ){
@@ -206,5 +214,45 @@ class BaseController extends Controller
         $this->menuGeography = $this->category->getMenu('geography');
         krsort($this->menuGeography);
         setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+
+
+        /*Prepara a cloud tag*/
+
+        $categories = new Category();
+        $values = $categories->defineCategories();
+
+        shuffle($values);
+
+        $categoryEnd = reset($values);
+
+        $category = file_get_contents(defineUrlDb() . 'category-' . $categoryEnd . '.json');
+
+        $jsonCategory = json_decode($category, true);
+
+        $arrayTags = [];
+        //$cloudWord = [];
+        $count = 1;
+
+        $wordNotPermitide = [
+            'Para','Ante','Após','Contra','Entre','Sobre','Trás','Fora','Aquele',
+            'Abaixo','Acima','Mais','Como'
+        ];
+
+        foreach ($jsonCategory as $tag) {
+            $word = explode(" ", $tag['title']);
+            foreach ($word as $wordCloud) {
+                if (strlen($wordCloud) > 4 &&
+                    !in_array($wordCloud,$wordNotPermitide)) {
+                    $arrayTags[] = removeCharacterSpecial(firstUppercase($wordCloud));                    
+                }
+            }
+        }
+
+        $arrayTags =  array_unique($arrayTags);
+
+        shuffle($arrayTags);
+        
+        $this->tagCloud = $arrayTags;
+       
     }
 }

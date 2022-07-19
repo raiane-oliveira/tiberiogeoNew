@@ -149,10 +149,12 @@
 
    <!-- javaScript Files	=============================================================================-->
    <?php
-   foreach ($js as $path) : ?>
-      <script src="<?= $path['path']; ?>"></script>
-   <?php endforeach; ?>
 
+   array_map(function($path){
+      echo '<script src="'.$path["path"].'"></script>';
+   }, $js);
+   ?>
+   
    <script>
       function carregar() {
          $("#load").addClass("load");

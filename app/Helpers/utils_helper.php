@@ -118,7 +118,8 @@ function createSlug(string $title): string
 }
 
 
-function defineColorWord(){
+function defineColorWord()
+{
     return 'orange';
 }
 
@@ -145,13 +146,13 @@ function anchorCategory(string $category, bool $style = false): string
     endif;
     if ($category == 'geography') :
         $color = "green";
-    endif;   
+    endif;
     if ($category == 'variety') :
         $color = "black";
-    endif;   
+    endif;
     if ($category == 'curiosity') :
         $color = "bordo";
-    endif;   
+    endif;
 
 
     if ($style) :
@@ -160,8 +161,8 @@ function anchorCategory(string $category, bool $style = false): string
         ];
     else :
         $dados = [
-            'class' => 'ts-'.$color . '-bg p-1 text-white font-weight-bold',
-            
+            'class' => 'ts-' . $color . '-bg p-1 text-white font-weight-bold',
+
         ];
     endif;
 
@@ -361,38 +362,37 @@ function buildOptionCategory(string $category = null): string
 
 function copyr($source, $dest)
 {
-   // COPIA UM ARQUIVO
-   if (is_file($source)) {
-      return copy($source, $dest);
-   }
- 
-   // CRIA O DIRETÓRIO DE DESTINO
-   if (!is_dir($dest)) {
-      mkdir($dest);
-      chmod($dest, 0777);
-      echo "DIRET&Oacute;RIO $dest CRIADO<br />";
-   }
- 
-   // FAZ LOOP DENTRO DA PASTA
-   $dir = dir($source);
-   while (false !== $entry = $dir->read()) {
-       
-      // PULA "." e ".."
-      if ($entry == '.' || $entry == '..') {
-         continue;
-      }
- 
-      // COPIA TUDO DENTRO DOS DIRETÓRIOS
-      if ($dest !== "$source/$entry") {
-         copyr("$source/$entry", "$dest/$entry");   
-         chmod("$dest/$entry", 0777);      
-         echo "COPIANDO $entry de $source para $dest <br />";
-      }
-   }
- 
-   $dir->close();
-   return true;
- 
+    // COPIA UM ARQUIVO
+    if (is_file($source)) {
+        return copy($source, $dest);
+    }
+
+    // CRIA O DIRETÓRIO DE DESTINO
+    if (!is_dir($dest)) {
+        mkdir($dest);
+        chmod($dest, 0777);
+        echo "DIRET&Oacute;RIO $dest CRIADO<br />";
+    }
+
+    // FAZ LOOP DENTRO DA PASTA
+    $dir = dir($source);
+    while (false !== $entry = $dir->read()) {
+
+        // PULA "." e ".."
+        if ($entry == '.' || $entry == '..') {
+            continue;
+        }
+
+        // COPIA TUDO DENTRO DOS DIRETÓRIOS
+        if ($dest !== "$source/$entry") {
+            copyr("$source/$entry", "$dest/$entry");
+            chmod("$dest/$entry", 0777);
+            echo "COPIANDO $entry de $source para $dest <br />";
+        }
+    }
+
+    $dir->close();
+    return true;
 }
 
 /**
@@ -400,8 +400,9 @@ function copyr($source, $dest)
  *
  * @return void
  */
-function defineUrlDb(){
-   return APPPATH.'Base/';
+function defineUrlDb()
+{
+    return APPPATH . 'Base/';
 }
 
 /**
@@ -413,18 +414,24 @@ function defineUrlDb(){
  */
 function tratarSentenca(string $sentenca): string
 {
-    $string = explode(" ",$sentenca);
+    $string = explode(" ", $sentenca);
     return mb_strtolower(tratarPalavras($string[0]));
-
 }
 
-function writeZeroLeft(Int $number){
+/**
+ * Method writeZeroLeft
+ *
+ * @param Int $number [explicite description]
+ *
+ * @return void
+ */
+function writeZeroLeft(Int $number)
+{
 
-    if($number < 9){
-        return '0'.$number;
+    if ($number < 9) {
+        return '0' . $number;
     }
     return $number;
-
 }
 
 function tratarPalavras($string)
@@ -442,5 +449,14 @@ function tratarPalavras($string)
         "/(Ú|Ù|Û|Ü)/",
         "/(ñ)/",
         "/(Ñ)/",
-        "/(Ç)/"), explode(" ", "a A e E i I o O u U n N C"), mb_strtoupper($string));
+        "/(Ç)/"
+    ), explode(" ", "a A e E i I o O u U n N C"), mb_strtoupper($string));
+}
+
+function removeCharacterSpecial(string $string)
+{
+    return preg_replace([
+        '/(,|;|:)/'
+    ], '', $string);
+
 }

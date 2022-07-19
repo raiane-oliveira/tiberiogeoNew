@@ -69,6 +69,7 @@ $total = count($dataCategory);
                     <div class="right-sidebar-1">
                         <?= view('site/side-favorite'); ?>
                         <?= view('site/side-category'); ?>
+                        <?= view('site/side-cloud'); ?>
                     </div>
                 </div>
             </div><!-- row end-->

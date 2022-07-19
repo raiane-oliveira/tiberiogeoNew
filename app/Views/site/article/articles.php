@@ -98,7 +98,11 @@ setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
             </div><!-- col end -->
             <div class="col-lg-3">
                 <?= view('site/side'); ?>
+                <br>
+                <?=view('site/side-cloud');?>
+         
             </div>
+            
             <!-- col end-->
         </div><!-- row end-->
     </div><!-- container-->
