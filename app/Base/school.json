@@ -51,6 +51,12 @@
             "title": "Conflitos entre Judeus e Árabes",
             "link": "/text/SlideJudeusArabes_1.pdf",
             "date": "19/07/2022"
+        },
+        {
+            "id": "202208012138519582452043",
+            "title": "A dinâmica Climática",
+            "link": "/text/SlideDinamicaClimatica.pdf",
+            "date": "01/08/2022"
         }
     ],
     "text": [
@@ -77,6 +83,12 @@
             "title": "Conflitos Entre Judeus e Arábes",
             "link": "/text/ConflitosEntreJudeusArabes.pdf",
             "date": "05/06/2022"
+        },
+        {
+            "id": "202208012136422842315396",
+            "title": "A Dinâmica Climática",
+            "link": "/text/DinamicaClimatica.pdf",
+            "date": "01/08/2022"
         }
     ]
 }
