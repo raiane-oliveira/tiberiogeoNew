@@ -20,12 +20,12 @@
                 "correct": false
             },
             {
-                "id": "20014544788345676",
+                "id": "2001454478834565676",
                 "alternative": "Se caracteriza pela divisão do ponto de vista econômico e não geográfico, no qual a linha que divide não é a Linha do Equador, mas uma linha que estabelecerá os países do sul como os subdesenvolvidos, pobres e os do norte, os desenvolvidos, ricos.",
                 "correct": true
             },
             {
-                "id": "20014544788345676",
+                "id": "2001454478834562176",
                 "alternative": "A divisão Norte-Sul é imutável, não havendo possibilidades de nenhuma nação subdesenvolvida se tornar desenvolvida e vice-versa.",
                 "correct": false
             }
@@ -35,7 +35,7 @@
     },
     {
         "position": 2,
-        "id": "14",
+        "id": "14566",
         "question": "\"[...] o Estado israelense anexou a Península do Sinai e a Faixa de Gaza (então pertencentes ao Egito), a Cisjordânia (da Jordânia) e para os palestinos. Novos contingentes de dezenas de milhares engrossaram a diáspora.\" ARBEX JR., José. Guerra Fria: terror de Estado, política e cultura. 3a ed. São Paulo: Moderna, 1997. [adapt.]. Os textos referem-se à",
         "alternatives": [
             {
@@ -44,7 +44,7 @@
                 "correct": false
             },
             {
-                "id": "13",
+                "id": "1553",
                 "alternative": "Guerra dos Seis Dias (1967), quando, com o apoio dos Estados Unidos, Israel expandiu seu território, promovendo um continuado conflito.",
                 "correct": true
             },
@@ -61,6 +61,40 @@
             {
                 "id": "200145447812834567986",
                 "alternative": "Guerra do Yom Kippur (1973), quando a OLP (Organização para a Libertação da Palestina), liderada por Yasser Arafat, entrou em conflito com os sionistas.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "a-otan-02.jpg"
+    },
+    {
+        "position": 3,
+        "id": "18666",
+        "question": "Sobre o período da Guerra Fria é CORRETO afirmar que",
+        "alternatives": [
+            {
+                "id": "20091423423939834567899",
+                "alternative": "A URSS e os EUA entraram em atrito por conta de seus sistemas socioeconômicos diferentes e a busca por apoio em seus ideais altruístas de reconstrução do globo.",
+                "correct": false
+            },
+            {
+                "id": "156744444233333",
+                "alternative": "Não teve um conflito direto entre os países envolvidos, mas gerou um grande clima de tensão com o grande investimento em tecnologia armamentista de ambos os lados.",
+                "correct": true
+            },
+            {
+                "id": "200123983343409875676",
+                "alternative": "Não atingiu o continente americano, já que o grande interesse dos países envolvidos estava nos antigos participantes da II Guerra Mundial.",
+                "correct": false
+            },
+            {
+                "id": "200145447883459235698676",
+                "alternative": "Culminou num acordo de cessar fogo de ambas as partes, selando a paz e terminando o atrito criado, no ano de 1991.",
+                "correct": false
+            },
+            {
+                "id": "20014544781283456337986",
+                "alternative": "Gerou um grande endividamento de ambos os países envolvidos, gerando a possiblidade do crescimento econômico das tradicionais economias europeias, o que gerou o fim da URSS.",
                 "correct": false
             }
         ],

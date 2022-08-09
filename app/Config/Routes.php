@@ -60,7 +60,7 @@ $routes->post('/search', 'Search::index');
 $routes->get('/search/(:any)', 'Search::cloud/$1');
 
 $routes->get('/quiz/(:any)', 'Quiz::index/$1');
-$routes->get('/quiz/sendQuestion', 'Quiz::sendQuestion');
+$routes->post('/quiz/sendQuestion', 'Quiz::sendQuestion');
 
 /*
  * --------------------------------------------------------------------

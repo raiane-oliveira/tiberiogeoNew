@@ -78,16 +78,19 @@ class QuizModel extends Model
                     if ($alternative['id'] == $idAlternative && $alternative['correct'] == true ) {
                     
                         $data['status'] = true;
+                        $data['resposta'] = $alternative['alternative'];
                         
                         break;
 
                     } else {
+                        if($alternative['correct'] == true) {
                             $data['resposta'] = $alternative['alternative'];
-                        
+                        }
                     }               
                     
                 }
                 $data['position'] = $item['position'];
+                $data['question'] = $item['question'];
                 break;                
             }
         }

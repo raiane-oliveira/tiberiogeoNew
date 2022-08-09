@@ -9,17 +9,24 @@ use App\Models\QuizModel;
 
 class Quiz extends BaseController
 {
+    private $erros;
 
-    public function index(int $position = 0)
+    public function index(int $position = 1)
     {
-        $sum = 1;
-        session()->set('position', $position + $sum);
-        $ps = session('position');
-
+        $msg = [
+            'message' => '',
+            'alert' => ''
+        ];
+        if (session()->has('erro')) {
+            $this->erros = session('erro');            
+        }
+        //session()->remove('position');
+        $quiz = new QuizModel();        
+        $totalQuestion = $quiz->getCount();       
+        
         $page = 'site/quiz/quiz';
 
-        $quiz = new QuizModel();
-        $quizQuestion = $quiz->getByPosition($ps);
+        $quizQuestion = $quiz->getByPosition($position);
         //$quizQuestion = $quiz->getAll();
         //shuffle($quizQuestion);         
         if (isset($dataCategory['error'])) {
@@ -51,7 +58,9 @@ class Quiz extends BaseController
             "dataVariety" => $dataCategoryVariety,
             'tagCloud' => $this->tagCloud,
             "quizzes" => $quizQuestion,
-            "totalQuizzes" => $quiz->getCount()
+            "totalQuizzes" => $quiz->getCount(),
+            'erro' => $this->erros
+            
         ];
 
 
@@ -60,11 +69,27 @@ class Quiz extends BaseController
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
+        //session()->remove('position');
         return $parser->render($page);
     }
 
     public function sendQuestion()
     {
+        $val = $this->validate(
+            [
+                'alternative' => 'required',
+            ],
+            [
+                'alternative' => [
+                    'required' => 'Escolha uma opção para continuar!',
+                ],
+            ]
+        );     
+
+        if (!$val) {
+            return redirect()->back()->with('erro', $this->validator);            
+        }
+
 
         $idQuestion = $this->request->getPost('idQuestion');
         $idAlternative = $this->request->getPost('alternative');
@@ -72,24 +97,36 @@ class Quiz extends BaseController
 
         $quiz = new QuizModel();
         $quizQuestion = $quiz->getById($idQuestion, $idAlternative);
-
+        $cont = 0;
+        if(!session()->has('hits')){
+            session()->set('hits', $cont );          
+        }
         if ($quizQuestion['status']) {
+            //session()->remove('hits');
+            $total = session('hits') + 1;     
+            //dd($total);
+            session()->set('hits', $total);
+            $d = session('hits');
+            //dd($d);
             session()->set(
                 [
                     'message' => '<h4>PARABÉNS! Resposta correta!</h4> <strong>Resposta :: </strong>' . $quizQuestion['resposta'] ,
-                    'position' => $quizQuestion['position'],
-                    'status' => 'success'
-                ],
+                    'status' => 'success',
+                    'question' =>  $quizQuestion['question']  
 
+                ],
             );
+            
         } else {
             session()->set([
                 'message' => '<h4>Ops! Que pena, você errou! A resposta correta é:</h4><strong>Resposta :: </strong>' . $quizQuestion['resposta'],
-                'position' => $quizQuestion['position'],
-                'status' => 'danger'
+                'status' => 'danger',
+                'question' =>  $quizQuestion['question']   
             ]);
         }
+        
+        //session()->set('position', $quizQuestion['position']);
 
-        return redirect()->to('/quiz');
+        return redirect()->to('quiz/'.$quizQuestion['position']);
     }
 }
