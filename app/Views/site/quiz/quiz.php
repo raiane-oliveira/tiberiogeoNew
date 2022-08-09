@@ -26,29 +26,47 @@ setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
                             <div class="entry-content">
                                 <?= form_open('/quiz/sendQuestion');
                                 echo form_hidden('idQuestion', $quizzes['id']);
+
                                 $contQuestion = 1;
                                 //foreach ($quizzes as $quiz) : 
                                 ?>
-                                <strong>Questão: <?= $contQuestion; ?> / <?= $totalQuizzes; ?></strong>
+                                <strong>Questão: <?= $contQuestion; ?> / <?= $totalQuizzes; ?></strong><br>
                                 <hr>
                                 <h3> <?= $quizzes['question']; ?></h3>
-                                <?php shuffle($quizzes['alternatives']);
-                                foreach ($quizzes['alternatives'] as $key => $alternatives) : ?>
-                                    <div class="form-check">
-                                        <input class="form-check-input justify-question" type="radio" name="alternative" id="<?= $alternatives['id']; ?>" value="<?= $alternatives['id']; ?>">
-                                        <label class="form-check-label justify-question" for="<?= $alternatives['id']; ?>">
-                                            <?= convertNumberString($key) . ' ' . $alternatives['alternative']; ?>
-                                        </label>
+
+                                <?php
+                                if (session('message')) : ?>
+                                    <div class="alert alert-<?= session('status'); ?>" role="alert">
+                                        <?php
+                                        echo session('message');
+                                        session()->remove('message') ?>
+                                        <hr>
+                                        <div>
+                                            <?= anchor('quiz/' . session('position'), 'Próxima Questão', ['class' => 'btn btn-primary']); ?>
+                                        </div>
+
                                     </div>
-                                <?php endforeach; ?>
-                                <hr>
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                                <p><?=session('resposta');
-                                session()->remove('resposta')?></p>
-                                <?php $contQuestion++;
-                                //endforeach; 
-                                ?>
-                                <?= form_close(); ?>
+                                <?php else : ?>
+
+                                    <?php //shuffle($quizzes['alternatives']);
+                                    //dd($quizzes['alternatives']);
+                                    foreach ($quizzes['alternatives'] as $key => $alternatives) : ?>
+                                        <div class="form-check">
+                                            <input class="form-check-input justify-question" type="radio" name="alternative" id="<?= $alternatives['id']; ?>" value="<?= $alternatives['id']; ?>">
+                                            <label class="form-check-label justify-question" for="<?= $alternatives['id']; ?>">
+                                                <?= convertNumberString($key) . ' ' . $alternatives['alternative']; ?>
+                                            </label>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                    <?php $contQuestion++;
+                                    //endforeach; 
+                                    ?>
+                                    <?= form_close(); ?>
+                                <?php endif ?>
+
+
                             </div><!-- entry content end-->
                         </div><!-- post content area-->
 

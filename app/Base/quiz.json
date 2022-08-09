@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "position": 1,
         "id": "2001239834567",
         "question": "O mundo é atualmente dividido entre países do Norte e países do Sul. Sobre essa divisão, assinale a alternativa CORRETA:",
         "alternatives": [
@@ -33,6 +34,7 @@
         "img": ""
     },
     {
+        "position": 2,
         "id": "14",
         "question": "\"[...] o Estado israelense anexou a Península do Sinai e a Faixa de Gaza (então pertencentes ao Egito), a Cisjordânia (da Jordânia) e para os palestinos. Novos contingentes de dezenas de milhares engrossaram a diáspora.\" ARBEX JR., José. Guerra Fria: terror de Estado, política e cultura. 3a ed. São Paulo: Moderna, 1997. [adapt.]. Os textos referem-se à",
         "alternatives": [

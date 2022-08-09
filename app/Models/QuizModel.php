@@ -7,11 +7,13 @@ use CodeIgniter\Model;
 class QuizModel extends Model
 {
     private $jsonString;
+
     public function __construct()
     {
         
         $this->jsonString = file_get_contents(defineUrlDb().'quiz.json');
     }
+
     public function getAll()
     {
         $dataQuiz = json_decode($this->jsonString, true);
@@ -24,6 +26,41 @@ class QuizModel extends Model
 
     }
 
+    public function getByPosition(int $position)
+    {
+        $dataQuiz = json_decode($this->jsonString, true);
+
+        $data = [];
+        $d = [];
+        foreach ($dataQuiz as $item) {
+
+            if ($item['position'] === $position) {
+                
+                $data['position'] = $item['position'];
+                $data['id'] = $item['id'];
+                $data['question'] = $item['question'];                
+               
+                foreach($item['alternatives'] as $ps){
+                    $data['alternatives'][] = [
+                        'id' => $ps['id'],
+                        'alternative' => $ps['alternative'],
+                        'correct' => $ps['correct']
+                      ];
+                }
+                
+                //$data['alternatives'] = $d;
+                $data['status'] = $item['status'];
+                $data['img'] = $item['img'];
+
+                break;
+                
+
+            }
+        }
+        return $data;
+
+    }
+
     public function getById(string $id, string $idAlternative)
     {
         
@@ -31,8 +68,6 @@ class QuizModel extends Model
 
         $data = [];
         $data['status'] = false;
-
-        $resposta = false;
 
         foreach ($dataQuiz as $item) {
 
@@ -47,19 +82,13 @@ class QuizModel extends Model
                         break;
 
                     } else {
-                        if($alternative['correct'] == true) {
                             $data['resposta'] = $alternative['alternative'];
-                        }
-                    }
-                    
-                    
-                    //dd('é diferente');
-                    //return 'ERROR! A Resposta correta é: xxxx'  ; 
+                        
+                    }               
                     
                 }
-                
-                break;
-                
+                $data['position'] = $item['position'];
+                break;                
             }
         }
         return $data;
