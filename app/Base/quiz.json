@@ -1,0 +1,68 @@
+[
+    {
+        "id": "2001239834567",
+        "question": "O mundo é atualmente dividido entre países do Norte e países do Sul. Sobre essa divisão, assinale a alternativa CORRETA:",
+        "alternatives": [
+            {
+                "id": "2001239834567899",
+                "alternative": "A divisão Norte-Sul não se trata de dividir o mundo em dois hemisférios, mas em ordenar a diferenciação entre os países ricos (majoritariamente localizados no Sul) e os países pobres (majoritariamente localizados no Norte).",
+                "correct": false
+            },
+            {
+                "id": "20012398345678976",
+                "alternative": "O norte se caracteriza por ter um PIB (Produto Interno Bruto) superior ao dos países do Sul, entretanto, as desigualdades sociais e os índices de miséria são mais acentuados.",
+                "correct": false
+            },
+            {
+                "id": "20012398345676",
+                "alternative": "A inclusão da Austrália e da Nova Zelândia no eixo dos países do Norte é errônea, uma vez que esses países pertencem ao Hemisfério Sul.",
+                "correct": false
+            },
+            {
+                "id": "20014544788345676",
+                "alternative": "Se caracteriza pela divisão do ponto de vista econômico e não geográfico, no qual a linha que divide não é a Linha do Equador, mas uma linha que estabelecerá os países do sul como os subdesenvolvidos, pobres e os do norte, os desenvolvidos, ricos.",
+                "correct": true
+            },
+            {
+                "id": "20014544788345676",
+                "alternative": "A divisão Norte-Sul é imutável, não havendo possibilidades de nenhuma nação subdesenvolvida se tornar desenvolvida e vice-versa.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": ""
+    },
+    {
+        "id": "14",
+        "question": "\"[...] o Estado israelense anexou a Península do Sinai e a Faixa de Gaza (então pertencentes ao Egito), a Cisjordânia (da Jordânia) e para os palestinos. Novos contingentes de dezenas de milhares engrossaram a diáspora.\" ARBEX JR., José. Guerra Fria: terror de Estado, política e cultura. 3a ed. São Paulo: Moderna, 1997. [adapt.]. Os textos referem-se à",
+        "alternatives": [
+            {
+                "id": "200123439834567899",
+                "alternative": "Ocupação israelense sobre o sul do Líbano (2006), antiga Fenícia, aprofundando a Diáspora hebraica como forma de contenção à ação do Hezbollah.",
+                "correct": false
+            },
+            {
+                "id": "13",
+                "alternative": "Guerra dos Seis Dias (1967), quando, com o apoio dos Estados Unidos, Israel expandiu seu território, promovendo um continuado conflito.",
+                "correct": true
+            },
+            {
+                "id": "200123983409875676",
+                "alternative": "Guerra do Yom Kippur (1973), quando Egito e Síria, embasados pelo nacionalismo de Nasser, ameaçaram a soberania israelense.",
+                "correct": false
+            },
+            {
+                "id": "2001454478834595698676",
+                "alternative": "Formação do Estado de Israel (1948), apoiada pela ONU, na região onde, na Antiguidade, se localizaram os reinos de Israel e Judá.",
+                "correct": false
+            },
+            {
+                "id": "200145447812834567986",
+                "alternative": "Guerra do Yom Kippur (1973), quando a OLP (Organização para a Libertação da Palestina), liderada por Yasser Arafat, entrou em conflito com os sionistas.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "a-otan-02.jpg"
+    }
+]

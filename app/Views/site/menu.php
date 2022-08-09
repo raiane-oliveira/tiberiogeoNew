@@ -130,6 +130,7 @@
                             <li><?= anchor('/school', "ESCOLA"); ?></li>
                             <?php
                             if (getEnv('CI_ENVIRONMENT') === 'development') : ?>
+                                <li><?= anchor('/quiz', "SIMULADO"); ?></li>
                                 <li>
                                     <?= anchor('#', "ADMIN"); ?>
                                     <ul class="nav-dropdown nav-submenu">

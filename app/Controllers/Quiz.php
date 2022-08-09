@@ -5,16 +5,18 @@ namespace App\Controllers;
 use App\Models\VarietyModel;
 use App\Models\CuriosityModel;
 use App\Controllers\BaseController;
+use App\Models\QuizModel;
 
-class Simulado extends BaseController
+class Quiz extends BaseController
 {
 
-    public function simulado()
+    public function index()
     {
-        $page = 'site/simulado/simulado';
+        $page = 'site/quiz/quiz';
 	   
-	    $dataCategory = $this->category->getArticleMain($category);
-        krsort($dataCategory);         
+        $quiz = new QuizModel();
+	    $quizQuestion = $quiz->getAll();
+        //shuffle($quizQuestion);         
         if (isset($dataCategory['error'])) {
             $page = 'site/error404.php';
         }
@@ -32,8 +34,7 @@ class Simulado extends BaseController
           
 
 	    $data = [
-	        "dataCategory" => $dataCategory,
-            "category" => $category,
+	       
             "data_temperature" => $this->dataTemperature,
             "date_now" => $this->dateNow,
             "dataMenuWorld" => $this->menuWorld,
@@ -43,6 +44,8 @@ class Simulado extends BaseController
             "dataCuriosity" => $dataCategoryCuriosity,
             "dataVariety" => $dataCategoryVariety,
             'tagCloud' => $this->tagCloud,
+            "quizzes" => end($quizQuestion),
+            "totalQuizzes" => $quiz->getCount()
         ];       
 	 
 	    
@@ -53,4 +56,23 @@ class Simulado extends BaseController
         $parser->setData($this->javascript);
 		return $parser->render($page);     
     }  
+
+    public function sendQuestion(){
+
+        $idQuestion = $this->request->getPost('idQuestion');
+        $idAlternative = $this->request->getPost('alternative');
+
+        
+        $quiz = new QuizModel();
+        $quizQuestion = $quiz->getById($idQuestion, $idAlternative);
+
+        if($quizQuestion['status']){
+            session()->set('resposta', 'PARABÉNS! Resposta correta');
+        } else{
+            session()->set('resposta', 'ERRO! A resposta correta é: <br>'. $quizQuestion['resposta']);
+        }
+       
+        return redirect()->to('/quiz');
+    
+    }
 }

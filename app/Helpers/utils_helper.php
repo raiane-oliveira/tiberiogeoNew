@@ -434,6 +434,28 @@ function writeZeroLeft(Int $number)
     return $number;
 }
 
+function convertNumberString(int $number) {
+
+    switch ($number) {
+        case 0:
+           return 'a)';
+           
+        case 1:
+           return 'b)';
+           
+        case 2:
+           return 'c)';
+           
+        case 3:
+           return 'd)';
+          
+        case 4:
+           return 'e)';         
+      
+    }    
+  
+}
+
 function tratarPalavras($string)
 {
     return preg_replace(array(

@@ -5688,3 +5688,11 @@ p img.float-left {
   color:#222222;
   font-weight:700;
 }
+.form-check-label{
+  font-size: 16px;
+  color:#222222;
+  font-weight:700;
+}
+.justify-question{
+  text-align:justify;
+}
