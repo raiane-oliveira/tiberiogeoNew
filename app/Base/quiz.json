@@ -2,31 +2,133 @@
     {   
         "position": 1,
         "id": "2001239834567",
-        "question": "O mundo é atualmente dividido entre países do Norte e países do Sul. Sobre essa divisão, assinale a alternativa CORRETA:",
+        "question": "Observe a imagem abaixo e responda: por que a imagem é INCOERENTE?",
         "alternatives": [
             {
                 "id": "2001239834567899",
-                "alternative": "A divisão Norte-Sul não se trata de dividir o mundo em dois hemisférios, mas em ordenar a diferenciação entre os países ricos (majoritariamente localizados no Sul) e os países pobres (majoritariamente localizados no Norte).",
+                "alternative": "Em tempos pré-históricos, os homens não caçavam répteis.",
                 "correct": false
             },
             {
                 "id": "20012398345678976",
-                "alternative": "O norte se caracteriza por ter um PIB (Produto Interno Bruto) superior ao dos países do Sul, entretanto, as desigualdades sociais e os índices de miséria são mais acentuados.",
+                "alternative": "Os dinossauros não eram presas fáceis para os humanos e dificilmente eram capturados.",
                 "correct": false
             },
             {
                 "id": "20012398345676",
-                "alternative": "A inclusão da Austrália e da Nova Zelândia no eixo dos países do Norte é errônea, uma vez que esses países pertencem ao Hemisfério Sul.",
-                "correct": false
-            },
-            {
-                "id": "2001454478834565676",
-                "alternative": "Se caracteriza pela divisão do ponto de vista econômico e não geográfico, no qual a linha que divide não é a Linha do Equador, mas uma linha que estabelecerá os países do sul como os subdesenvolvidos, pobres e os do norte, os desenvolvidos, ricos.",
+                "alternative": "Os seres humanos surgiram no período quaternário da era Cenozoica, quando os dinossauros já haviam sido extintos.",
                 "correct": true
             },
             {
+                "id": "2001454478834565676",
+                "alternative": "Quando os dinossauros surgiram, no terciário, os seres humanos não viviam mais da caça, e sim da agricultura.",
+                "correct": false
+            },
+            {
                 "id": "2001454478834562176",
-                "alternative": "A divisão Norte-Sul é imutável, não havendo possibilidades de nenhuma nação subdesenvolvida se tornar desenvolvida e vice-versa.",
+                "alternative": "Os dinossauros viveram na era Paleozoica e os seres humanos na era primária em diante, que são períodos geológicos distintos.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura01.png"
+    },
+    {
+        "position": 2,
+        "id": "14566",
+        "question": "Observe a imagem abaixo: os fósseis, a exemplo da imagem acima, costumam se formar apenas em um tipo específico de estrutura rochosa, em virtude de suas características de formação. Os tipos de rochas que permitem a fossilização são:",
+        "alternatives": [
+            {
+                "id": "200123439834567899",
+                "alternative": "As metamórficas, pois o metamorfismo dos solos permite a conservação da estrutura dos elementos orgânicos;",
+                "correct": false
+            },
+            {
+                "id": "1553",
+                "alternative": "As sedimentares, pois o transporte de sedimentos pelos agentes exógenos permite o soterramento dos restos orgânicos, iniciando assim o processo de fossilização. ",
+                "correct": true
+            },
+            {
+                "id": "200123983409875676",
+                "alternative": "As magmáticas, pois apenas em condições elevadas de pressão interna, causadas pelo “afundamento” dos fósseis ao longo de milhares de anos, é possível a sua formação.",
+                "correct": false
+            },
+            {
+                "id": "2001454478834595698676",
+                "alternative": "As ígneas, pois elas são o único tipo de rocha que apresenta uma estrutura maleável para a formação de fósseis.",
+                "correct": false
+            },
+            {
+                "id": "200145447812834567986",
+                "alternative": "N.D.A.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura-02.png"
+    },
+    {
+        "position": 3,
+        "id": "18666",
+        "question": "A imagem abaixo mostra a situação da mulher no mercado de trabalho. Analise as afirmativas abaixo e em seguida assinale a alternativa que corresponda CORRETAMENTE a sua intenção. ",
+        "alternatives": [
+            {
+                "id": "20091423423939834567899",
+                "alternative": "A situação da mulher no mercado de trabalho é muito cômoda, pois ela só exerce a função de secretária.",
+                "correct": false
+            },
+            {
+                "id": "156744444233333",
+                "alternative": "Que a mulher cada vez mais tem escolhido a profissão de técnica em informática.",
+                "correct": false
+            },
+            {
+                "id": "200123983343409875676",
+                "alternative": "Mostra que a mulher, em sua grande maioria, tem jornada dupla de trabalho.",
+                "correct": true
+            },
+            {
+                "id": "200145447883459235698676",
+                "alternative": "A mulher nas últimas décadas vem perdendo espaço no mercado de trabalho para se dedicar exclusivamente dos afazeres do lar.",
+                "correct": false
+            },
+            {
+                "id": "20014544781283456337986",
+                "alternative": "A situação de que a mulher, em geral, vem tendo filhos cada vez mais para poder ter auxilio por parte do governo.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura-03.png"
+    },
+    {
+        "position": 4,
+        "id": "1866672186",
+        "question": "A fase atual de expansão do capitalismo é chamada de globalização. Ela é consequência do avanço tecnológico, especialmente da modernização do sistema industrial. As tecnologias modernas permitem um aumento considerável da produtividade, isto é, com o mesmo número de trabalhadores consegue-se produzir mais. De forma crítica podemos concluir que:",
+        "alternatives": [
+            {
+                "id": "2009142342393983434567899",
+                "alternative": "a produção cresce significativamente e sem problemas;",
+                "correct": false
+            },
+            {
+                "id": "156744444442313333",
+                "alternative": "o desemprego diminui significativamente, pois essas tecnologias são geradoras de mão de obra;",
+                "correct": false
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "a produção compensa o desemprego, justificando os meios;",
+                "correct": false
+            },
+            {
+                "id": "20014544788345998235698676",
+                "alternative": "o desemprego cresce significativamente, pois essas tecnologias são poupadoras de mão de obra;",
+                "correct": true
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "é natural que os diversos ramos industriais venham se modernizando, contudo, o desemprego é responsabilidade única do trabalhador que não se atualiza.",
                 "correct": false
             }
         ],
@@ -34,71 +136,207 @@
         "img": ""
     },
     {
-        "position": 2,
-        "id": "14566",
-        "question": "\"[...] o Estado israelense anexou a Península do Sinai e a Faixa de Gaza (então pertencentes ao Egito), a Cisjordânia (da Jordânia) e para os palestinos. Novos contingentes de dezenas de milhares engrossaram a diáspora.\" ARBEX JR., José. Guerra Fria: terror de Estado, política e cultura. 3a ed. São Paulo: Moderna, 1997. [adapt.]. Os textos referem-se à",
+        "position": 5,
+        "id": "186095666786",
+        "question": "Observe a imagem e assinale a alternativa CORRETA ",
         "alternatives": [
             {
-                "id": "200123439834567899",
-                "alternative": "Ocupação israelense sobre o sul do Líbano (2006), antiga Fenícia, aprofundando a Diáspora hebraica como forma de contenção à ação do Hezbollah.",
-                "correct": false
-            },
-            {
-                "id": "1553",
-                "alternative": "Guerra dos Seis Dias (1967), quando, com o apoio dos Estados Unidos, Israel expandiu seu território, promovendo um continuado conflito.",
+                "id": "2009142342393983434567899",
+                "alternative": "alta amplitude térmica.",
                 "correct": true
             },
             {
-                "id": "200123983409875676",
-                "alternative": "Guerra do Yom Kippur (1973), quando Egito e Síria, embasados pelo nacionalismo de Nasser, ameaçaram a soberania israelense.",
+                "id": "156744444442313333",
+                "alternative": "elevada evapotranspiração.",
                 "correct": false
             },
             {
-                "id": "2001454478834595698676",
-                "alternative": "Formação do Estado de Israel (1948), apoiada pela ONU, na região onde, na Antiguidade, se localizaram os reinos de Israel e Judá.",
+                "id": "200123983342113409875676",
+                "alternative": "reduzida taxa de insolação.",
                 "correct": false
             },
             {
-                "id": "200145447812834567986",
-                "alternative": "Guerra do Yom Kippur (1973), quando a OLP (Organização para a Libertação da Palestina), liderada por Yasser Arafat, entrou em conflito com os sionistas.",
+                "id": "20014544788345998235698676",
+                "alternative": "inexistência de pluviosidade.",
+                "correct": false
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "intensa umidade relativa do ar.",
                 "correct": false
             }
         ],
         "status": "active",
-        "img": "a-otan-02.jpg"
+        "img": "figura-05.png"
     },
     {
-        "position": 3,
-        "id": "18666",
-        "question": "Sobre o período da Guerra Fria é CORRETO afirmar que",
+        "position": 6,
+        "id": "1860927895289666786",
+        "question": "Analise a tirinha abaixo sobre as evoluções tecnológicas contemporâneas. A tirinha acima reproduz uma crítica recorrentemente direcionada aos impactos gerados pela Terceira Revolução Industrial, assinale a alternativa CORRETA: ",
         "alternatives": [
             {
-                "id": "20091423423939834567899",
-                "alternative": "A URSS e os EUA entraram em atrito por conta de seus sistemas socioeconômicos diferentes e a busca por apoio em seus ideais altruístas de reconstrução do globo.",
+                "id": "2009142342393983434567899",
+                "alternative": "A excessiva capacidade de memória dos aparelhos industrializados.",
                 "correct": false
             },
             {
-                "id": "156744444233333",
-                "alternative": "Não teve um conflito direto entre os países envolvidos, mas gerou um grande clima de tensão com o grande investimento em tecnologia armamentista de ambos os lados.",
+                "id": "156744444442313333",
+                "alternative": "A superioridade do desempenho dos produtos face à capacidade humana.",
+                "correct": false
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "A alienação gerada pelas facilidades promovidas pelas tecnologias.",
                 "correct": true
             },
             {
-                "id": "200123983343409875676",
-                "alternative": "Não atingiu o continente americano, já que o grande interesse dos países envolvidos estava nos antigos participantes da II Guerra Mundial.",
+                "id": "20014544788345998235698676",
+                "alternative": "O processo de substituição do homem pela máquina no campo produtivo industrial.",
                 "correct": false
             },
             {
-                "id": "200145447883459235698676",
-                "alternative": "Culminou num acordo de cessar fogo de ambas as partes, selando a paz e terminando o atrito criado, no ano de 1991.",
-                "correct": false
-            },
-            {
-                "id": "20014544781283456337986",
-                "alternative": "Gerou um grande endividamento de ambos os países envolvidos, gerando a possiblidade do crescimento econômico das tradicionais economias europeias, o que gerou o fim da URSS.",
+                "id": "2001454478128346562156337986",
+                "alternative": "O desequilíbrio entre o excesso de informações e a incapacidade de armazená-las.",
                 "correct": false
             }
         ],
         "status": "active",
-        "img": "a-otan-02.jpg"
+        "img": "figura-06.png"
+    },
+    {
+        "position": 7,
+        "id": "18609278921367986",
+        "question": "A Amazônia é considerada uma floresta tropical. Entre as suas principais características, podemos destacar:",
+        "alternatives": [
+            {
+                "id": "2009142342393983434567899",
+                "alternative": "Clima quente e seco / elevada precipitação / vegetação rasteira",
+                "correct": false
+            },
+            {
+                "id": "156744444442313333",
+                "alternative": "Clima quente e úmido / baixa precipitação / vegetação arbustiva",
+                "correct": false
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "Clima frio e úmido / elevada precipitação / vegetação gramínea",
+                "correct": false
+            },
+            {
+                "id": "20014544788345998235698676",
+                "alternative": "Clima quente e úmido / elevada precipitação / vegetação arbórea",
+                "correct": true
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "Clima frio e seco / baixa precipitação / vegetação arbórea",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": ""
+    },
+    {
+        "position": 8,
+        "id": "186092789213671254607986",
+        "question": "Sobre a economia globalizada, analise a imagem abaixo e em seguida assinale a alternativa CORRETA:",
+        "alternatives": [
+            {
+                "id": "2009142342393983434567899",
+                "alternative": "Houve uma homogeneização das culturas e fez com que uma rede de fast food mudasse sua logomarca.",
+                "correct": false
+            },
+            {
+                "id": "156744444442313333",
+                "alternative": "Devido a imagem que as transnacionais apresentam para o mundo, há uma criatividade de outros para parecer com as originais e, assim, atrair mais clientes.",
+                "correct": true
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "A globalização tem promovido uma melhora significativa da população que passa a ter a autorização pra usar suas logomarcas de forma indiscriminada.",
+                "correct": false
+            },
+            {
+                "id": "20014544788345998235698676",
+                "alternative": "Uma rede de fast food tem promovida uma popularização de sua marca, autorizando que ocorra uma mudança no nome, mas mantendo a sua estrutura.",
+                "correct": false
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "Estabeleceu a diminuição das desigualdades sociais entre as nações do mundo com a massificação da cultura dos fast food.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura-08.png"
+    },
+    {
+        "position": 9,
+        "id": "186092217899367986",
+        "question": "Observe esta imagem: Esta imagem nos mostra",
+        "alternatives": [
+            {
+                "id": "2009142342393983434567899",
+                "alternative": "a sintonia do desenvolvimento industrial com a natureza",
+                "correct": false
+            },
+            {
+                "id": "156744444442313333",
+                "alternative": "um ambiente agrário.",
+                "correct": false
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "a poluição causada pelas queimadas em plantações de cana de açúcar.",
+                "correct": false
+            },
+            {
+                "id": "20014544788345998235698676",
+                "alternative": "a poluição causada pelo desenvolvimento industrial.",
+                "correct": false
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "O desenvolvimento econômico sem danos ao meio ambiente.",
+                "correct": true
+            }
+        ],
+        "status": "active",
+        "img": "figura-09.png"
+    },
+    {
+        "position": 10,
+        "id": "18609221789936792134",
+        "question": "A desigualdade social EXPLICA-SE:",
+        "alternatives": [
+            {
+                "id": "2009142342393983434567899",
+                "alternative": "Pela distribuição da riqueza de acordo com o esforço de cada um no desempenho de seu trabalho.",
+                "correct": false
+            },
+            {
+                "id": "156744444442313333",
+                "alternative": "Pela divisão da sociedade em classes sociais, decorrente da separação entre proprietários e não proprietários dos meios de produção.",
+                "correct": false
+            },
+            {
+                "id": "200123983342113409875676",
+                "alternative": "Pelas diferenças de inteligência e habilidade inatas dos indivíduos, determinadas biologicamente.",
+                "correct": true
+            },
+            {
+                "id": "20014544788345998235698676",
+                "alternative": "Pela apropriação das condições de trabalho pelos homens mais capazes em contextos históricos, marcados pela igualdade de oportunidades.",
+                "correct": false
+            },
+            {
+                "id": "2001454478128346562156337986",
+                "alternative": "Pela capacidade de cada indivíduo de superar suas necessidades básicas de alimentação.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": ""
     }
 ]

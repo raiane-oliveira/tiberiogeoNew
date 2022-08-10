@@ -456,6 +456,18 @@ function convertNumberString(int $number) {
   
 }
 
+function defineEmotion(int $num)
+{
+    if($num >= 80){
+        return '&#128516;';        
+    } else if($num <= 70 && $num >=40) {
+        return '&#128558;';
+    }
+    return '&#128542;';
+
+
+}
+
 function tratarPalavras($string)
 {
     return preg_replace(array(

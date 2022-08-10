@@ -95,6 +95,7 @@ class QuizModel extends Model
                 }
                 $data['position'] = $item['position'];
                 $data['question'] = $item['question'];
+                $data['img'] = $item['img'];
                 break;
             }
         }

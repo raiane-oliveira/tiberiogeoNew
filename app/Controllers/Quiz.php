@@ -75,6 +75,11 @@ class Quiz extends BaseController
 
     public function sendQuestion()
     {
+        if(!session('control')){
+
+            session()->set('control', []);
+        }
+              
         $val = $this->validate(
             [
                 'alternative' => 'required',
@@ -97,6 +102,11 @@ class Quiz extends BaseController
 
         $quiz = new QuizModel();
         $quizQuestion = $quiz->getById($idQuestion, $idAlternative);
+        
+        session()->push('control',['id'=> $quizQuestion['position']]);
+
+     
+
         $cont = 0;
         if(!session()->has('hits')){
             session()->set('hits', $cont );          
@@ -116,7 +126,8 @@ class Quiz extends BaseController
                     'question' =>  $quizQuestion['question'] ,
                     'return' => 'Você acertou!',
                     'response_correct' =>  $quizQuestion['resposta'],
-                    'key' =>  convertNumberString($quizQuestion['key']) 
+                    'key' =>  convertNumberString($quizQuestion['key']),
+                    'img' =>  $quizQuestion['img']
 
                 ],
             );
@@ -130,7 +141,8 @@ class Quiz extends BaseController
                 'response_correct' =>  $quizQuestion['resposta'],
                 'response_check' =>  $quizQuestion['check_resposta'],
                 'key_check' =>  convertNumberString($quizQuestion['check_key']),
-                'key' =>  convertNumberString($quizQuestion['key']) 
+                'key' =>  convertNumberString($quizQuestion['key']),
+                'img' =>  $quizQuestion['img']
             ]);
         }
         
