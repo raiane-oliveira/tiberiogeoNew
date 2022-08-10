@@ -43,24 +43,38 @@ setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
                                 ?>
                                 <strong>Questão: <?= $contQuestion; ?> / <?= $totalQuizzes; ?></strong><br>
                                 <hr>
-
                                 <?php
-                                if (session('message')) :
-                                    echo "<h3>" . $contQuestion . '. ' . session('question') . "</h3>"; ?>
-                                    <div class="alert alert-<?= session('status'); ?>" role="alert">
+                                if (session('message')) : ?>
+                                    <h2 class="text-<?= session('status') ?>"><?= session('return'); ?></h2>
+                                    <div class="radio-toolbar">
+                                    <div class="fail">
+                                    <h4 class="justify-question">
                                         <?php
-                                        echo session('message');
-                                        session()->remove('message') ?>
+                                            echo  session('key_check') .' ' . session('response_check'); ?>
+                                    </h4>
+                                    <i class="fa fa-2x fa-times"></i>
+                                    </div>
+                                    </div>
+                                    <?php echo "<h3>" . $contQuestion . '. ' . session('question') . "</h3>"; ?>
+                                    <div class="radio-toolbar">
+                                        <div class="active">
+                                            <h4 class="justify-question">
+                                                <?php echo (session('key')) . ' ' . session('response_correct'); ?>
+                                            </h4>
+                                            <i class="fa fa-2x fa-check"></i>
+                                        </div>
+                                        <?php session()->remove('message') ?>
+                                        <?php //session()->remove('key') ?>
                                         <hr>
                                         <?php if ($nextQuestion <= $totalQuizzes) : ?>
-
                                             <?= anchor('quiz/' . $nextQuestion, 'Próxima Questão', ['class' => 'btn btn-primary', 'onclick' => 'carregar()']); ?>
+                                            <?= anchor('quiz/', 'Recomeçar', ['class' => '']); ?>
                                         <?php else : ?>
                                             <div class="alert alert-warning" role="alert">
-                                                <h4 class="alert-heading">Seus Acertos ::
+                                                <h2 class="alert-heading">Seus Acertos ::
                                                     <?= session('hits'); ?> / <?= $totalQuizzes ?>
                                                     <?php session()->remove('hits'); ?>
-                                                </h4>
+                                                </h2>
                                                 <?= anchor('quiz/', 'Recomeçar', ['class' => 'btn btn-primary', 'onclick' => 'carregar()']); ?>
                                             </div>
                                         <?php endif ?>

@@ -101,6 +101,7 @@ class Quiz extends BaseController
         if(!session()->has('hits')){
             session()->set('hits', $cont );          
         }
+       
         if ($quizQuestion['status']) {
             //session()->remove('hits');
             $total = session('hits') + 1;     
@@ -112,7 +113,10 @@ class Quiz extends BaseController
                 [
                     'message' => '<h4>PARABÉNS! Resposta correta!</h4> <strong>Resposta :: </strong>' . $quizQuestion['resposta'] ,
                     'status' => 'success',
-                    'question' =>  $quizQuestion['question']  
+                    'question' =>  $quizQuestion['question'] ,
+                    'return' => 'Você acertou!',
+                    'response_correct' =>  $quizQuestion['resposta'],
+                    'key' =>  convertNumberString($quizQuestion['key']) 
 
                 ],
             );
@@ -121,7 +125,12 @@ class Quiz extends BaseController
             session()->set([
                 'message' => '<h4>Ops! Que pena, você errou! A resposta correta é:</h4><strong>Resposta :: </strong>' . $quizQuestion['resposta'],
                 'status' => 'danger',
-                'question' =>  $quizQuestion['question']   
+                'question' =>  $quizQuestion['question'],
+                'return' => 'Você errou!',
+                'response_correct' =>  $quizQuestion['resposta'],
+                'response_check' =>  $quizQuestion['check_resposta'],
+                'key_check' =>  convertNumberString($quizQuestion['check_key']),
+                'key' =>  convertNumberString($quizQuestion['key']) 
             ]);
         }
         
@@ -129,4 +138,5 @@ class Quiz extends BaseController
 
         return redirect()->to('quiz/'.$quizQuestion['position']);
     }
+   
 }

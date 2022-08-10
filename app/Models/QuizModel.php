@@ -10,8 +10,8 @@ class QuizModel extends Model
 
     public function __construct()
     {
-        
-        $this->jsonString = file_get_contents(defineUrlDb().'quiz.json');
+
+        $this->jsonString = file_get_contents(defineUrlDb() . 'quiz.json');
     }
 
     public function getAll()
@@ -22,8 +22,7 @@ class QuizModel extends Model
 
     public function getCount()
     {
-        return count(json_decode($this->jsonString, true));   
-
+        return count(json_decode($this->jsonString, true));
     }
 
     public function getByPosition(int $position)
@@ -35,35 +34,32 @@ class QuizModel extends Model
         foreach ($dataQuiz as $item) {
 
             if ($item['position'] === $position) {
-                
+
                 $data['position'] = $item['position'];
                 $data['id'] = $item['id'];
-                $data['question'] = $item['question'];                
-               
-                foreach($item['alternatives'] as $ps){
+                $data['question'] = $item['question'];
+
+                foreach ($item['alternatives'] as $ps) {
                     $data['alternatives'][] = [
                         'id' => $ps['id'],
                         'alternative' => $ps['alternative'],
                         'correct' => $ps['correct']
-                      ];
+                    ];
                 }
-                
+
                 //$data['alternatives'] = $d;
                 $data['status'] = $item['status'];
                 $data['img'] = $item['img'];
 
                 break;
-                
-
             }
         }
         return $data;
-
     }
 
     public function getById(string $id, string $idAlternative)
     {
-        
+
         $dataQuiz = json_decode($this->jsonString, true);
 
         $data = [];
@@ -72,28 +68,64 @@ class QuizModel extends Model
         foreach ($dataQuiz as $item) {
 
             if ($item['id'] === $id) {
-                
-                foreach($item['alternatives'] as $alternative) {      
 
-                    if ($alternative['id'] == $idAlternative && $alternative['correct'] == true ) {
-                    
+                foreach ($item['alternatives'] as $key => $alternative) {
+
+                    if ($alternative['id'] == $idAlternative) {
+                        
+                        $data['check_resposta'] = $alternative['alternative'];
+                        $data['check_key'] = $key;
+
+                    }
+
+                    if ($alternative['id'] == $idAlternative && $alternative['correct'] == true) {
+
                         $data['status'] = true;
                         $data['resposta'] = $alternative['alternative'];
-                        
-                        break;
+                        $data['key'] = $key;
 
+                        //break;
                     } else {
-                        if($alternative['correct'] == true) {
+
+                        if ($alternative['correct'] == true) {
                             $data['resposta'] = $alternative['alternative'];
+                            $data['key'] = $key;
                         }
-                    }               
-                    
+                    }
                 }
                 $data['position'] = $item['position'];
                 $data['question'] = $item['question'];
-                break;                
+                break;
             }
         }
+
+        return $data;
+    }
+    public function getByIdAlternative(string $id, string $idAlternative)
+    {
+
+        $dataQuiz = json_decode($this->jsonString, true);
+
+        $data = [];
+
+        foreach ($dataQuiz as $item) {
+
+            if ($item['id'] === $id) {
+
+                foreach ($item['alternatives'] as $key => $alternative) {
+
+                    if ($alternative['id'] == $idAlternative) {
+
+                        $data['check_alternative'] = $alternative['alternative'];
+                        $data['key'] = $key;
+
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+
         return $data;
     }
 }
