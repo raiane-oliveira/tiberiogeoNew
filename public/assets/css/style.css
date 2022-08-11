@@ -5697,9 +5697,6 @@ p img.float-left {
   text-align:justify;
 }
 
-.radio-toolbar {
-  margin: 10px;
-}
 
 .radio-toolbar input[type="radio"] {
   opacity: 0;

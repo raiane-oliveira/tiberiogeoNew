@@ -38,6 +38,7 @@ class QuizModel extends Model
                 $data['position'] = $item['position'];
                 $data['id'] = $item['id'];
                 $data['question'] = $item['question'];
+                $data['question-sub'] = $item['question-sub'];
 
                 foreach ($item['alternatives'] as $ps) {
                     $data['alternatives'][] = [
@@ -95,6 +96,7 @@ class QuizModel extends Model
                 }
                 $data['position'] = $item['position'];
                 $data['question'] = $item['question'];
+                $data['question-sub'] = $item['question-sub'];
                 $data['img'] = $item['img'];
                 break;
             }
@@ -102,31 +104,5 @@ class QuizModel extends Model
 
         return $data;
     }
-    public function getByIdAlternative(string $id, string $idAlternative)
-    {
-
-        $dataQuiz = json_decode($this->jsonString, true);
-
-        $data = [];
-
-        foreach ($dataQuiz as $item) {
-
-            if ($item['id'] === $id) {
-
-                foreach ($item['alternatives'] as $key => $alternative) {
-
-                    if ($alternative['id'] == $idAlternative) {
-
-                        $data['check_alternative'] = $alternative['alternative'];
-                        $data['key'] = $key;
-
-                        break;
-                    }
-                }
-                break;
-            }
-        }
-
-        return $data;
-    }
+    
 }

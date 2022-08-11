@@ -2,7 +2,9 @@
     {   
         "position": 1,
         "id": "2001239834567",
-        "question": "Observe a imagem abaixo e responda: por que a imagem é INCOERENTE?",
+        "question": "Observe a imagem abaixo e responda:",
+        "img": "figura01.png",
+        "question-sub": "Por que a imagem acima é INCOERENTE?",
         "alternatives": [
             {
                 "id": "2001239834567899",
@@ -30,13 +32,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura01.png"
+        "status": "active"
     },
     {
         "position": 2,
         "id": "14566",
-        "question": "Observe a imagem abaixo: os fósseis, a exemplo da imagem acima, costumam se formar apenas em um tipo específico de estrutura rochosa, em virtude de suas características de formação. Os tipos de rochas que permitem a fossilização são:",
+        "question": "Observe a imagem abaixo:",
+        "img": "figura-02.png",
+        "question-sub": "Os fósseis, a exemplo da imagem acima, costumam se formar apenas em um tipo específico de estrutura rochosa, em virtude de suas características de formação. Os tipos de rochas que permitem a fossilização são:",
         "alternatives": [
             {
                 "id": "200123439834567899",
@@ -64,13 +67,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-02.png"
+        "status": "active"
     },
     {
         "position": 3,
         "id": "18666",
         "question": "A imagem abaixo mostra a situação da mulher no mercado de trabalho. Analise as afirmativas abaixo e em seguida assinale a alternativa que corresponda CORRETAMENTE a sua intenção. ",
+        "img": "figura-03.png",
+        "question-sub": "",
         "alternatives": [
             {
                 "id": "20091423423939834567899",
@@ -98,13 +102,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-03.png"
+        "status": "active"
     },
     {
         "position": 4,
         "id": "1866672186",
         "question": "A fase atual de expansão do capitalismo é chamada de globalização. Ela é consequência do avanço tecnológico, especialmente da modernização do sistema industrial. As tecnologias modernas permitem um aumento considerável da produtividade, isto é, com o mesmo número de trabalhadores consegue-se produzir mais. De forma crítica podemos concluir que:",
+        "img": "",
+        "question-sub": "",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -132,13 +137,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": ""
+        "status": "active"
     },
     {
         "position": 5,
         "id": "186095666786",
         "question": "Observe a imagem e assinale a alternativa CORRETA ",
+        "img": "figura-05.png",
+        "question-sub": "",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -166,13 +172,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-05.png"
+        "status": "active"
     },
     {
         "position": 6,
         "id": "1860927895289666786",
-        "question": "Analise a tirinha abaixo sobre as evoluções tecnológicas contemporâneas. A tirinha acima reproduz uma crítica recorrentemente direcionada aos impactos gerados pela Terceira Revolução Industrial, assinale a alternativa CORRETA: ",
+        "question": "Analise a tirinha abaixo sobre as evoluções tecnológicas contemporâneas.",
+        "img": "figura-06.png",
+        "question-sub": "A tirinha acima reproduz uma crítica recorrentemente direcionada aos impactos gerados pela Terceira Revolução Industrial, assinale a alternativa CORRETA:",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -200,13 +207,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-06.png"
+        "status": "active"
     },
     {
         "position": 7,
         "id": "18609278921367986",
         "question": "A Amazônia é considerada uma floresta tropical. Entre as suas principais características, podemos destacar:",
+        "img": "",
+        "question-sub":"",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -234,13 +242,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": ""
+        "status": "active"
     },
     {
         "position": 8,
         "id": "186092789213671254607986",
         "question": "Sobre a economia globalizada, analise a imagem abaixo e em seguida assinale a alternativa CORRETA:",
+        "img": "figura-08.png",
+        "question-sub":"",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -268,13 +277,14 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-08.png"
+        "status": "active"
     },
     {
         "position": 9,
         "id": "186092217899367986",
-        "question": "Observe esta imagem: Esta imagem nos mostra",
+        "question": "Observe esta imagem:",
+        "img": "figura-09.png",
+        "question-sub":"Esta imagem nos mostra:",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -294,21 +304,22 @@
             {
                 "id": "20014544788345998235698676",
                 "alternative": "a poluição causada pelo desenvolvimento industrial.",
-                "correct": false
+                "correct": true
             },
             {
                 "id": "2001454478128346562156337986",
                 "alternative": "O desenvolvimento econômico sem danos ao meio ambiente.",
-                "correct": true
+                "correct": false
             }
         ],
-        "status": "active",
-        "img": "figura-09.png"
+        "status": "active"
     },
     {
         "position": 10,
         "id": "18609221789936792134",
         "question": "A desigualdade social EXPLICA-SE:",
+        "img": "",
+        "question-sub":"",
         "alternatives": [
             {
                 "id": "2009142342393983434567899",
@@ -336,7 +347,6 @@
                 "correct": false
             }
         ],
-        "status": "active",
-        "img": ""
+        "status": "active"
     }
 ]

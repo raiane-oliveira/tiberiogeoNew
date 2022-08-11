@@ -59,6 +59,7 @@ $routes->post('/buildSchool/add', 'Build::addSchool');
 $routes->post('/search', 'Search::index');
 $routes->get('/search/(:any)', 'Search::cloud/$1');
 
+$routes->get('/quiz/restart', 'Quiz::restart');
 $routes->get('/quiz/(:any)', 'Quiz::index/$1');
 $routes->post('/quiz/sendQuestion', 'Quiz::sendQuestion');
 

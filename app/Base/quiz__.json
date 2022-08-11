@@ -1,0 +1,104 @@
+[
+    {   
+        "position": 1,
+        "id": "10",
+        "question": "Observe a imagem abaixo e responda: por que a imagem é INCOERENTE?",
+        "alternatives": [
+            {
+                "id": "101",
+                "alternative": "Em tempos pré-históricos, os homens não caçavam répteis.",
+                "correct": false
+            },
+            {
+                "id": "102",
+                "alternative": "Os dinossauros não eram presas fáceis para os humanos e dificilmente eram capturados.",
+                "correct": false
+            },
+            {
+                "id": "103",
+                "alternative": "Os seres humanos surgiram no período quaternário da era Cenozoica, quando os dinossauros já haviam sido extintos.",
+                "correct": true
+            },
+            {
+                "id": "104",
+                "alternative": "Quando os dinossauros surgiram, no terciário, os seres humanos não viviam mais da caça, e sim da agricultura.",
+                "correct": false
+            },
+            {
+                "id": "105",
+                "alternative": "Os dinossauros viveram na era Paleozoica e os seres humanos na era primária em diante, que são períodos geológicos distintos.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura01.png"
+    },
+    {
+        "position": 2,
+        "id": "20",
+        "question": "Observe a imagem abaixo: os fósseis, a exemplo da imagem acima, costumam se formar apenas em um tipo específico de estrutura rochosa, em virtude de suas características de formação. Os tipos de rochas que permitem a fossilização são:",
+        "alternatives": [
+            {
+                "id": "201",
+                "alternative": "As metamórficas, pois o metamorfismo dos solos permite a conservação da estrutura dos elementos orgânicos;",
+                "correct": false
+            },
+            {
+                "id": "202",
+                "alternative": "As sedimentares, pois o transporte de sedimentos pelos agentes exógenos permite o soterramento dos restos orgânicos, iniciando assim o processo de fossilização. ",
+                "correct": true
+            },
+            {
+                "id": "203",
+                "alternative": "As magmáticas, pois apenas em condições elevadas de pressão interna, causadas pelo “afundamento” dos fósseis ao longo de milhares de anos, é possível a sua formação.",
+                "correct": false
+            },
+            {
+                "id": "204",
+                "alternative": "As ígneas, pois elas são o único tipo de rocha que apresenta uma estrutura maleável para a formação de fósseis.",
+                "correct": false
+            },
+            {
+                "id": "205",
+                "alternative": "N.D.A.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura-02.png"
+    },
+    {
+        "position": 3,
+        "id": "18666",
+        "question": "A imagem abaixo mostra a situação da mulher no mercado de trabalho. Analise as afirmativas abaixo e em seguida assinale a alternativa que corresponda CORRETAMENTE a sua intenção. ",
+        "alternatives": [
+            {
+                "id": "20091423423939834567899",
+                "alternative": "A situação da mulher no mercado de trabalho é muito cômoda, pois ela só exerce a função de secretária.",
+                "correct": false
+            },
+            {
+                "id": "156744444233333",
+                "alternative": "Que a mulher cada vez mais tem escolhido a profissão de técnica em informática.",
+                "correct": false
+            },
+            {
+                "id": "200123983343409875676",
+                "alternative": "Mostra que a mulher, em sua grande maioria, tem jornada dupla de trabalho.",
+                "correct": true
+            },
+            {
+                "id": "200145447883459235698676",
+                "alternative": "A mulher nas últimas décadas vem perdendo espaço no mercado de trabalho para se dedicar exclusivamente dos afazeres do lar.",
+                "correct": false
+            },
+            {
+                "id": "20014544781283456337986",
+                "alternative": "A situação de que a mulher, em geral, vem tendo filhos cada vez mais para poder ter auxilio por parte do governo.",
+                "correct": false
+            }
+        ],
+        "status": "active",
+        "img": "figura-03.png"
+    }
+]
