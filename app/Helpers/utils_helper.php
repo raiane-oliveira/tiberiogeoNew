@@ -74,7 +74,14 @@ function toCategory(string $category): string
     }
 }
 
-function defineColorCategory($category)
+/**
+ * Method defineColorCategory
+ *
+ * @param $category $category [explicite description]
+ *
+ * @return string
+ */
+function defineColorCategory($category): string
 {
     switch ($category) {
         case 'world':
@@ -116,13 +123,6 @@ function createSlug(string $title): string
         "/(ç)/"
     ), explode(" ", "a A e E i I o O u U n N C c"), mb_strtolower($title)));
 }
-
-
-function defineColorWord()
-{
-    return 'orange';
-}
-
 
 /**
  * anchorCategory
@@ -194,6 +194,15 @@ function createQuote(string $quote, string $quoteAuthor): string
     return  '<blockquote>' . $quote . ' <cite>' . $quoteAuthor . '</cite></blockquote>';
 }
 
+/**
+ * Method defineSocial
+ *
+ * @param string $name [explicite description]
+ * @param string $slug [explicite description]
+ * @param bool $title [explicite description]
+ *
+ * @return string
+ */
 function defineSocial(string $name, string $slug, bool $title = null): string
 {
     if (!$title) {
@@ -301,7 +310,14 @@ function createImageGallery(string $images, string $title): string
     return $img;
 }
 
-function tratarImagemGallery(string $img)
+/**
+ * Method tratarImagemGallery
+ *
+ * @param string $img [explicite description]
+ *
+ * @return string
+ */
+function tratarImagemGallery(string $img): string
 {
     $result = explode('.jpg;', $img);
     $result2 = '';
@@ -345,6 +361,13 @@ function buildButtonListCategory(): string
  * @return string
  * 
  */
+/**
+ * Method buildOptionCategory
+ *
+ * @param string $category [explicite description]
+ *
+ * @return string
+ */
 function buildOptionCategory(string $category = null): string
 {
     $options = "";
@@ -360,7 +383,8 @@ function buildOptionCategory(string $category = null): string
     return $options;
 }
 
-function copyr($source, $dest)
+
+function copyr(string $source, string $dest)
 {
     // COPIA UM ARQUIVO
     if (is_file($source)) {
@@ -400,7 +424,12 @@ function copyr($source, $dest)
  *
  * @return void
  */
-function defineUrlDb()
+/**
+ * Method defineUrlDb
+ *
+ * @return string
+ */
+function defineUrlDb(): string
 {
     return APPPATH . 'Base/';
 }
@@ -425,7 +454,14 @@ function tratarSentenca(string $sentenca): string
  *
  * @return void
  */
-function writeZeroLeft(Int $number)
+/**
+ * Method writeZeroLeft
+ *
+ * @param Int $number [explicite description]
+ *
+ * @return string
+ */
+function writeZeroLeft(Int $number): string
 {
 
     if ($number < 9) {
@@ -434,41 +470,60 @@ function writeZeroLeft(Int $number)
     return $number;
 }
 
-function convertNumberString(int $number) {
+/**
+ * Method convertNumberString
+ *
+ * @param int $number [explicite description]
+ *
+ * @return string
+ */
+function convertNumberString(int $number): string
+{
 
     switch ($number) {
         case 0:
-           return 'a)';
-           
+            return 'a)';
+
         case 1:
-           return 'b)';
-           
+            return 'b)';
+
         case 2:
-           return 'c)';
-           
+            return 'c)';
+
         case 3:
-           return 'd)';
-          
+            return 'd)';
+
         case 4:
-           return 'e)';         
-      
-    }    
-  
+            return 'e)';
+    }
 }
 
-function defineEmotion(int $num)
+/**
+ * Method defineEmotion
+ *
+ * @param int $num [explicite description]
+ *
+ * @return string
+ */
+function defineEmotion(int $num): string
 {
-    if($num >= 80){
-        return '&#128516;';        
-    } else if($num <= 70 && $num >=40) {
+    if ($num >= 80) {
+        return '&#128516;';
+    } else if ($num <= 70 && $num >= 40) {
         return '&#128558;';
     }
     return '&#128542;';
-
-
 }
 
-function tratarPalavras($string)
+
+/**
+ * Method tratarPalavras
+ *
+ * @param string $string [explicite description]
+ *
+ * @return string
+ */
+function tratarPalavras(string $string): string
 {
     return preg_replace(array(
         "/(á|à|ã|â|ä)/",
@@ -487,10 +542,16 @@ function tratarPalavras($string)
     ), explode(" ", "a A e E i I o O u U n N C"), mb_strtoupper($string));
 }
 
-function removeCharacterSpecial(string $string)
+/**
+ * Method removeCharacterSpecial
+ *
+ * @param string $string [explicite description]
+ *
+ * @return void
+ */
+function removeCharacterSpecial(string $string):string
 {
     return preg_replace([
         '/(,|;|:)/'
     ], '', $string);
-
 }

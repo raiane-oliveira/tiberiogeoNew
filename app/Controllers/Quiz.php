@@ -9,12 +9,18 @@ use App\Models\QuizModel;
 
 class Quiz extends BaseController
 {
-    private $erros;
-
-    public function index(int $position = 1)
+    private $erros;    
+       
+    /**
+     * Method index
+     *
+     * @param int $position [explicite description]
+     *
+     * @return string
+     */
+    public function index(int $position = 1): string
     {
-        //session()->destroy();
-        //dd('');
+        
         $msg = [
             'message' => '',
             'alert' => ''
@@ -22,16 +28,14 @@ class Quiz extends BaseController
         if (session()->has('erro')) {
             $this->erros = session('erro');
         }
-
-        //session()->remove('position');
+       
         $quiz = new QuizModel();
 
         $quizQuestion = $quiz->getByPosition($position);
 
 
         $page = 'site/quiz/quiz';
-
-        //$quizQuestion = $quiz->getAll();
+        
         //shuffle($quizQuestion);         
         if (isset($dataCategory['error'])) {
             $page = 'site/error404.php';
@@ -51,9 +55,6 @@ class Quiz extends BaseController
         } else {
             $this->restart();
         }
-
-
-
 
         /*Define os favoritos*/
         $categoryFavorite = 'geography';
@@ -90,11 +91,17 @@ class Quiz extends BaseController
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        //session()->remove('position');
+        
         return $parser->render($page);
     }
-
-    public function sendQuestion()
+    
+       
+    /**
+     * Method sendQuestion
+     *
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function sendQuestion(): \CodeIgniter\HTTP\RedirectResponse
     {
        
 
@@ -110,7 +117,7 @@ class Quiz extends BaseController
         );
 
         if (!$val) {
-            return redirect()->back()->with('erro', $this->validator);
+            return redirect()->back()->withInput()->with('erro', $this->validator);
         }
 
 
@@ -161,7 +168,7 @@ class Quiz extends BaseController
             ]);
         }
 
-        //session()->set('position', $quizQuestion['position']);
+        
         if (session()->has('endQuest')) {
 
             session()->set('endQuest', $quizQuestion['position']);
@@ -171,8 +178,14 @@ class Quiz extends BaseController
 
         return redirect()->to('quiz/' . $quizQuestion['position']);
     }
-
-    public function restart()
+    
+      
+    /**
+     * Method restart
+     *
+     * @return \CodeIgniter\HTTP\RedirectResponse
+     */
+    public function restart(): \CodeIgniter\HTTP\RedirectResponse
     {
         session()->destroy();
 

@@ -7,25 +7,49 @@ use CodeIgniter\Model;
 class QuizModel extends Model
 {
     private $jsonString;
-
+    
+    /**
+     * Method __construct
+     *
+     * @return void
+     */
     public function __construct()
     {
 
         $this->jsonString = file_get_contents(defineUrlDb() . 'quiz.json');
     }
-
-    public function getAll()
+    
+        
+    /**
+     * Method getAll
+     *
+     * @return array
+     */
+    public function getAll(): array
     {
         $dataQuiz = json_decode($this->jsonString, true);
         return $dataQuiz;
     }
-
-    public function getCount()
+    
+    /**
+     * Method getCount
+     *
+     * @return int
+     */
+    public function getCount(): int
     {
         return count(json_decode($this->jsonString, true));
     }
-
-    public function getByPosition(int $position)
+    
+       
+    /**
+     * Method getByPosition
+     *
+     * @param int $position [explicite description]
+     *
+     * @return array
+     */
+    public function getByPosition(int $position): array
     {
         $dataQuiz = json_decode($this->jsonString, true);
 
@@ -57,8 +81,17 @@ class QuizModel extends Model
         }
         return $data;
     }
-
-    public function getById(string $id, string $idAlternative)
+    
+       
+    /**
+     * Method getById
+     *
+     * @param string $id [explicite description]
+     * @param string $idAlternative [explicite description]
+     *
+     * @return array
+     */
+    public function getById(string $id, string $idAlternative): array
     {
 
         $dataQuiz = json_decode($this->jsonString, true);
