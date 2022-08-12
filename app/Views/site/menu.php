@@ -128,9 +128,9 @@
                                 </div>
                             </li>
                             <li><?= anchor('/school', "ESCOLA"); ?></li>
+                            <li><?= anchor('/quiz/restart', "SIMULADO"); ?></li>
                             <?php
                             if (getEnv('CI_ENVIRONMENT') === 'development') : ?>
-                                <li><?= anchor('/quiz/restart', "SIMULADO"); ?></li>
                                 <li>
                                     <?= anchor('#', "ADMIN"); ?>
                                     <ul class="nav-dropdown nav-submenu">

@@ -131,6 +131,7 @@
                      <li><?= anchor('/category/brazil', 'Brasil'); ?></li>
                      <li><?= anchor('/category/geography', 'Geografia'); ?></li>
                      <li><?= anchor('/school', 'Escola'); ?></li>
+                     <li><?= anchor('/quiz/restart', 'Simulado'); ?></li>
                   </ul>
                </div>
                <div class="copyright-text text-center">

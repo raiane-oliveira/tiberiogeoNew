@@ -31,7 +31,7 @@ setlocale(LC_ALL, 'pt_BR.utf-8', 'pt_BR', 'Portuguese_Brazil');
                                 //foreach ($quizzes as $quiz) : 
                                 ?>
                                  <div class="clearfix entry-cat-header">
-                            <h2 class="ts-title float-left">Simulado</h2>
+                            <h2 class="ts-title float-left">SIMULADO</h2>
                         </div>
                       
                         <?php if (session()->has('erro')) : ?>
