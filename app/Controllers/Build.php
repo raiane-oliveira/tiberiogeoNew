@@ -690,7 +690,7 @@ class Build extends BaseController
             } else {                
 
                 if ($arquivo->isValid()) {
-                    $arquivo->move('./text/', $arquivo->getName());
+                    $arquivo->move('/text/', $arquivo->getName());
                     
                     $dadosArticle = array(
                         'id' => generateId(10, false, false, true, false),
