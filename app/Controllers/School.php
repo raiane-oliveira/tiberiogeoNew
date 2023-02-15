@@ -55,6 +55,7 @@ class School extends BaseController
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('site/school/school');
-    }
+        return $parser->render('site/school/school');    }
+
+   
 }

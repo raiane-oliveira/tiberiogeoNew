@@ -133,7 +133,7 @@ $javascript = [
                                     </div>
                                     <span style="color:red" class="font-italic font-weight-bold"><?php echo $erro !== '' ? $erro->getError('title') : ''; ?></span>
                                 </div>
-                            </div>                            
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -147,13 +147,45 @@ $javascript = [
 
                             <?= form_close() ?>
                         </div><!-- grid box end -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="clear">
+                                    <h3>LISTAR ARTIGOS ESCOLA</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="table">
+                                        <table class="table table-striped">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>TIPO</th>
+                                                    <th>DATA</th>
+                                                    <th>TÍTULO</th>
+                                                    <th class="text-center" colspan="3">AÇÃO</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <?php
+                                                    foreach ($dataSchool as $type => $item) :
+                                            
+                                                        foreach ($item as $it) : ?>
+                                                            <td><?= defineTypeSchool($type); ?></td>
+                                                            <td><?= $it['date']; ?></td>
+                                                            <td><?= $it['title']; ?></td>
+                                                            <td class="text-center"><?= anchor('buildSchool/delete/' . $it['id'] . '/', '<span class="btn btn-primary">Excluir</span>', ['onclick'=>"return confirm('Tem certeza que deseja excluir?')"]); ?></td>
+                                                </tr>
+                                        <?php endforeach;
+                                                    endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div><!-- col end-->
                 </div><!-- row end-->
             </div><!-- container end-->
-    </section>
-
-
-
+    </section>   
 
     <!-- newslater end -->
     <!-- footer start -->

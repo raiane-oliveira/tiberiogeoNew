@@ -5,11 +5,12 @@ namespace App\Controllers;
 
 use App\Models\ArticleModel;
 use App\Controllers\BaseController;
+use App\Models\SchoolModel;
 
 class Build extends BaseController
 {
     public $erros = '';
-    public $alocacao = '';    
+    public $alocacao = '';
 
     public function index($category)
     {
@@ -24,9 +25,9 @@ class Build extends BaseController
                 'alert' => 'danger'
             ];
         }
-        if(session()->get ('success')){           
+        if (session()->get('success')) {
             $msg = [
-                'message'=>'<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo alterado com sucesso!',
+                'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo alterado com sucesso!',
                 'alert' => 'success'
             ];
         }
@@ -95,8 +96,8 @@ class Build extends BaseController
         }
         $article = new ArticleModel();
         $dataCategory = $article->getById($id, $category);
-       
-        
+
+
 
         $data = array(
             'msgs' => $msg,
@@ -105,14 +106,14 @@ class Build extends BaseController
 
         );
 
-        $page = !$dataCategory['error'] ? 'buildEdit' : 'buildErro'; 
+        $page = !$dataCategory['error'] ? 'buildEdit' : 'buildErro';
 
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('admin/'.$page);
+        return $parser->render('admin/' . $page);
     }
     public function deleteArticle($id, $category)
     {
@@ -129,8 +130,8 @@ class Build extends BaseController
         }
         $article = new ArticleModel();
         $dataCategory = $article->getById($id, $category);
-       
-        
+
+
 
         $data = array(
             'msgs' => $msg,
@@ -139,14 +140,14 @@ class Build extends BaseController
 
         );
 
-        $page = !$dataCategory['error'] ? 'buildDelete' : 'buildErro'; 
+        $page = !$dataCategory['error'] ? 'buildDelete' : 'buildErro';
 
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('admin/'.$page);
+        return $parser->render('admin/' . $page);
     }
     public function editCategory($id, $category)
     {
@@ -163,8 +164,8 @@ class Build extends BaseController
         }
         $article = new ArticleModel();
         $dataCategory = $article->getById($id, $category);
-       
-        
+
+
 
         $data = array(
             'msgs' => $msg,
@@ -173,35 +174,36 @@ class Build extends BaseController
 
         );
 
-        $page = !$dataCategory['error'] ? 'buildEditCategory' : 'buildErro'; 
+        $page = !$dataCategory['error'] ? 'buildEditCategory' : 'buildErro';
 
         $parser = \Config\Services::renderer();
         $parser->setData($this->style);
         $parser->setData($data);
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
-        return $parser->render('admin/'.$page);
+        return $parser->render('admin/' . $page);
     }
 
-    public function del(){
+    public function del()
+    {
         if ($this->request->getMethod() !== 'post') {
             return redirect()->to('/build');
         }
 
         /*Busca o artigo*/
         $category = $this->request->getPost('category');
-        
+
         /*Atualiza o arquivo*/
         $this->articleUpdate = new ArticleModel();
-        
+
         //$this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
         $delete = $this->articleUpdate->excluirArticle($this->request->getPost('id'), $category);
-        
+
         session()->set([
-            'success' => true,                
+            'success' => true,
         ]);
 
-        return redirect()->to('build/category/'.$category);
+        return redirect()->to('build/category/' . $category);
     }
     public function update()
     {
@@ -332,29 +334,29 @@ class Build extends BaseController
             ],
         ]);*/
         $val = $this->validate(
-            [               
+            [
                 'newCategory' => 'equalCategory[category]',
-              
+
             ],
             [
-               'newCategory' =>[
-                      'equalCategory' => 'Ops! Categoria escolhida igual a anterior.'
-                  ]  
-                ],
-               
+                'newCategory' => [
+                    'equalCategory' => 'Ops! Categoria escolhida igual a anterior.'
+                ]
+            ],
+
         );
-       
+
         //dd($val);
-        if(!$val){ 
+        if (!$val) {
             return redirect()->back()->withInput()->with('erro', $this->validator);
-        } else {            
+        } else {
             /*$blog['title'] = $this->request->getPost('title');
             $blog['text'] = $this->request->getPost('text');
             $blog['image-main'] = $this->request->getPost('image-main');
             $blog['data_postagem'] = date('d/m/Y');*/
 
             /*Busca o artigo*/
-            
+
             $newCategory = $this->request->getPost('newCategory');
             $category = $this->request->getPost('category');
             $dataCategory = $this->category->getArticleMain($category);
@@ -383,19 +385,19 @@ class Build extends BaseController
                     $dataArticle['access'] = $dados['access'];
                     break;
                 }
-            }         
+            }
             /*Atualiza o arquivo*/
             $this->articleUpdate = new ArticleModel();
-            $update = $this->articleUpdate->updateCategory($dataArticle,$category, $newCategory);
-           
+            $update = $this->articleUpdate->updateCategory($dataArticle, $category, $newCategory);
+
             //$this->articleUpdate->updateArticle($dataCategory, $this->request->getPost('category'));
             $delete = $this->articleUpdate->excluirArticle($this->request->getPost('id'), $category);
-            
+
             session()->set([
-                'success' => true,                
+                'success' => true,
             ]);
 
-            return redirect()->to('build/category/'.$newCategory);
+            return redirect()->to('build/category/' . $newCategory);
         }
 
         $datas['msgs'] = [
@@ -404,7 +406,7 @@ class Build extends BaseController
 
         ];
 
-      
+
         /*$dataCategory = $this->category->getArticleMain($category);
         krsort($dataCategory);
 
@@ -436,9 +438,13 @@ class Build extends BaseController
             ];
         }
 
+        $school = new SchoolModel();
+        $datas = $school->getSchool();
+
         $data = array(
             'msgs' => $msg,
-            'erro' => $this->erros
+            'erro' => $this->erros,
+            "dataSchool" => $datas,
         );
 
 
@@ -536,7 +542,7 @@ class Build extends BaseController
             );
 
             // extrai a informação do ficheiro
-            $string = file_get_contents(defineUrlDb().'category-' . $this->request->getPost('category') . '.json');
+            $string = file_get_contents(defineUrlDb() . 'category-' . $this->request->getPost('category') . '.json');
             // faz o decode o json para uma variavel php que fica em array
             $json = json_decode($string, true);
 
@@ -544,7 +550,7 @@ class Build extends BaseController
             $json[] = $dadosArticle;
 
             // abre o ficheiro em modo de escrita
-            $fp = fopen(defineUrlDb().'category-' . $this->request->getPost('category') . '.json', 'w');
+            $fp = fopen(defineUrlDb() . 'category-' . $this->request->getPost('category') . '.json', 'w');
             // escreve no ficheiro em json
             fwrite($fp, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             // fecha o ficheiro
@@ -575,23 +581,22 @@ class Build extends BaseController
             }*/
             //return view('/admin/blog/cadastrar-blog', $data);
 
-            $new = file_get_contents(defineUrlDb().'categories.json');
+            $new = file_get_contents(defineUrlDb() . 'categories.json');
             $json = json_decode($new, true);
 
             // aqui é onde adiciona a nova linha ao ao array assignment
             $dadosArticleNew = [
                 'id' => $dadosArticle['id'],
-                'category'=> $dadosArticle['category']
+                'category' => $dadosArticle['category']
             ];
             $json[] = $dadosArticleNew;
 
             // abre o ficheiro em modo de escrita
-            $fp2 = fopen(defineUrlDb().'categories.json', 'w');
+            $fp2 = fopen(defineUrlDb() . 'categories.json', 'w');
             // escreve no ficheiro em json
             fwrite($fp2, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             // fecha o ficheiro
             fclose($fp2);
-           
         }
 
         $datas['msgs'] = [
@@ -614,10 +619,9 @@ class Build extends BaseController
     }
 
     public function delete(string $id, string $category)
-    {   
-        $this->alocacao =  new ArticleModel();       
+    {
+        $this->alocacao =  new ArticleModel();
         $this->alocacao->excluirArticle($id, $category);
-
     }
     public function addSchool()
     {
@@ -634,7 +638,7 @@ class Build extends BaseController
         ]);*/
         $val = $this->validate(
             [
-                'title'        => 'required|min_length[3]',                
+                'title'        => 'required|min_length[3]',
                 //'link'         => 'required',
                 //'image-main'         => 'required',
                 //'category'         => 'required',
@@ -650,7 +654,7 @@ class Build extends BaseController
                 'title'        => [
                     'required' => 'O campo TÍTULO tem preenchimento obrigatório!',
                     'min_length' => 'O campo TÍTULO precisar tem no mínimo 3 caracteres!'
-                ],               
+                ],
                 /*'link'        => [
                     'required' => 'O campo LINK tem preenchimento obrigatório!'
                 ],*/
@@ -676,7 +680,7 @@ class Build extends BaseController
             $blog['text'] = $this->request->getPost('text');
             $blog['image-main'] = $this->request->getPost('image-main');
             $blog['data_postagem'] = date('d/m/Y');*/
-            $arquivo = $this->request->getFile('arquivo');           
+            $arquivo = $this->request->getFile('arquivo');
 
             $tipo = $arquivo->getMimeType();
 
@@ -687,11 +691,11 @@ class Build extends BaseController
                     'alert' => 'danger',
 
                 ];
-            } else {                
+            } else {
 
                 if ($arquivo->isValid()) {
                     $arquivo->move('/text/', $arquivo->getName());
-                    
+
                     $dadosArticle = array(
                         'id' => generateId(10, false, false, true, false),
                         'title' => $this->request->getPost('title'),
@@ -699,41 +703,39 @@ class Build extends BaseController
                         'date' => date('d/m/Y'),
                     );
 
-                     // extrai a informação do ficheiro
-            $string = file_get_contents(defineUrlDb().'school.json');
-            // faz o decode o json para uma variavel php que fica em array
-            $json = json_decode($string, true);
+                    // extrai a informação do ficheiro
+                    $string = file_get_contents(defineUrlDb() . 'school.json');
+                    // faz o decode o json para uma variavel php que fica em array
+                    $json = json_decode($string, true);
 
 
 
-            // aqui é onde adiciona a nova linha ao ao array assignment
-            $json[$this->request->getPost('type')][] = $dadosArticle;
+                    // aqui é onde adiciona a nova linha ao ao array assignment
+                    $json[$this->request->getPost('type')][] = $dadosArticle;
 
-            // abre o ficheiro em modo de escrita
-            $fp = fopen(defineUrlDb().'school.json', 'w');
-            // escreve no ficheiro em json
-            fwrite($fp, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
-            // fecha o ficheiro
-            fclose($fp);
+                    // abre o ficheiro em modo de escrita
+                    $fp = fopen(defineUrlDb() . 'school.json', 'w');
+                    // escreve no ficheiro em json
+                    fwrite($fp, json_encode($json, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+                    // fecha o ficheiro
+                    fclose($fp);
 
-        $datas['msgs'] = [
-            'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo criado com sucesso!',
-            'alert' => 'success',
+                    $datas['msgs'] = [
+                        'message' => '<i class="fa fa-exclamation-triangle"></i> Parabéns! Artigo criado com sucesso!',
+                        'alert' => 'success',
 
-        ];
-
-        
+                    ];
                 }
             }
 
-           
+
             //$filepath = base_url().'/assets/text/'.$arquivo->store();
             //$data = [
             //  'uploaded_fileinfo'=> new File($filepath)
             //];
 
 
-           
+
             //mkdir('./assets/img/codo',0775,true);
             /*if(!is_dir('././assets/img/world/casa')){
                 mkdir('././assets/img/world/casa');
@@ -767,5 +769,28 @@ class Build extends BaseController
         $parser->setData($this->dataHeader);
         $parser->setData($this->javascript);
         return $parser->render('admin/buildSchool');
+    }
+
+    public function deleteSchool(string $id)
+    {        
+        $idSchool = new SchoolModel();
+        $dataSchool = $idSchool->getSchool();
+        foreach ($dataSchool as $type => $item) {
+            
+            foreach ($item as $a => $it) {
+
+                if ($it['id'] === $id) {                   
+                    unset($dataSchool[$type][$a]);
+                }
+            }
+        }
+
+        $newDataSchool = json_encode($dataSchool, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+       
+        file_put_contents(defineUrlDb() . 'school.json', $newDataSchool);
+
+        return $this->buildSchool();
+      
+
     }
 }

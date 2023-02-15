@@ -17,7 +17,7 @@ class SchoolModel extends Model
     public function getSchool(): array
     {
         $jsonString = file_get_contents(defineUrlDb().'school.json');
-        $dataSchool = json_decode($jsonString, true);
+        $dataSchool = json_decode($jsonString, true);        
         return $dataSchool;
     }
 }

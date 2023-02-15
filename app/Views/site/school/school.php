@@ -10,8 +10,8 @@
                     <div class="post-list-item widgets">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a  href="#exercise" aria-controls="exercise" role="tab" data-toggle="tab" aria-selected="false" title="Exercícios"><i class="fa fa-list-alt"></i> Exerc.</a></li>
-                            
+                            <li role="presentation"><a href="#exercise" aria-controls="exercise" role="tab" data-toggle="tab" aria-selected="false" title="Exercícios"><i class="fa fa-list-alt"></i> Exerc.</a></li>
+
                             <li role="presentation"><a href="#evidences" aria-controls="evidences" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-text-o"></i> Provas</a></li>
                             <li role="presentation"><a href="#slide" aria-controls="slide" role="tab" data-toggle="tab" class="" aria-selected="false"><i class="fa fa-file-powerpoint-o"></i> Slide</a></li>
                             <li role="presentation"><a href="#text" aria-controls="text" role="tab" data-toggle="tab" class="active" aria-selected="true"><i class="fa fa-file-text"></i> Textos</a></li>
@@ -25,24 +25,33 @@
                                 use App\Models\ArticleModel;
 
                                 krsort($dataSchool['exercicie']);
-                                foreach ($dataSchool['exercicie'] as $item) : ?>
-                                    <div class="post-content media">
-                                        <i class="fa fa-list-alt fa-3x"></i>
-                                        <div class="media-body px-2">
-                                            <span class="post-tag">
-                                                <a href="#" class="green-color"><?= $item['date']; ?></a>
-                                            </span>
-                                            <h4 class="post-title">
-                                                <?= anchor(base_url() . $item['link'], $item['title'], ['target' => '_blank']); ?>
-                                            </h4>
+                                $total = count($dataSchool['exercicie']);
+                                if ($total >= 1) {
+
+                                    foreach ($dataSchool['exercicie'] as $item) : ?>
+                                        <div class="post-content media">
+                                            <i class="fa fa-list-alt fa-3x"></i>
+                                            <div class="media-body px-2">
+                                                <span class="post-tag">
+                                                    <a href="#" class="green-color"><?= $item['date']; ?></a>
+                                                </span>
+                                                <h4 class="post-title">
+                                                    <?= anchor(base_url() . $item['link'], $item['title'], ['target' => '_blank']); ?>
+                                                </h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                    <?php endforeach;
+                                } else { ?>
+                                    <h4 class="post-title" style="color:grey"> Aguardando exercícios...</h4>
+                                <?php }
+                                ?>
                             </div>
                             <!--ts-grid-box end -->
                             <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="evidences">
                                 <?php
                                 krsort($dataSchool['evidences']);
+                                $total = count($dataSchool['evidences']);
+                                if ($total >= 1) {
                                 foreach ($dataSchool['evidences'] as $item) : ?>
                                     <div class="post-content media">
                                         <i class="fa fa-file-text-o fa-3x"></i>
@@ -55,12 +64,18 @@
                                             </h4>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php endforeach; 
+                            } else { ?>
+                                    <h4 class="post-title" style="color:grey"> Aguardando provas...</h4>
+                                <?php }
+                                ?>
                             </div>
                             <!--ts-grid-box end -->
                             <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list" id="slide">
                                 <?php
                                 krsort($dataSchool['slide']);
+                                $total = count($dataSchool['slide']);
+                                if ($total >= 1) {
                                 foreach ($dataSchool['slide'] as $item) : ?>
                                     <div class="post-content media">
                                         <i class="fa fa-file-powerpoint-o fa-3x"></i>
@@ -73,12 +88,18 @@
                                             </h4>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php endforeach; 
+                                } else { ?>
+                                    <h4 class="post-title" style="color:grey"> Aguardando slides...</h4>
+                                <?php }
+                                ?>
                             </div>
                             <!--ts-grid-box end -->
                             <div role="tabpanel" class="tab-pane ts-grid-box post-tab-list active" id="text">
                                 <?php
                                 krsort($dataSchool['text']);
+                                $total = count($dataSchool['text']);
+                                if ($total >= 1) {
                                 foreach ($dataSchool['text'] as $item) : ?>
                                     <div class="post-content media">
                                         <i class="fa fa-file-text fa-3x"></i>
@@ -91,7 +112,10 @@
                                             </h4>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php endforeach; } else { ?>
+                                    <h4 class="post-title" style="color:grey"> Aguardando textos...</h4>
+                                <?php }
+                                ?>
                             </div>
                             <!--ts-grid-box end -->
                             <!--ts-grid-box end -->

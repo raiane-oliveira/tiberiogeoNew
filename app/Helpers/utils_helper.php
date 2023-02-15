@@ -549,9 +549,23 @@ function tratarPalavras(string $string): string
  *
  * @return void
  */
-function removeCharacterSpecial(string $string):string
+function removeCharacterSpecial(string $string): string
 {
     return preg_replace([
         '/(,|;|:)/'
     ], '', $string);
+}
+
+function defineTypeSchool(string $type): string
+{
+    switch ($type) {
+        case "exercicie":
+            return "Exercícios";
+        case "slide":
+            return "Slides";
+        case "text":
+            return "Textos";
+        case "evidences":
+            return "Provas";
+    }
 }

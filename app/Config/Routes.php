@@ -54,6 +54,7 @@ $routes->post('/build/updateCategory', 'Build::updateCategory');
 
 $routes->get('/buildSchool', 'Build::buildSchool');
 $routes->post('/buildSchool/add', 'Build::addSchool');
+$routes->get('/buildSchool/delete/(:any)', 'Build::deleteSchool/$1');
 
 
 $routes->post('/search', 'Search::index');
