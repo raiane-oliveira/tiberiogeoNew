@@ -1,6 +1,20 @@
 {
     "exercicie": [],
     "evidences": [],
-    "slide": [],
-    "text": []
+    "slide": [
+        {
+            "id": "202302191027471517824369",
+            "title": "Slide O Espaço Geográfico e a Construção do Capitalismo",
+            "link": "/text/ConstrucaoEspacoGeograficoGlobalizacao.pdf",
+            "date": "19/02/2023"
+        }
+    ],
+    "text": [
+        {
+            "id": "202302191025022305414367",
+            "title": "O Espaço Geográfico e a Construção do Capitalismo",
+            "link": "/text/EspacoGeografiaConstrucaoCapitalismo.pdf",
+            "date": "19/02/2023"
+        }
+    ]
 }
