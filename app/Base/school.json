@@ -25,7 +25,26 @@
             "date": "07/04/2023"
         }
     ],
-    "evidences": [],
+    "evidences": [
+        {
+            "id": "202304160919423415372281",
+            "title": "Simulado da área de Humanas - 1º Bimestre (3º Ano)",
+            "link": "/text/Simulado_3Ano_Humanas_2023_1Bimestre.pdf",
+            "date": "16/04/2023"
+        },
+        {
+            "id": "202304160920323464170391",
+            "title": "Gabarito do Simulado da Área de Humanas - 1º Bimestre (3º Ano)",
+            "link": "/text/GabaritoSimuladoHumanas_1Bimestre_2023.pdf",
+            "date": "16/04/2023"
+        },
+        {
+            "id": "202304160925495341405227",
+            "title": "Avaliação do 1º ano sobre Espaço Geográfico e Categorias Geoigráficas",
+            "link": "/text/Avaliacao_1ano_Espaco_CategoriasGeográficas.pdf",
+            "date": "16/04/2023"
+        }
+    ],
     "slide": [
         {
             "id": "202302191027471517824369",
