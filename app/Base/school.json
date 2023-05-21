@@ -23,6 +23,12 @@
             "title": "Orientação  e Localização Geográfica - 1º ANO",
             "link": "/text/Exercicio_LocalizacaoOrientacaoGeografica.pdf",
             "date": "07/04/2023"
+        },
+        {
+            "id": "202305211224285285146097",
+            "title": "A Nova Ordem Mundial - 3° ANO",
+            "link": "/text/ExercicioNovaOrdemMundial_Oficial.pdf",
+            "date": "21/05/2023"
         }
     ],
     "evidences": [
@@ -75,6 +81,12 @@
             "title": "A Cartografia e as Projeções Cartográficas - 1º ANO",
             "link": "/text/RepresentacaoEspacoOficial.pdf",
             "date": "23/04/2023"
+        },
+        {
+            "id": "202305211227328162923553",
+            "title": "A Questão Ambiental - 3º ANO",
+            "link": "/text/SlideMeioAmbiente_3Ano_Oficial.pdf",
+            "date": "21/05/2023"
         }
     ],
     "text": [
@@ -113,6 +125,12 @@
             "title": "A Cartografia e as Projeções Cartográficas - 1º ANO ",
             "link": "/text/Texto_Cartografia_Projecoes.pdf",
             "date": "23/04/2023"
+        },
+        {
+            "id": "202305211226445987132403",
+            "title": "A Questão Ambiental - 3º ANO",
+            "link": "/text/TextoQuestaoAmbiental_3Ano.pdf",
+            "date": "21/05/2023"
         }
     ]
 }
