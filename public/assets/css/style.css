@@ -5710,7 +5710,7 @@ p img.float-left {
     padding: 10px 20px;
     font-family: sans-serif, Arial;
     font-size: 16px;
-    /*border: 1px solid #444;*/
+    border: 1px solid #ddd;
     border-radius: 4px;
     width: 100%;
 }
